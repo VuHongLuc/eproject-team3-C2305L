@@ -1,0 +1,227 @@
+body{
+    padding-top: 101px;
+}
+.custom-rounded {
+  border-radius: 20px;
+  border: 2px solid black;
+  background-image: url("Photos/Logo/logo2.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.text-red {
+  color: red;
+}
+.text-red:hover {
+    text-decoration: none;
+}
+
+.custom-input {
+  border-radius: 10px;
+  background-color: rgba(243, 241, 241, 1);
+}
+
+.text-blue {
+  color: #007BFF;
+}
+.text-black {
+    color: #000;
+    
+}
+.text-black:hover {
+    color: red;
+    text-decoration: none;
+}
+
+
+/* Hưng */
+   /* Styling for the footer section */
+   .footer-section-container {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-around; /* Canh giữa theo chiều ngang các phần tử trong footer */
+    background-color: #000; /* Nền đen cho phần footer */
+    display: flex;
+    background-color: #000; /* Nền đen cho phần footer */
+    padding: 20px; /* Khoảng cách lề phần footer */
+}
+
+/* Styling for footer section elements */
+.footer-section {
+    width: 20%;
+    text-align: left; /* Canh trái nội dung trong footer */
+    color: #fff; /* Chữ màu trắng */
+}
+
+/* Styling for h2 elements inside the footer section */
+.footer-section h2 {
+    color: #fff; /* Chữ màu trắng */
+    font-size: 27px;
+    position: relative;
+}
+
+/* Styling for the line after h2 elements inside the footer section */
+.footer-section h2::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+/* Styling for p and a elements inside the footer section */
+.footer-section p, .footer-section a {
+    color: #fff !important; /* Chữ màu trắng */
+    display: block;
+    position: relative;
+    margin:0;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: red !important; /* Change the text color to red on hover */
+}
+
+/* Styling for the map container */
+.map-container {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+
+/* Styling for the button container */
+.button-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Styling for anchor elements inside the button container */
+.button-container a {
+    color: #fff; /* Chữ màu trắng */
+}
+
+
+
+
+
+
+
+/*Phong*/
+*{ 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+   }
+/* Component */
+.padding {
+    padding: 10px;
+}
+.margin {
+    margin: 5px;
+}
+.font-weight_bold{
+    font-weight: bold;
+}
+/* Main Menu */
+#main-menu{
+    width: 100%;
+    background: #E7E7E7;
+
+}
+.main-menu_categories, .main-menu_brands{
+    width: 1350px;   
+}
+.main-menu_name {
+   
+    font-size: 25.6px;
+    font-weight: 700;
+}
+.category-menu {
+    padding: 12px;
+
+}
+
+.menu-item {
+    height: 180px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: #FFF;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s; 
+}
+.menu-item:hover  {
+    border: 1px solid rgba(4, 4, 4, 0.2);
+    box-shadow: -1px 0 2px 0px rgba(2, 2, 2, 0.3) ;
+    cursor: pointer;
+}
+.menu-item:hover .menu-item_img{
+    transform: scale(1.1);
+}
+
+.menu-item_img {
+    width: 80px;
+    height: 80px;
+    background: none;
+    border-radius: 50%;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+/* Responsive */
+
+
+/* list */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.custom-col {
+    max-width: 285px;
+    max-height: 400px;
+}
+
+
+.custom-col:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Hiệu ứng đổ bóng khi hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Thời gian và kiểu chuyển động */
+}
+
+.home-custom-image {
+    height: 190px;
+    width: 100%;
+}
+
+.col-inner {
+    background-color: #FFF;
+    padding: 30px 15px 15px 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 3px 0 #dee2e6;
+}
+
+.wrapper {
+    background-color: #E7E7E7;
+    max-width: 100%;
+
+}
+
+.home-btn-showmore{
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.home-custom-card-title {
+    display: inline-block;
+    height: 70px;
+}
+.home-custom-card-title:hover {
+    color: #ed1a20;
+}
