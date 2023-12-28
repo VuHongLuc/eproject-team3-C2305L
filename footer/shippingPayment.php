@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>SHIPPING AND PAYMENT</title>
     
 </head>
 
 <body>
-    <?php include 'navbar.html'; ?>
+    <?php include '../navbar.html'; ?>
     
     <div class="container">
     <h2>SHIPPING AND PAYMENT</h2>
@@ -49,7 +50,7 @@
         <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm.</p>
     </div>
     </div>
-    <?php include 'footer.html'; ?>
+    <?php include '../footer.html'; ?>
 </body>
 
 </html>

@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
     <title>Privacy Policy</title>
 </head>
 <body>
-    <?php include 'navbar.html'; ?>
+    <?php include '../navbar.html'; ?>
 
     <div class="container">
         <h2>PRIVACY POLICY</h2>
@@ -36,6 +37,6 @@
         </ul>
     </div>
 
-    <?php include 'footer.html'; ?>
+    <?php include '../footer.html'; ?>
 </body>
 </html>
