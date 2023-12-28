@@ -4,26 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Menu</title>
+    <link rel="stylesheet" href="../style.css">
+    <title>View List Category</title>
 </head>
 <body>
+<?php include "../navbar.html" ?>
+
 <div class="wrapper container-fluid">
     <br>
     <?php 
-        include "db.php";
-        $sql1 = "SELECT * FROM category";
+        include "../db.php";
+        $sql1 = "SELECT * FROM category WHERE categoryID = ".$_GET['category'];
         $result1 = $conn->query($sql1);
-        while ($row1 = $result1->fetch_assoc()) {
+        $row1 = $result1->fetch_assoc();
     ?>
     <div class="container col-inner">
         <h2 style="text-align: center" class="text-uppercase">
-            <a href="listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="list-group-item"><?php echo $row1["categoryName"]?>
+            <a href="" class="list-group-item"><?php echo $row1["categoryName"]?>
             </a>
     </h2>
         <div class="row">
     <?php
-        $sql = "SELECT * FROM products where categoryID =". $row1["categoryID"] ." limit 8";
+
+        // Định nghĩa các thông số
+        $sql2 = "SELECT COUNT(*) as totalRecords FROM products WHERE categoryID =". $_GET['category'];
+        $result2 = $conn->query($sql2);
+        if ($result2->num_rows > 0) {
+            $row2 = $result2->fetch_assoc();
+            $totalRecords = $row2["totalRecords"];
+        } else {
+            $totalRecords = 0;
+        }
+        $recordsPerPage = 8;
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+
+        // Tính toán số trang và vị trí bắt đầu
+        $totalPages = ceil($totalRecords / $recordsPerPage);
+        $startPosition = ($currentPage - 1) * $recordsPerPage;
+
+        // Truy vấn cơ sở dữ liệu
+        $sql = "SELECT * FROM products WHERE categoryID =". $_GET['category'] ." LIMIT $recordsPerPage OFFSET $startPosition";
         $result = $conn->query($sql);
 
         while ($row = $result->fetch_assoc()) {
@@ -31,7 +51,7 @@
                 <div class="col-md-3 mt-2">
                     <div class="card custom-col">
                         <a href="" class="list-group-item align-items-center">
-                            <img src="<?php echo $row["imageLink"]?>" class="p-5 object-fit-contain home-custom-image" alt="Product 3">
+                            <img src="../<?php echo $row["imageLink"]?>" class="p-5 object-fit-contain home-custom-image" alt="Product 3">
                         </a>
                         
                         <div class="card-body text-center">
@@ -47,16 +67,20 @@
         <?php
         }
         ?>
+
         <div class="justify-content-center d-flex">
-        <a href="listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="btn btn-danger home-btn-showmore ">SHOW MORE</a>
+            <?php
+                for ($i = 1; $i <= $totalPages; $i++) {
+                    echo '<a href="?category='.$_GET['category'].'&page=' . $i . '"class="btn btn-danger list-btn-pagination">' . $i . '</a>';
+                }
+            ?>
         </div>
+
         </div>
         </div>
         <br>
-    <?php
-    }
-    ?>
-</div>
 
+</div>
+<?php include "../footer.html" ?>
 </body>
 </html>
