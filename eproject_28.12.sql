@@ -194,7 +194,11 @@ VALUES
 	(DEFAULT, 'High-Endurance microSD Memory Card', 'Photos/Kingston/Kingston-MemoryCard-21.jpg', 26.76,1000, '4', '5', '64GB', '95MB/s Read and 30MB/s Write', 'Black', '3 years', '11mm x 15mm x 1mm', 'A high-endurance microSD memory card is a storage solution designed for continuous and demanding use, such as in surveillance cameras, dashcams, or other devices that require frequent read/write cycles.'),
 	(DEFAULT, 'DataTraveler Max USB 3.2 Gen 2 Series Flash Drive', 'Photos/Kingston/Kingston-USB-22.jpg', 110.93,1000, '3', '5', '256GB', ' 1,000MB/s read, 900MB/s write', 'Pink', '3 years', '82.17 mm x 22.00 mm x 9.02 mm', 'The DataTraveler Max USB 3.2 Gen 2 Series is a high-performance flash drive by Kingston Technology. It features USB 3.2 Gen 2 connectivity for fast data transfer speeds. With a sleek design and durable metal casing, it provides reliable and secure storage in capacities ranging from moderate to high.'),
 	(DEFAULT, 'Canvas Select Plus microSD Memory Card', 'Photos/Kingston/Kingston-MemoryCard-23.jpg', 6.56,1000, '4', '5', '32GB', '100MB/s Read, UHS-I Speed Class, U1, V10', 'Black', '5 years', '11mm x 15mm x 1mm', 'The Canvas Select Plus microSD Memory Card is a product offered by Kingston Technology. It is a microSD card designed for use in various devices such as cameras, smartphones, and tablets.'),
-	(DEFAULT, 'DataTraveler Exodia M USB Flash Drive', 'Photos/Kingston/Kingston-USB-24.jpg', 3.09,1000, '3', '5', '64GB', 'USB 3.2 Gen 1 compliant', 'Blue', '5 years', '	67.4mm x 21.8mm x 11.6mm', 'The DataTraveler Exodia M is a USB flash drive manufactured by Kingston. It offers portable storage with a compact and durable design. The "M" in its name likely denotes its compatibility with USB Type-C ports. With various storage capacities.');
+	(DEFAULT, 'DataTraveler Exodia M USB Flash Drive', 'Photos/Kingston/Kingston-USB-24.jpg', 3.09,1000, '3', '5', '64GB', 'USB 3.2 Gen 1 compliant', 'Blue', '5 years', '	67.4mm x 21.8mm x 11.6mm', 'The DataTraveler Exodia M is a USB flash drive manufactured by Kingston. It offers portable storage with a compact and durable design. The "M" in its name likely denotes its compatibility with USB Type-C ports. With various storage capacities.'),
+    (DEFAULT, 'Ram Kingston Fury Beast White RGB 32GB', 'Photos/Kingston/Kingston-RAM-25.jpg', 160.07,1000, '5', '5', '32GB', '4800MB/s read, 5200MB/s write', 'White', '5 years', '133,35 mm x 42,23 mm x 7,11 mm', 'The Kingston Fury Beast White RGB 32GB DDR5 5600MHz Kit (KF556C40BWAK2-32) is a high-performance RAM kit designed for gaming and content creation. With a capacity of 32GB spread across two modules, it operates at a fast speed of 5600MHz, ensuring smooth multitasking and responsiveness.'),
+	(DEFAULT, 'Ram Kingston Fury Beast RGB 64GB DDR5', 'Photos/Kingston/Kingston-RAM-26.jpg', 246.48,1000, '5', '5', '64GB', '4800MB/s, 5200MB/s write', 'Black', '5 years', '133,35 mm x 42,23 mm x 7,11 mm', 'The Kingston Fury Beast RGB 64GB DDR5 5200MHz Kit (KF552C40BBAK2-64) is a high-performance RAM kit designed for gaming and demanding applications. Featuring DDR5 technology, it provides fast data transfer rates at 5200MHz. The kit includes two modules, each with a capacity of 32GB, totaling 64GB. The RGB lighting adds a customizable aesthetic to your system.'),
+	(DEFAULT, 'Ram Kingston Fury Beast 16GB DDR5', 'Photos/Kingston/Kingston-RAM-27.jpg', 81.88,1000, '5', '5', '16GB', '4800MB/s Read and 5200MB/s Write', 'Black', '5 years', '133,35 mm x 34,9 mm x 6,62 mm', 'The Kingston Fury Beast 16GB DDR5 5600MHz RAM (model KF556C40BB-16) is a high-performance memory module designed for gaming and other demanding applications. With a capacity of 16GB and a fast clock speed of 5600MHz, it delivers quick data transfer rates for improved system responsiveness.'),
+	(DEFAULT, 'Ram Kingston Fury Beast 8GB DDR5', 'Photos/Kingston/Kingston-RAM-28.jpg', 57.20,1000, '5', '5', '8GB', '4800MB/s, 5200MB/s write', 'Black', '5 years', '133,35 mm x 34,9 mm x 6,62 mm', 'The Kingston Fury Beast 8GB DDR5 4800MHz (model KF548C38BB-8) is a high-performance RAM module designed for gaming and demanding applications. It features a capacity of 8GB and operates at a fast 4800MHz frequency, providing swift data transfer for enhanced system responsiveness.');
 
  
 INSERT INTO `eproject`.`products` (
@@ -252,43 +256,43 @@ INSERT INTO `eproject`.`products` (
     'Transfer files easily and quickly with USB 3.2 Gen 1 interface.\nCompact design for on-the-go lifestyle.\nPassword-protect your files using a downloadable software .'
 ),
 -- Memory card
-(DEFAULT ,'Nintendo®-Licensed Memory Cards For Nintendo Switch™','Photos\SanDisk\SanDisk-MemoryCard-01.png', 12.99, 100, 4, 4, '64GB', 'up to 100MB/s2', 'Green', '2 year', '15 x 11 x 1.0 mm', 
+(DEFAULT ,'Nintendo®-Licensed Memory Cards For Nintendo Switch™','Photos/SanDisk/SanDisk-MemoryCard-01.png', 12.99, 100, 4, 4, '64GB', 'up to 100MB/s2', 'Green', '2 year', '15 x 11 x 1.0 mm', 
     'Load games faster with transfer rates up to 100MB/s.\nInstantly add up to 1TB of additional space.\nDesigned, tested, and approved for the Nintendo Switch console  .'
 ),
-(DEFAULT ,'SanDisk Extreme® microSDXC™ UHS-I CARD','Photos\SanDisk\SanDisk-MemoryCard-02.png', 12.99, 400, 4, 4, '128GB', 'up to 190MB/s9', 'Fold&Red', '2 year', '15 x 11 x 1.0 mm', 
+(DEFAULT ,'SanDisk Extreme® microSDXC™ UHS-I CARD','Photos/SanDisk/SanDisk-MemoryCard-02.png', 12.99, 400, 4, 4, '128GB', 'up to 190MB/s9', 'Fold&Red', '2 year', '15 x 11 x 1.0 mm', 
     'Water-proof, temperature proof, X-ray proof, magnet proof, shock proof.\nClass 10 for Full HD video playback – watch right from the card.\nUp to 120MB/s transfer speeds let you move photos and files fast.'
 ),
-(DEFAULT ,'SanDisk MAX ENDURANCE microSD™ Card','Photos\SanDisk\SanDisk-MemoryCard-03.png', 44.99, 156, 4, 4, '256GB', 'up to 100MB/s2', 'Silver', '2 year', '0.04 x 0.59 x 0.43 inch', 
+(DEFAULT ,'SanDisk MAX ENDURANCE microSD™ Card','Photos/SanDisk/SanDisk-MemoryCard-03.png', 44.99, 156, 4, 4, '256GB', 'up to 100MB/s2', 'Silver', '2 year', '0.04 x 0.59 x 0.43 inch', 
     'Designed to last1, this microSD card can withstand a variety of extreme weather conditions because it’s temperature-proof, waterproof, shockproof, and X-ray proof.2 With capacities of up to 256GB7, you can record and store more Full HD or 4K videos3. And, with read speeds up to 100MB/s5, you’ll be able to spend less time transferring and backing up video footage, and more time living life..\nRecord Full HD and 4K video.'
 ),
-(DEFAULT ,'SanDisk Extreme SD UHS-I Card','Photos\SanDisk\SanDisk-MemoryCard-04.png', 62.99, 263, 4, 4, '512B', 'up to 180MB/s6', 'Black Gold', '2 year', '0.04 x 0.59 x 0.43 inch', 
+(DEFAULT ,'SanDisk Extreme SD UHS-I Card','Photos/SanDisk/SanDisk-MemoryCard-04.png', 62.99, 263, 4, 4, '512B', 'up to 180MB/s6', 'Black Gold', '2 year', '0.04 x 0.59 x 0.43 inch', 
     'With the SanDisk Extreme SD UHS-I memory card save time transferring media with read speeds of up to 180MB/s6 powered by SanDisk® QuickFlow™ Technology8 (64GB - 512GB). Pair with the SanDisk Professional PRO-READER SD and microSD to achieve maximum speeds (sold separately). With shot speeds of up to 130MB/s6 and UHS speed Class 3 (U3)2 recording, you’re ready to capture high-resolution, stutter-free 4K UHD video1.'
 ),
 -- RAM
 
-(DEFAULT ,'AORUS RGB Memory DDR5','Photos\SanDisk\SanDisk-RAM-01.png', 102.66, 20, 5, 4, '32GB', '5600MT/s', 'Black', '4 year', '145 mm x 35 mm. ', 
+(DEFAULT ,'AORUS RGB Memory DDR5','Photos/SanDisk/SanDisk-RAM-01.png', 102.66, 20, 5, 4, '32GB', '5600MT/s', 'Black', '4 year', '145 mm x 35 mm. ', 
     'AORUS DDR5 RGB memory adopts a new copper-aluminum composite material heat spreader. Besides, with NanoCarbon coating, enhance passive thermal spreader when under ultra-high performance. The coating material covers the entire heat spreaders. High voltage may cause a memory peak over 70°C and failure.'
 ),
-(DEFAULT ,'Crucial Pro RAM DDR5','Photos\SanDisk\SanDisk-RAM-02.png', 88.65, 320, 5, 4, '32GB', '4800MT/s', 'Black', '4 year', '145 mm x 35 mm ', 
+(DEFAULT ,'Crucial Pro RAM DDR5','Photos/SanDisk/SanDisk-RAM-02.png', 88.65, 320, 5, 4, '32GB', '4800MT/s', 'Black', '4 year', '145 mm x 35 mm ', 
     'Plug-and-play extreme performance. Downclock capable for systems that only support 5200MT/s or 4800MT/s.\nUniversal compatibility. Compatible with 12th–13th Gen Intel Core or AMD Ryzen 7000 Series desktop CPUs.'
 ),
-(DEFAULT ,'Corsair VENGEANCE LPX DDR4 RAM','Photos\SanDisk\SanDisk-RAM-03.png', 67.99, 230, 5, 4, '32GB', '	3200 MHz', 'Black', '4 year', '145 mm x 35 mm', 
+(DEFAULT ,'Corsair VENGEANCE LPX DDR4 RAM','Photos/SanDisk/SanDisk-RAM-03.png', 67.99, 230, 5, 4, '32GB', '	3200 MHz', 'Black', '4 year', '145 mm x 35 mm', 
     'Hand-sorted memory chips ensure high performance with generous overclocking headroom.\nVENGEANCE LPX is optimized for wide compatibility with the latest Intel and AMD DDR4 motherboards.\nA low-profile height of just 34mm ensures that VENGEANCE LPX even fits in most small-form-factor builds.'
 ),
-(DEFAULT ,'Lexar ARES RGB DDR4','Photos\SanDisk\SanDisk-RAM-04.png', 44.99, 512, 5, 4, '16GB', '3600MT/s ', 'White', '4 year', '145 mm x 35 mm ', 
+(DEFAULT ,'Lexar ARES RGB DDR4','Photos/SanDisk/SanDisk-RAM-04.png', 44.99, 512, 5, 4, '16GB', '3600MT/s ', 'White', '4 year', '145 mm x 35 mm ', 
     'Delivering blazing-fast DDR4 overclocked performance to elevate your gaming experience.\n Full range RGB support – customize your colors and effects with a vibrant RGB light bar.'
 ),
 -- portable
-(DEFAULT ,'WD 5TB Elements Portable HDD, External Hard Drive','Photos\SanDisk\SanDisk-Portable-01.png', 119.99, 30, 6, 4, '5TB', ' 5Gbps', 'Black', '4 year', '2.5 Inches ', 
+(DEFAULT ,'WD 5TB Elements Portable HDD, External Hard Drive','Photos/SanDisk/SanDisk-Portable-01.png', 119.99, 30, 6, 4, '5TB', ' 5Gbps', 'Black', '4 year', '2.5 Inches ', 
     'Improve PC performance - When your internal hard drive is almost full your PC slows down. Don’t delete files. Free up space on your internal hard drive by transferring files to your WD Elements portable hard drive and get your laptop moving again.Plug-and-play ready for Windows PC'
 ),
-(DEFAULT ,'Seagate Portable 4TB External Hard Drive HDD','Photos\SanDisk\SanDisk-Portable-02.png', 59.99, 629, 6, 4, '4TB', '10Gbps', 'Black', '5 year', '18 Inches', 
+(DEFAULT ,'Seagate Portable 4TB External Hard Drive HDD','Photos/SanDisk/SanDisk-Portable-02.png', 59.99, 629, 6, 4, '4TB', '10Gbps', 'Black', '5 year', '18 Inches', 
     'Easily store and access 4TB of content on the go with the Seagate Portable Drive, a USB external hard drive.Specific uses: Personal.Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop.'
 ),
-(DEFAULT ,'Toshiba Canvio Basics 1TB Portable External Hard Drive','Photos\SanDisk\SanDisk-Portable-03.png', 61.899, 90, 6, 4, '4TB', '5Gbps', 'Black', '5 year', '2.5 Inches ', 
+(DEFAULT ,'Toshiba Canvio Basics 1TB Portable External Hard Drive','Photos/SanDisk/SanDisk-Portable-03.png', 61.899, 90, 6, 4, '4TB', '5Gbps', 'Black', '5 year', '2.5 Inches ', 
     'Sleek profile design with a matte, smudge-resistance finish.Plug & Play - Easy to use with no software to install.Quickly add more storage capacity to your PC and other compatible devices.'
 ),
-(DEFAULT ,'Seagate Portable 5TB External Hard Drive HDD','Photos\SanDisk\SanDisk-Portable-04.png', 109.99, 700, 6, 4, '32GB', '10Gbps', 'Black', '5 year', '18 Inches ', 
+(DEFAULT ,'Seagate Portable 5TB External Hard Drive HDD','Photos/SanDisk/SanDisk-Portable-04.png', 109.99, 700, 6, 4, '32GB', '10Gbps', 'Black', '5 year', '18 Inches ', 
     'Easily store and access 5TB of content on the go with the Seagate portable drive, a USB external hard Drive.Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop.'
 );
 
@@ -320,7 +324,7 @@ VALUES
 	(DEFAULT,'Transcend RAM 8GB DDR4','Photos/Transcend/Transcend-RAM-8G.jpg',59.99,30,5,6,'8GB','DDR4','Green','3 years','15x5x1 cm','High-performance DDR4 RAM for improved system speed and stability.'),
 	(DEFAULT,'Transcend RAM 16GB DDR4','Photos/Transcend/Transcend-RAM-16G.jpg',109.99,20,5,6,'16GB','DDR4','Green','3 years','15x5x1 cm','High-capacity DDR4 RAM module for enhanced multitasking and gaming.'),
 	(DEFAULT,'Transcend RAM 32GB DDR4','Photos/Transcend/Transcend-RAM-32G.jpg',159.99,15,5,6,'32GB','DDR4','Green','3 years','15x5x1 cm','Extreme performance DDR4 RAM for gaming enthusiasts and content creators.'),
-	(DEFAULT,' Transcend RAM 4GB DDR4','Photos/Transcend/Transcend-RAM-4G.png',24.99,10,5,6,'4GB','DDR4','Green','Lifetime','15x5x1 cm','Ultra-high capacity DDR4 RAM for professional workstations and power users.'),
+	(DEFAULT,' Transcend RAM 4GB DDR4','Photos/Transcend/Transcend-RAM-4G.jpg',24.99,10,5,6,'4GB','DDR4','Green','Lifetime','15x5x1 cm','Ultra-high capacity DDR4 RAM for professional workstations and power users.'),
 	(DEFAULT,'Transcend Portable HDD 1TB','Photos/Transcend/Transcend-Portable-HDD-1TB.jpg',79.99,50,6,6,'1TB','USB 3.0','Black','2 years','12x8x2 cm','With the desire to provide enthusiasts with fast transfer speeds, large storage capacity and a unique three-layer shock protection system, the StoreJet 25H3P USB 3.0 portable hard drive is an ideal storage device. Ideal for data backup, archiving and file movement.'),
 	(DEFAULT,'Transcend Portable HDD 2TB','Photos/Transcend/Transcend-Portable-HDD-2TB.jpg',109.99,30,6,6,'2TB','USB 3.0','Black','2 years','12x8x2 cm','With the desire to provide enthusiasts with fast transfer speeds, large storage capacity and a unique three-layer shock protection system, the StoreJet 25H3P USB 3.0 portable hard drive is an ideal storage device. Ideal for data backup, archiving and file movement.'),
 	(DEFAULT,'Transcend Portable HDD 4TB','Photos/Transcend/Transcend-Portable-HDD-4TB.jpg',159.99,20,6,6,'4TB','USB 3.0',' Purple','3 years','12x8x2 cm','With the desire to provide enthusiasts with fast transfer speeds, large storage capacity and a unique three-layer shock protection system, the StoreJet 25H3P USB 3.0 portable hard drive is an ideal storage device. Ideal for data backup, archiving and file movement.'),
