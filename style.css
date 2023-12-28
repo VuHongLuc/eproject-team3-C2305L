@@ -225,3 +225,10 @@ body{
 .home-custom-card-title:hover {
     color: #ed1a20;
 }
+
+.list-btn-pagination{
+    width: 40px;
+    height: 40px;
+    margin: 10px 5px;
+
+}
