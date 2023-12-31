@@ -9,16 +9,7 @@
 <body>
 
 <?php
-$hostName = "localhost:3306";
-$userName = "root";
-$password = "12345678";
-$databaseName = "eproject";
-
-$conn = new mysqli($hostName, $userName, $password, $databaseName);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include ('db.php');
 
 $searchQuery = $_GET['search'];
 

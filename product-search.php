@@ -27,16 +27,7 @@
             <main class="col-md-9">
                 <div class="row">
                     <?php
-                    $hostName = "localhost";
-                    $userName = "root";
-                    $password = "12345678";
-                    $databaseName = "eproject";
-
-                    $conn = new mysqli($hostName, $userName, $password, $databaseName);
-
-                    if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
-                    }
+                    include('db.php');
 
                     // Get the search keyword from the URL
                     $searchKeyword = isset($_GET['search']) ? $_GET['search'] : '';
