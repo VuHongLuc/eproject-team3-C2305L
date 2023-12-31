@@ -50,7 +50,7 @@
         <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm.</p>
     </div>
     </div>
-    <?php include 'footer.html'; ?>
+    <?php include "../footer.html" ?>
 </body>
 
 </html>

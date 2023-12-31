@@ -71,7 +71,7 @@
     <p>To receive support, please contact <a href="index.php" class="custom-link bold-link">oceangate.com.vn</a> or Hotline <strong>1800 1141</strong>.</p>
       </div>
       
-    <?php include 'footer.html'; ?>
+    <?php include '../footer.html' ?>
 
 </body>
 </html>

@@ -37,6 +37,6 @@
     <p>To know more about return regulations, please contact <strong>1800 1141</strong></p>
     </div>
     
-    <?php include 'footer.html'; ?>
+    <?php include '../footer.html' ?>
 </body>
 </html>
