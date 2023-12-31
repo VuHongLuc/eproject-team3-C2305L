@@ -1,5 +1,6 @@
 body{
     padding-top: 101px;
+    background-color: #E7E7E7;
 }
 .custom-rounded {
   border-radius: 20px;
@@ -33,7 +34,17 @@ body{
     color: red;
     text-decoration: none;
 }
+.bg-red {
+    background: #ed1a20 !important;
+}
 
+.padding-5 {
+    padding: 5px;
+}
+/* navbar */
+nav {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
 
 /* Hưng */
    /* Styling for the footer section */
@@ -232,3 +243,146 @@ body{
     margin: 10px 5px;
 
 }
+
+
+/* Product-detail */
+.product-detail-container {
+    width: 100%;
+    background: #E7E7E7;
+    border-bottom: 1px solid #E7E7E7;
+}
+.product-details {
+    width: 60%;
+    background: #FFF;
+
+
+    
+}
+.product-detail-img {
+    width: 420px;
+    height: 350px;
+    border: 1px solid #E7E7E7;
+    box-shadow: 0 0 5px #E7E7E7;
+    
+
+}
+
+
+
+/* Quantity product */
+.increase-btn, .decrease-btn {
+    width: 30px;
+    height: 30px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.quantity-pro-input {
+    width: 50px !important;
+    border: 1px solid #ececec;
+
+}
+/* LÀm mất mũi lên lên xuống của ô input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.font-size-sm{
+    font-size: 80%;
+}
+.font-size-smsm{
+    font-size: 60%;
+}
+
+.product-detail-action .btn-add{
+    background-color: none !important;
+    border: 1px solid #ed1a20;
+    border-radius: 3px;
+}
+.product-detail-action .btn-add:hover {
+    background: #ed1a20;
+    color: white !important;
+}
+.product-detail-action .btn-contact {
+    background: #fb6e2e !important;
+}
+.btn-contact:hover{
+    background: #d45d1a !important;
+}
+
+.product-details-benefit img{
+    width: 40px;
+}
+.product-decription table td {
+    width: 50%;
+    
+}
+.border-bot-red {
+    border-bottom: 1px solid #ed1a20;
+    width: 200px !important;
+}
+.text-justify {
+    text-align: justify;
+}
+.text-start {
+    text-align: start;
+}
+/* FeedBack */
+.product-text-feedback{
+    width: 100%;
+    height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transition: border-color 0.3s;
+    
+}
+.product-text-feedback:focus{
+   border-color :#df8083;
+   outline: none;
+}
+
+/* View cart */
+.view-cart {
+    width:100%;
+    background: #E7E7E7;
+
+}
+.view-cart-details {
+    width: 60%;
+    background: #fff;
+}
+.view-cart-details  table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+  }
+  /* .view-cart-details  table td:first-child{
+    max-width: 50%;
+  }  */
+  .view-cart-details  table th:first-child, .view-cart-details  table td:first-child {
+   width: 50%;
+  }
+  .view-cart-details  table tr {
+    border-bottom: 1px solid #ececec;
+  }
+  .view-cart-details  table tr:first-child {
+    border-bottom: 2px solid #ececec;
+  }
+.view-cart-details  table tr td img {
+    max-width: 50px;
+    max-height: 50px;
+}
+.cart-btn-x {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #ececec;
+    color: #ececec;
+    background: none;
+}
+.cart-btn-x:hover {
+    border: 1px solid #000;
+    color:#000;
+}
+
