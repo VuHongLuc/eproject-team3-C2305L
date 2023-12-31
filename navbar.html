@@ -10,12 +10,12 @@
 
        <!-- Font Awesome CSS -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-      
+       <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div style="position: fixed; z-index: 10; width: 100%; top: 0; left: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="https://i.snipboard.io/kQIriT.jpg" alt="Logo" width="125" height="75">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav m-auto font-size-25">
                     <li class="nav-item m-3">
-                        <a class="nav-link active fw-bold" aria-current="page" href="#" style="color: red;">HOME</a>
+                        <a class="nav-link active fw-bold" aria-current="page" href="index.php" style="color: red;">HOME</a>
                     </li>
                     <li class="nav-item  m-3">
                         <a class="nav-link text-dark fw-bold" href="">COMPANY</a>
@@ -49,29 +49,34 @@
                         <a class="nav-link text-dark fw-bold" href="#">CONTACT</a>
                     </li>
                 </ul>
-
+                
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                      <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search for..." aria-label="Search">
-                        <button class="btn btn-outline-danger" type="submit">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="" width="20px" height="20px">
+
+                    <!-- Search function -->
+
+                    <form id="searchForm" onsubmit="redirectToSearch(); return false;" method="GET" class="d-flex">
+                        <input class="form-control" type="text" id="searchInput" placeholder="Search for..." oninput="searchProducts()">
+                        <button type="submit" class="btn btn-outline-danger"> 
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="" width="20px" height="20px">
                         </button>
-                      </form>
+                    </form>
+                    <div id="searchResults"></div>
+
                     </li>
                     <li class="nav-item">
                       <a href="#" class="nav-link"><span class="px-2 text-danger"><i class="fas fa-shopping-cart"></i></span></a>
                     </li>
                   </ul>
 
-                <!-- Đưa dropdown vào menu -->
-                <ul class="navbar-nav">
+                <!-- User to menu -->
+                <ul class="navbar-nav m-lg-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link text-dark" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="px-3 py-2 rounded-pill"><i class="far fa-user"></i></span>
                         </a>
-                        <div class="dropdown-menu m-auto" aria-labelledby="loging-dropdown">
-                            <a class="dropdown-item" href="login/login.php">Log In</a>
+                        <div class="dropdown-menu pxe-3" aria-labelledby="loging-dropdown">
+                            <a class="dropdown-item" href="login.php">Log In</a>
                             <a class="dropdown-item" href="#">Sign up</a>
                         </div>
                     </li>
@@ -84,6 +89,33 @@
       <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+      <script>
+        function searchProducts() {
+            var searchInput = document.getElementById("searchInput").value;
 
+            // Create a new XMLHttpRequest object
+            var xhttp = new XMLHttpRequest();
+
+            // Define the function to handle the response
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    // Update the searchResults div with the response
+                    document.getElementById("searchResults").innerHTML = this.responseText;
+                }
+            };
+
+            // Open a GET request to product-list.php with the search query
+            xhttp.open("GET", "product-list.php?search=" + searchInput, true);
+
+            // Send the request
+            xhttp.send();
+        }
+        function redirectToSearch() {
+            var searchInput = document.getElementById("searchInput").value;
+            // Redirect to product-search.php with the search input as a query parameter
+            window.location.href = "product-search.php?search=" + searchInput;
+        }
+        
+    </script>
 </body>
 </html>
