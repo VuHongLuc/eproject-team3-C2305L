@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +16,11 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="" method="POST" class="sign-in-form">
+        <form action="loginData.php" method="POST" class="sign-in-form">
           <h2 class="title">Sign in</h2>
+          <?php if (isset($_GET['error'])) { ?>
+            <p class="error"><?php echo $_GET['error']; ?></p>
+          <?php } ?>
           <div class="input-field">
             <i class="fas fa-user"></i>
             <input type="text" name="username" placeholder="Username" />
@@ -35,40 +41,7 @@
           </div>
         </form>
 
-        <?php
-    
-    $msg = '';
 
-    function isLogin($username1, $password1){
-        include "../db.php";
-        $flag = false;
-
-        // SQL query to fetch all table names in the database
-        $sql = "SELECT *FROM user where userName = '$username1' and password = '$password1'";
-
-        $result = $conn->query($sql);
-        if ($result !== false && $result->num_rows > 0) {
-            $flag = true;
-        }
-        
-        // Close the database connection
-        $conn->close();
-        return $flag;
-    }
-    
-    if (isset($_POST['login']) && !empty($_POST['username']) 
-        && !empty($_POST['password'])) {      
-        if (isLogin($_POST['username'], $_POST['password'])) {
-            
-            $_SESSION['username'] = $_POST['username'];
-            
-            echo 'You have entered valid use name and password';
-            header("Location:../index/index.php");
-        }else {
-            echo 'Wrong username or password';
-        }
-    }
-    ?>
 
         <form action="singUp.php" method="post" class="sign-up-form">
           <h2 class="title">Sign up</h2>
@@ -84,8 +57,6 @@
             <i class="fas fa-lock"></i>
             <input type="password" id="password" name="password" placeholder="Password" required />
           </div>
-
-
           <div class="input-field">
             <i class="fas fa-calendar"></i>
             <input type="date" id="dob" name="dob" required>
@@ -94,6 +65,12 @@
             <i class="fas fa-phone-alt"></i>
             <input type="tel" id="phone" name="phone" placeholder="Phone" required />
           </div>
+          <div class="input-field">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" id="address" name="address" placeholder="Address" required />
+          </div>
+          <input type="hidden" id="rolenumber" name="rolenumber" value="0">
+
           <input type="submit" class="btn" value="Sign up" />
           <p class="social-text">-Or Sign up with- </p>
           <div class="social-media">
