@@ -7,7 +7,7 @@
     <title>Privacy Policy</title>
 </head>
 <body>
-    <?php include '../navbar.html'; ?>
+    <?php include '../home/navbar.html'; ?>
 
     <div class="container">
         <h2>PRIVACY POLICY</h2>
@@ -37,6 +37,6 @@
         </ul>
     </div>
 
-    <?php include '../footer.html' ?>
+    <?php include '../home/footer.html' ?>
 </body>
 </html>

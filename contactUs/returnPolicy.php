@@ -7,7 +7,7 @@
     <title>EXCHANGE & RETURN POLICY</title>
 </head>
 <body>
-    <?php include '../navbar.html'; ?>
+    <?php include '../home/navbar.html'; ?>
 
     <div class="container">
     <h2>EXCHANGE & RETURN POLICY</h2>
@@ -37,6 +37,6 @@
     <p>To know more about return regulations, please contact <strong>1800 1141</strong></p>
     </div>
     
-    <?php include '../footer.html' ?>
+    <?php include '../home/footer.html' ?>
 </body>
 </html>

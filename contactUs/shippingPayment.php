@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <?php include '../navbar.html'; ?>
+    <?php include '../home/navbar.html'; ?>
     
     <div class="container">
     <h2>SHIPPING AND PAYMENT</h2>
@@ -50,7 +50,7 @@
         <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm.</p>
     </div>
     </div>
-    <?php include "../footer.html" ?>
+    <?php include "../home/footer.html" ?>
 </body>
 
 </html>

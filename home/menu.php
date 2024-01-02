@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">   
+    <link rel="stylesheet" href="../style.css">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
@@ -17,38 +17,38 @@
                 <div class="category-menu row text-center  d-flex flex-wrap justify-content-around">
                     <!-- List item of Categories -->
                     <div class="menu-item  col-lg-2 col-md-3 col-6 p-3  ">
-                        <a href="listPage/viewListCategory.php?category=2" class="list-group-item">
-                            <img src="Photos\category\SSD.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=2" class="list-group-item">
+                            <img src="../Photos\category\SSD.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding  ">SSD</p>
                             </a>
                     </div>
                     <div class="menu-item   col-lg-2 col-md-3  col-6 p-3" >
-                        <a href="listPage/viewListCategory.php?category=1" class="list-group-item">
-                            <img src="Photos\category\HDD.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=1" class="list-group-item">
+                            <img src="../Photos\category\HDD.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">HDD</p>
                             </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-3  col-6 p-3" >
-                        <a href="listPage/viewListCategory.php?category=4" class="list-group-item">
-                            <img src="Photos\category\MemoryCard.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=4" class="list-group-item">
+                            <img src="../Photos\category\MemoryCard.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Memory Card</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-3  col-6 p-3" >
-                        <a href="listPage/viewListCategory.php?category=5" class="list-group-item">
-                            <img src="Photos\category\Ram.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=5" class="list-group-item">
+                            <img src="../Photos\category\Ram.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Ram</p>
                             </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-4  col-6 p-3" >
-                        <a href="listPage/viewListCategory.php?category=3" class="list-group-item">
-                            <img src="Photos\category\USB.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=3" class="list-group-item">
+                            <img src="../Photos\category\USB.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">USB</p>
                             </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-4  col-6 p-3" >
-                        <a href="listPage/viewListCategory.php?category=6" class="list-group-item">
-                            <img src="Photos\category\PortableHardDrive.png" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListCategory.php?category=6" class="list-group-item">
+                            <img src="../Photos\category\PortableHardDrive.png" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Portal hard drive</p>
                         </a>
                     </div>
@@ -62,38 +62,38 @@
                 <div class="category-menu row text-center d-flex flex-wrap justify-content-around   ">
                     <!-- List item of Brands -->
                     <div class="menu-item  col-lg-2 col-md-3  col-6 p-3 ">
-                        <a href="listPage/viewListBrand.php?brand=1" class="list-group-item">                    
-                                <img src="Photos\category\LogoSamSung.png" alt="" class="menu-item_img m-1" >
+                        <a href="../listPage/viewListBrand.php?brand=1" class="list-group-item">                    
+                                <img src="../Photos\category\LogoSamSung.png" alt="" class="menu-item_img m-1" >
                                 <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding">Samsung</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-3 col-6 p-3" >
-                        <a href="listPage/viewListBrand.php?brand=4" class="list-group-item">
-                            <img src="Photos\category\LogoSanDisk.png" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListBrand.php?brand=4" class="list-group-item">
+                            <img src="../Photos\category\LogoSanDisk.png" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Sandisk</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-3 col-6 p-3" >
-                        <a href="listPage/viewListBrand.php?brand=2" class="list-group-item">
-                            <img src="Photos\category\LogoWesternDigital.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListBrand.php?brand=2" class="list-group-item">
+                            <img src="../Photos\category\LogoWesternDigital.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">WD</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-3  col-6 p-3" >
-                        <a href="listPage/viewListBrand.php?brand=5" class="list-group-item">
-                            <img src="Photos\category\LogoKingSton1.png" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListBrand.php?brand=5" class="list-group-item">
+                            <img src="../Photos\category\LogoKingSton1.png" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Kingston</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-4  col-6 p-3" >
-                        <a href="listPage/viewListBrand.php?brand=3" class="list-group-item">
-                            <img src="Photos\category\LogoSeaGate.png" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListBrand.php?brand=3" class="list-group-item">
+                            <img src="../Photos\category\LogoSeaGate.png" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Seagate</p>
                         </a>
                     </div>
                     <div class="menu-item col-lg-2 col-md-4  col-6 p-3" >
-                        <a href="listPage/viewListBrand.php?brand=6" class="list-group-item">
-                            <img src="Photos\category\LogoTranscend.jpg" alt="" class="menu-item_img m-1 ">
+                        <a href="../listPage/viewListBrand.php?brand=6" class="list-group-item">
+                            <img src="../Photos\category\LogoTranscend.jpg" alt="" class="menu-item_img m-1 ">
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Transcend</p>
                         </a>
                     </div>

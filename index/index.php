@@ -7,10 +7,10 @@
     <title>OceanGate</title>
 </head>
 <body>
-    <?php include "navbar.html" ?>
-    <?php include "menu.php" ?>
-    <?php include "list.php" ?>
-    <?php include "footer.html" ?>
+    <?php include "../home/navbar.html" ?>
+    <?php include "../home/menu.php" ?>
+    <?php include "../home/list.php" ?>
+    <?php include "../home/footer.html" ?>
 
 </body>
 </html>

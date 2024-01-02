@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <title>WARRANTY POLICY</title>
 
@@ -24,7 +25,7 @@
 </head>
 <body>
 
-    <?php include '../navbar.html'; ?>
+    <?php include '../home/navbar.html'; ?>
 
     <div class="container">    
     <h1>WARRANTY POLICY</h1>
@@ -71,7 +72,7 @@
     <p>To receive support, please contact <a href="index.php" class="custom-link bold-link">oceangate.com.vn</a> or Hotline <strong>1800 1141</strong>.</p>
       </div>
       
-    <?php include '../footer.html' ?>
+    <?php include '../home/footer.html' ?>
 
 </body>
 </html>
