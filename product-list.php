@@ -13,8 +13,7 @@ include ('db.php');
 
 $searchQuery = $_GET['search'];
 
-// Use LIMIT to restrict the number of results to 4
-$sql = "SELECT productName, imageLink FROM products WHERE productName LIKE '%$searchQuery%' LIMIT 4";
+$sql = "SELECT productID, productName, imageLink FROM products WHERE productName LIKE '%$searchQuery%' LIMIT 4";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -23,8 +22,10 @@ if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>";
         echo "<td>";
-        echo "<img src='" . $row['imageLink'] . "' alt='Product Image' style='width: 30x; height: 30px;'>";
+        echo "<img src='" . $row['imageLink'] . "' alt='' style='width: 30x; height: 30px;'>";
+        echo "<a class='nav-link' href='productDetail/view/viewproduct.php?productID=".$row['productID']."'>";
         echo "<h8 class='card-title fw-bold text-uppercase'>" . $row['productName'] . "</h8>";
+        echo "</a>";
         echo "</td>"."</br>";
         echo "</tr>";
         echo "</table>";
