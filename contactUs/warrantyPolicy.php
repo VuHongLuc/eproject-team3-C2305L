@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="../style.css">
     <title>WARRANTY POLICY</title>
 
@@ -32,7 +32,7 @@
 
     <h2>Warranty policy of OceanGate</h2>
 
-    <p><a href="index.php" class="custom-link bold-link">OceanGate</a> warrants to the original end user that its products are free from defects in materials and workmanship under the terms and conditions set forth herein. Subject to the conditions and limitations set forth below, OceanGate will, as the case may be, repair or replace any part of the product that proves to be defective due to improper manufacturing techniques or materials. . Repaired parts or replacement products will be provided by OceanGate on an exchange basis and will be new or recertified. All recertified products have been tested to ensure that they function the same as new products. If OceanGate is unable to repair or replace the product, OceanGate will provide a refund for the lesser of either of the following: the current value of the product at the time of the warranty claim or the purchase price. You must provide proof of purchase showing the date and place of original purchase as well as the product description and price.</p>
+    <p><a href="../index/index.php" class="custom-link bold-link">OceanGate</a> warrants to the original end user that its products are free from defects in materials and workmanship under the terms and conditions set forth herein. Subject to the conditions and limitations set forth below, OceanGate will, as the case may be, repair or replace any part of the product that proves to be defective due to improper manufacturing techniques or materials. . Repaired parts or replacement products will be provided by OceanGate on an exchange basis and will be new or recertified. All recertified products have been tested to ensure that they function the same as new products. If OceanGate is unable to repair or replace the product, OceanGate will provide a refund for the lesser of either of the following: the current value of the product at the time of the warranty claim or the purchase price. You must provide proof of purchase showing the date and place of original purchase as well as the product description and price.</p>
 
     <p>This limited warranty does not cover any damage to this product resulting from improper installation, accident, abuse, misuse, act of God, excessive power supply, excessive power supply, or excessive power supply. abnormal mechanical or environmental conditions, or unauthorized dismantling, repair, or modification. This limited warranty does not apply if: (i) the product is not used in accordance with the accompanying instructions, or (ii) the product is not used for its intended purpose.</p>
 
@@ -69,7 +69,7 @@
 
     <p>If you encounter difficulties during installation or use of OceanGate products, you can contact oceangate Vietnam's Technical Support department.</p>
 
-    <p>To receive support, please contact <a href="index.php" class="custom-link bold-link">oceangate.com.vn</a> or Hotline <strong>1800 1141</strong>.</p>
+    <p>To receive support, please contact <a href="../index/index.php" class="custom-link bold-link">oceangate.com.vn</a> or Hotline <strong>1800 1141</strong>.</p>
       </div>
       
     <?php include '../home/footer.html' ?>

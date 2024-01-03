@@ -39,6 +39,15 @@ input {
   z-index: 5;
 }
 
+.error {
+  background: #F2DEDE;
+  color: #A94442;
+  padding: 10px;
+  width: 66%;
+  
+  margin: 20px auto;
+}
+
 form {
   display: flex;
   align-items: center;

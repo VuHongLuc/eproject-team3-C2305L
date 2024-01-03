@@ -85,7 +85,7 @@
                 <p><strong>Address:</strong> 3rd floor, 19 Le Thanh Nghi Street, Bach Mai Ward, Hai Ba Trung District, Ha Noi City</p>
                 <p><strong>Hotline:</strong> 1800 1141</p>
                 <p><strong>Website:</strong> oceangate.com.vn</p>
-                <p><strong>Email:</strong> <a href="index.php" class="custom-link bold-link">oceangate.com.vn@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="../index/index.php" class="custom-link bold-link">oceangate.com.vn@gmail.com</a></p>
             </div>
         </div>
 
