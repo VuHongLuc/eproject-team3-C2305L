@@ -11,6 +11,22 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 
+function togglePasswordField() {
+  const passwordField = document.getElementById('password');
+  const togglePassword = document.getElementById('togglePassword');
+
+  const fieldType = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', fieldType);
+
+ 
+  if (fieldType === 'password') {
+    togglePassword.classList.remove('fa-eye-slash');
+  } else {
+    togglePassword.classList.add('fa-eye-slash');
+  }
+}
+
+
 
 
 
