@@ -8,11 +8,7 @@ session_start();
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
   <link rel="stylesheet" href="login.css" />
-  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-
   <title>Sign in & Sign up Form</title>
 </head>
 
@@ -31,8 +27,7 @@ session_start();
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" id="password" name="password" placeholder="Password" required />
-            <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordField()"></i>
+            <input type="password" name="password" placeholder="Password" />
           </div>
           <input type="submit" name="login" value="Login" class="btn solid" />
           <p class="social-text">- Or sign in with -</p>
@@ -48,7 +43,7 @@ session_start();
 
 
 
-        <form action="signUpdata.php" method="post" class="sign-up-form">
+        <form action="singUp.php" method="post" class="sign-up-form">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -74,10 +69,9 @@ session_start();
             <i class="fas fa-map-marker-alt"></i>
             <input type="text" id="address" name="address" placeholder="Address" required />
           </div>
-          <input type="hidden" id="roleUser" name="roleUser" value="0">
+          <input type="hidden" id="rolenumber" name="rolenumber" value="0">
 
           <input type="submit" class="btn" value="Sign up" />
-
           <p class="social-text">-Or Sign up with- </p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -91,8 +85,6 @@ session_start();
         </form>
       </div>
     </div>
-
-
 
     <div class="panels-container">
       <div class="panel left-panel">
@@ -122,13 +114,7 @@ session_start();
     </div>
   </div>
 
-
   <script src="app.js"></script>
-  <script src="sweetaler.js"></script>
-
-
-
 </body>
-
 
 </html>

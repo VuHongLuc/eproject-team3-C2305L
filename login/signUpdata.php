@@ -1,9 +1,12 @@
 <?php
-    include('../db.php');
-    if (!empty($_POST['username']) && !empty($_POST['password'])
-    && !empty($_POST['dob'])
-    && !empty($_POST['phone']) && !empty($_POST['email'])
-    && !empty($_POST['address'])) {
+session_start();
+include('../db.php');
+
+if (
+    !empty($_POST['username']) && !empty($_POST['password'])
+    && !empty($_POST['dob']) && !empty($_POST['phone'])
+    && !empty($_POST['email']) && !empty($_POST['address'])
+) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     $dob = $_POST['dob'];
@@ -11,25 +14,36 @@
     $email = $_POST['email'];
     $address = $_POST['address'];
     $roleUser = $_POST['roleUser'];
-    function convertToDate($day){
+
+    function convertToDate($day)
+    {
         $date = strtotime($day);
         return date("y-m-d", $date);
     }
 
     $dateIntoDb = convertToDate($dob);
 
-    $query = "INSERT INTO `user` (username, password, dob,address, phone, email, roleUser)
-    VALUES ('$username', '$password', '$dateIntoDb','$address', '$phone', '$email','$roleUser')";
+   
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+    $query = "INSERT INTO `user` (userName, password, dob, address, phone, email, roleUser)
+    VALUES ('$username', '$hashedPassword', '$dateIntoDb','$address', '$phone', '$email','$roleUser')";
 
     $result = $conn->query($query);
-     
-    if($result !== false){
-        
+
+    if ($result !== false) {
+
         header('Refresh: 1; URL = login.php');
-        echo "<script> alert('Hello! I am an alert box')  </script>";
-    }else{
+        echo "<script>
+        swal({
+            title: 'Good job!',
+            text: 'You clicked the button!',
+            icon: 'success',
+            button: 'Aww yiss!'
+        });
+      </script>";
+    } else {
         echo "Fail Register";
     }
-        
-    }
-    ?>
+}
+?>
