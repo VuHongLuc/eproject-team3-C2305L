@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"> -->
-
+    <link rel="stylesheet" href="../style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="stylesheet" href="../style.css">
+    
     <title>View List Category</title>
 </head>
 <body>
@@ -77,7 +77,8 @@
         <div class="justify-content-center d-flex">
             <?php
                 for ($i = 1; $i <= $totalPages; $i++) {
-                    echo '<a href="?category='.$_GET['category'].'&page=' . $i . '"class="btn btn-danger list-btn-pagination">' . $i . '</a>';
+                    $activeClass = ($i == $currentPage) ? 'active-page' : '';
+                    echo '<a href="?category='.$_GET['category'].'&page=' . $i . '" class="btn btn-danger list-btn-pagination ' . $activeClass . '">' . $i . '</a>';
                 }
             ?>
         </div>

@@ -76,7 +76,8 @@
         <div class="justify-content-center d-flex">
             <?php
                 for ($i = 1; $i <= $totalPages; $i++) {
-                    echo '<a href="?brand='.$_GET['brand'].'&page=' . $i . '"class="btn btn-danger list-btn-pagination">' . $i . '</a>';
+                    $activeClass = ($i == $currentPage) ? 'active-page' : '';
+                    echo '<a href="?brand='.$_GET['brand'].'&page=' . $i . '" class="btn btn-danger list-btn-pagination ' . $activeClass . '">' . $i . '</a>';
                 }
             ?>
         </div>
