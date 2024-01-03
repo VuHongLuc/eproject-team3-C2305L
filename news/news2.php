@@ -24,7 +24,8 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-    <div class="container">
+<div class="wrapper container-fluid">
+<div class="container col-inner"> 
 
         <h2>Should I Buy a Kingston USB?</h2>
 
@@ -43,7 +44,7 @@
 
         <h3>Should I buy a Kingston USB?</h3>
         <p>With Kingston USB, the compact, unique design as well as the diversity of designs and capacity are the attractions for consumers. Not only that, technology enthusiasts consider the Kingston USB to be quite convenient to carry and can connect to all operating systems. Furthermore, this product also has good quality and good warranty.</p>
-
+        </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>

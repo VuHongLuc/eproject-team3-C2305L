@@ -24,7 +24,8 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-    <div class="container">
+    <div class="wrapper container-fluid">
+<div class="container col-inner">
 
         <h2>How to Format an SSD</h2>
 
@@ -56,7 +57,7 @@
 
         <h3>Conclusion</h3>
         <p>Formatting an SSD is a quick and simple process that anyone can do. If you encounter any problems when formatting your SSD, please contact Kingston Vietnam for support.</p>
-
+        </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>
