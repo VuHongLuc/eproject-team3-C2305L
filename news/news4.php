@@ -43,14 +43,11 @@
         <p>Use a cable with a connector compatible with your computer.</p>
         <p>Plug the VP80ES into any available USB 3.0 port on your computer. The drive will test itself, then display the language selection screen. Select the language you want to use and then click the check mark to move to the next step.</p>
 
-        <img src="ironkey_setup_image.png" alt="IronKey Setup Image">
-
         <p>Set administrator password</p>
         <p>Next, you will create and confirm an Administrator password. This password must be at least 6 characters long and can include numbers, letters, and spaces.</p>
         <p>Enter the password using the keyboard on the touch screen of the VP80ES. You can press the ABC or 123 button to switch between the alphabetic keyboard and the numeric keyboard.</p>
         <p>Confirm your password by tapping the check mark.</p>
 
-        <img src="ironkey_password_image.png" alt="IronKey Password Image">
 
         <p>After setting an Administrator password, you can use VP80ES to store and access important files. You can also set the removable SSD to 'read-only' mode by tapping the globe icon to access language options or tapping the gear icon to change advanced settings (such as adding a user password).</p>
 
