@@ -11,6 +11,5 @@
     <?php include "../home/menu.php" ?>
     <?php include "../home/list.php" ?>
     <?php include "../home/footer.html" ?>
-
 </body>
 </html>

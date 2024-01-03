@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">   
+    <link rel="stylesheet" href="../style.css">   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -11,8 +11,8 @@
 </head>
 <body>
     <?php
-        include('../../db.php');
-        include('../../home/navbar.html');
+        include('../db.php');
+        include('../home/navbar.html');
     ?> 
     <?php
         if (isset($_GET['productID'])) {
@@ -56,11 +56,10 @@
                                     <input type="hidden" name="product_name" value="<?php $rowProDetail['productName'] ; ?>">
                                     <input type="hidden" name="price" value="<?php $rowProDetail['unitPrice'] ; ?>">
                                     <input type="hidden" name="imgLink" value="<?php $rowProDetail['imageLink'] ; ?>"> 
-                <img src="../../<?php echo $productImg;  ?>" alt="" class="product-detail-img col-lg-5 col-md-5 col-sm-12 col-12">
+                <img src="../<?php echo $productImg;  ?>" alt="" class="product-detail-img col-lg-5 col-md-5 col-sm-12 col-12">
                 <div class="product-info col-lg-5 col-md-5 col-sm-12 col-12">
                     <h3 class="product-detail-name fw-bold text-start"><?php echo $rowProDetail['productName'] ; ?></h3>
                     <h3 class="product-detail-price p-2 text-red"><?php echo $rowProDetail['unitPrice']."$"; ?></h3>
-
                     <div class="product-detail-color d-flex my-1 ">
                         <label for="" class="fw-bold p-2 font-size-sm mt-1">Color</label>
                         <p class="product-color mx-2 my-0 p-2"><?php echo $rowProDetail['color']; ?></p>
@@ -91,28 +90,28 @@
 
                     <div class="product-details-benefit d-flex justify-content-center flex-wrap">
                         <div class="col-12 col-lg-6 d-flex p-1 justify-content-between">
-                            <img class="col-12 col-lg-4" src="../../Photos/IconProductDetails/atm-card.svg" alt="atm-card">
+                            <img class="col-12 col-lg-4" src="../Photos/IconProductDetails/atm-card.svg" alt="atm-card">
                                 <div class="col-12 col-lg-8 d-flex flex-wrap align-items-center mx-1">
                                     <p class="my-0 p-0 col-lg-12  text-uppercase font-size-smsm ">Pay</p>
                                     <p class="my-0 p-0 text-uppercase font-size-smsm  fw-bold">CONVENIENT</p>
                                 </div>
                         </div>
                         <div class="col-12 col-lg-6 d-flex p-1 justify-content-between ">
-                            <img class="col-12 col-lg-4" src="../../Photos/IconProductDetails/check.svg" alt="check">
+                            <img class="col-12 col-lg-4" src="../Photos/IconProductDetails/check.svg" alt="check">
                                 <div class="col-12 col-lg-8 d-flex flex-wrap align-items-center mx-1 ">
                                     <p class="my-0 p-0 col-lg-12  text-uppercase font-size-smsm ">PRODUCT</p>
                                     <p class="my-0 p-0 text-uppercase font-size-smsm  fw-bold">GENUINE</p>
                                 </div>
                             </div>
                         <div class="col-12 col-lg-6 d-flex p-1 justify-content-between">
-                            <img class="col-12 col-lg-4" src="../../Photos/IconProductDetails/comments.svg"  alt="comment">
+                            <img class="col-12 col-lg-4" src="../Photos/IconProductDetails/comments.svg"  alt="comment">
                                 <div class="col-12 col-lg-8 d-flex flex-wrap align-items-center mx-1">
                                     <p class="my-0 p-0 col-lg-12  text-uppercase font-size-smsm ">NATIONWIDE SHIPPING</p>
                                     <p class="my-0 p-0 text-uppercase font-size-smsm  fw-bold">Ship COD</p>
                                 </div>
                             </div>
                         <div class="col-12 col-lg-6 d-flex p-1 justify-content-between">
-                            <img class="col-12 col-lg-4" src="../../Photos/IconProductDetails/delivery-truck.svg" alt="delivery-truck">
+                            <img class="col-12 col-lg-4" src="../Photos/IconProductDetails/delivery-truck.svg" alt="delivery-truck">
                                 <div class="col-12 col-lg-8 d-flex flex-wrap align-items-center mx-1">
                                     <p class="my-0 p-0 col-lg-12  text-uppercase font-size-smsm ">24/7 SUPPORT</p>
                                     <p class="my-0 p-0 text-uppercase font-size-smsm fw-bold">PROFESSIONAL</p>
@@ -161,6 +160,11 @@
                                             <td  class=" fw-bold font-size-sm p-2 align-middle ">Decription</td>
                                             <td  class="font-size-sm text-justify "><?php echo $rowProDetail['description']; ?></td>
                                         </tr>
+                                        <tr>
+                                            <td>
+                                                
+                                            </td>
+                                        </tr>
                                     </tbody>
                             </table>
                         
@@ -187,11 +191,11 @@
 
 
     <!-- footer -->
-    <?php include('../../home/footer.html'); ?>
+    <?php include('../home/footer.html'); ?>
    
     <!-- Link  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script src="../controller/controller.js"></script>
+    <script src="controller.js"></script>
   
 </body>
 </html>

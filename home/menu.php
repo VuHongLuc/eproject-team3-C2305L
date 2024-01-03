@@ -11,10 +11,12 @@
 </head>
 <body>
 <div id="main-menu" class="d-flex flex-wrap justify-content-center">
-            <div class="main-menu_categories p-3  ">
+            <div class="main-menu_categories p-3 ">
+                    
                 <h1 class="main-menu_name text-center text-uppercase p-3 ">Categories</h1>
             
                 <div class="category-menu row text-center  d-flex flex-wrap justify-content-around">
+                    
                     <!-- List item of Categories -->
                     <div class="menu-item  col-lg-2 col-md-3 col-6 p-3  ">
                         <a href="../listPage/viewListCategory.php?category=2" class="list-group-item">
@@ -52,7 +54,9 @@
                             <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Portal hard drive</p>
                         </a>
                     </div>
+                    
                 </div>
+                
             </div>
 
             <!-- Brand -->
@@ -100,7 +104,6 @@
                 </div>
             </div>
         </div>
-     </script>
     <!-- Link  -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

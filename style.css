@@ -263,6 +263,7 @@ nav {
     height: 350px;
     border: 1px solid #E7E7E7;
     box-shadow: 0 0 5px #E7E7E7;
+    object-fit: contain;
     
 
 }

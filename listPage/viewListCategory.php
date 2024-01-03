@@ -52,15 +52,15 @@
                 <div class="col-md-3 mt-2">
                     <div class="card custom-col">
                         <!-- phong sửa ở đây -->
-                        <a href="../productDetail/view/viewProduct.php?productID=<?php echo $row['productID'];?>" class="list-group-item align-items-center">
+                        <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="list-group-item align-items-center">
                             <img src="../<?php echo $row["imageLink"]?>" class="p-5 object-fit-contain home-custom-image" alt="Product 3">
                         </a>
                         
                         <div class="card-body text-center">
-                        <h5 class="card-title text-center mt-2 home-custom-card-title fw-bold text-uppercase"><a href="../productDetail/view/viewProduct.php?productID=<?php echo $row['productID'];?>" class="list-group-item"><?php echo $row["productName"]?></a></h5>
+                        <h5 class="card-title text-center mt-2 home-custom-card-title fw-bold text-uppercase"><a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="list-group-item"><?php echo $row["productName"]?></a></h5>
                             <p class="card-text text-danger fw-bold"><?php echo $row["unitPrice"]."$"?></p>
                             <div class="justify-content-between d-flex">
-                                <a href="../productDetail/view/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
+                                <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
                                 <a href="#" class="btn btn-outline-secondary fw-bold">COMPARE</a>
                             </div>
                         </div>
