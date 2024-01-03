@@ -11,10 +11,10 @@
 
     <div class="wrapper container-fluid">
 <div class="container col-inner">
-    <h2>EXCHANGE & RETURN POLICY</h2>
+    <h2 class="my-5">EXCHANGE & RETURN POLICY</h2>
     <p>To help customers more conveniently during the shopping process at Kingston Vietnam, we would like to inform customers of the exchange and return regulations as follows:</p>
     
-    <h3>EXCHANGE REGULATIONS</h3>
+    <h3 class="my-3">EXCHANGE REGULATIONS</h3>
     <p>In case a customer has purchased a product from Kingston Vietnam and is not satisfied or wants to exchange for another product, we will support the customer in the right to exchange the product.<br>
 
     Conditions when exchanging goods:<br>
@@ -26,7 +26,7 @@
     –  No returns for promotional products<br>
     –  For sealed products, we will charge an additional opening fee of 15% depreciation if returned.</p>
 
-    <h3>RETURNS REGULATIONS</h3>
+    <h3 class="my-3">RETURNS REGULATIONS</h3>
     <p>Conditions when returning goods<br>
     –  The product you receive is not as promised<br>
     –  The price, packaging and product origin are not the same as the information we posted on the website<br>

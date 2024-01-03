@@ -31,19 +31,19 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner"> 
 
-        <h2>Learn about USB-C</h2>
+        <h2 class="my-3">Learn about USB-C</h2>
 
         <p>What is USB-C? To solve the problem of incompatible cables ending up in landfills, a group of the world's most prestigious technology companies gathered under the name of the USB Implementers Forum to create a connector standard. As a result, USB-C® was born and quickly became widely adopted. Here are some advantages of using USB-C.</p>
 
-        <p><strong>Is USB-C easier to use?</strong><br>
+        <p class="my-3"><strong>Is USB-C easier to use?</strong><br>
         Technology can make us frustrated, but there's nothing more frustrating than plugging a USB into your computer and finding it doesn't fit. So you turn the USB over only to realize that the original direction is correct... Does this sound familiar to you?</p>
 
         <p>USB-C will help eliminate all of these annoyances because it is a user-friendly, symmetrically shaped, and reversible connector. Like Apple's Lightning connector, USB-C can be plugged in both ways. Far different from the original square, large-format USB head, USB-C has a thin, compact shape and rounded sides. USB-C is small enough to fit into today's increasingly slim mobile devices, but powerful enough to connect all the peripherals to your laptop.</p>
-        <p><strong>Set administrator password</strong></p>
+        <p class="my-3"><strong>Set administrator password</strong></p>
         <p>Next, you will create and confirm an Administrator password. This password must be at least 6 characters long and can include numbers, letters, and spaces.</p>
         <p>Enter the password using the keyboard on the touch screen of the VP80ES. You can press the ABC or 123 button to switch between the alphabetic keyboard and the numeric keyboard.</p>
         <p>Confirm your password by tapping the check mark.</p>
-        <p><strong>Impressive USB-C performance</strong><br>
+        <p class="my-3"><strong>Impressive USB-C performance</strong><br>
         Another reason USB-C is growing in popularity is because of its impressive performance standards. This type of connector supports the latest USB 3.2 communication protocols, which is much faster and more powerful than most standard USBs. USB-C can provide up to 100W of power to devices and can transfer data at speeds of up to 20Gbps. USB-C is also capable of transmitting 4K Ultra HD video and audio. This means you can charge full-sized products and transfer data up to 20 times faster than USB 2.0, while still enjoying the ultimate 4K Ultra HD video experience.</p>
         </div>
     </div>

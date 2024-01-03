@@ -14,9 +14,9 @@
     
        <div class="wrapper container-fluid">
 <div class="container col-inner">
-    <h2>SHIPPING AND PAYMENT</h2>
+    <h2 class="my-5">SHIPPING AND PAYMENT</h2>
 
-    <h3>Transport</h3>
+    <h3 class="my-3">Transport</h3>
 
     <p><strong>Ship within Hanoi Inner City:</strong></p>
     <ul>
@@ -35,7 +35,7 @@
         <li>We ensure safe delivery in the original packaging.</li>
     </ul>
 
-    <h3>Payment</h3>
+    <h3 class="my-3">Payment</h3>
 
     <p><strong>Payment via bank account:</strong></p>
     <p>In case the customer wants to pay first and receive the goods later, please transfer to the following bank account:</p>

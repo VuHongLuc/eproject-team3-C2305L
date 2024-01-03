@@ -27,11 +27,11 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2>How to Set Up an IronKey Vault Privacy 80 Portable SSD</h2>
+        <h2 class="my-3">How to Set Up an IronKey Vault Privacy 80 Portable SSD</h2>
 
         <p>Need to set up an IronKey Vault Privacy 80 removable SSD? This guide Kingston Vietnam will help you easily through the simple setup process.</p>
 
-        <h3>Product box includes:</h3>
+        <h3 class="my-3">Product box includes:</h3>
         <ul>
             <li>IronKey Vault Privacy 80 removable SSD</li>
             <li>Two USB 3.2 Gen 1 cables; one USB-C® to USB-C cable and one USB-C to USB-A cable</li>
@@ -39,7 +39,7 @@
             <li>Convenient travel case to store all products</li>
         </ul>
 
-        <h3>Let's get started</h3>
+        <h3 class="my-3">Let's get started</h3>
         <p>Use a cable with a connector compatible with your computer.</p>
         <p>Plug the VP80ES into any available USB 3.0 port on your computer. The drive will test itself, then display the language selection screen. Select the language you want to use and then click the check mark to move to the next step.</p>
 
@@ -51,7 +51,7 @@
 
         <p>After setting an Administrator password, you can use VP80ES to store and access important files. You can also set the removable SSD to 'read-only' mode by tapping the globe icon to access language options or tapping the gear icon to change advanced settings (such as adding a user password).</p>
 
-        <h3>Connect VP80ES to your System</h3>
+        <h3 class="my-3">Connect VP80ES to your System</h3>
         <p>After plugging in the VP80ES, connect this device to your system by pressing the "Connect" button on the screen. A new screen will appear on the VP80ES, and the currently connected system will have a storage drive named KINGSTON available. When you want to disconnect, press the Lock and Disconnect button to safely remove the drive.</p>
 
         <p>That's it! Once you've set up the IronKey Vault Privacy 80 removable SSD, you can begin safely saving and securing important data.</p>

@@ -31,9 +31,9 @@
 
     <div class="wrapper container-fluid">
 <div class="container col-inner">    
-    <h1>WARRANTY POLICY</h1>
+    <h1 class="my-5">WARRANTY POLICY</h1>
 
-    <h2>Warranty policy of OceanGate</h2>
+    <h2 class="my-3">Warranty policy of OceanGate</h2>
 
     <p><a href="../index/index.php" class="custom-link bold-link">OceanGate</a> warrants to the original end user that its products are free from defects in materials and workmanship under the terms and conditions set forth herein. Subject to the conditions and limitations set forth below, OceanGate will, as the case may be, repair or replace any part of the product that proves to be defective due to improper manufacturing techniques or materials. . Repaired parts or replacement products will be provided by OceanGate on an exchange basis and will be new or recertified. All recertified products have been tested to ensure that they function the same as new products. If OceanGate is unable to repair or replace the product, OceanGate will provide a refund for the lesser of either of the following: the current value of the product at the time of the warranty claim or the purchase price. You must provide proof of purchase showing the date and place of original purchase as well as the product description and price.</p>
 
@@ -43,7 +43,7 @@
 
     <p>This limited warranty covers only repair, replacement, refund or credit for defective OceanGate products as set forth above. OceanGate is not responsible and does not cover under warranty any damages or losses of any kind arising from loss, damage or corruption of content or data, or any costs related thereto. determine the cause of system problems or remove, service or install OceanGate products. This warranty does not cover third-party software, connected devices, or stored data. Therefore, OceanGate is not responsible for any actual or consequential loss or damage that may be attributed to third party software, connected devices or stored data. In the event of a claim, OceanGate's sole and maximum liability will be to repair and replace the hardware or provide a refund as determined by OceanGate Vietnam.</p>
 
-    <h2>Product warranty period</h2>
+    <h2 class="my-3">Product warranty period</h2>
 
     <ul>
         <li><strong>Lifetime product warranty:</strong> The following oceangate products are covered by a lifetime product warranty:</li>
@@ -68,7 +68,7 @@
 
     <p>Please refer to the following SSD Warranty table for product-specific warranty information:</p>
 
-    <h2>Free Technical Support</h2>
+    <h2 class="my-3">Free Technical Support</h2>
 
     <p>If you encounter difficulties during installation or use of OceanGate products, you can contact oceangate Vietnam's Technical Support department.</p>
 

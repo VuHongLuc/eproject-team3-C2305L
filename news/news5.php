@@ -27,13 +27,13 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2>How to Format a USB Drive</h2>
+        <h2 class="my-3">How to Format a USB Drive</h2>
 
         <p>Oceangate introduces to you how to format a USB drive</p>
 
         <p>Formatting a USB drive is something most computer users don't think about, as most drives come pre-formatted upon purchase, and are ready to use in almost any situation. However, there are times when you need to completely erase all the data in the drive, or you need to make the drive compatible with a different type of computer than the one for which the drive was formatted. If you've ever experienced a flash drive working on a PC but not on a Mac, or vice versa, the format of the drive is usually the cause of the problem. This article will explain how to format your drive in Windows and on Mac OS 10+.</p>
 
-        <h3>What is the format?</h3>
+        <h3 class="my-3">What is the format?</h3>
         <p>Formatting is the process of preparing a storage device, such as a hard drive, semiconductor drive, flash drive, etc. for information storage. This creates a storage system that organizes your data and allows you to maximize file space. Typically, you will format a drive when a new operating system is about to be used or more space is needed.</p>
 
         <p>There are two types of formats on USB drives:</p>
@@ -42,7 +42,7 @@
             <li><strong>Full format:</strong> Will scan for bad sectors and write 0 to all sectors, this will permanently erase all data. This operation may take a long time, depending on the capacity of the drive.</li>
         </ul>
 
-        <h3>File system options</h3>
+        <h3 class="my-3">File system options</h3>
         <p>When formatting a drive, it's important to understand the different types of formatting options available for your ideal use. The most commonly used file systems in USB drives are:</p>
         <ul>
             <li><strong>FAT32:</strong> Common option recognized by both Mac and Windows operating systems. Not secure and limits files to 4GB in size. Most USB drives will have a FAT32 file system out of the box.</li>
@@ -51,7 +51,7 @@
             <li><strong>Mac OS Extended:</strong> Integrated solution for Mac users. No maximum file size. Only use if the drive will only be used in Mac OS. Windows will not detect this file system without a third-party utility.</li>
         </ul>
 
-        <h3>Format the drive in Windows</h3>
+        <h3 class="my-3">Format the drive in Windows</h3>
         <p>Follow these steps to format a USB drive in Windows:</p>
         <ol>
             <li>Plug the USB drive into the USB port.</li>
@@ -67,7 +67,7 @@
             <li>Once formatting is complete, the USB drive will be set up to store documents, images, videos, and other files on the removable drive.</li>
         </ol>
 
-        <h3>Format the drive on Mac OS 10+</h3>
+        <h3 class="my-3">Format the drive on Mac OS 10+</h3>
         <p>Follow these steps to format a USB drive on Mac OS 10+:</p>
         <ol>
             <li>Plug the USB drive into the USB port.</li>
@@ -80,7 +80,7 @@
             <li>Once formatting is complete, the USB drive will be set up to store documents, images, videos, and other files on the removable drive.</li>
         </ol>
 
-        <h3>Conclusion</h3>
+        <h3 class="my-3">Conclusion</h3>
         <p>Formatting a USB drive can be a great option if you want to erase data from a flash drive quickly and efficiently or if you want to use the flash drive on another operating system. By formatting your USB drive, you will optimize the drive's performance.</p>
         </div>
     </div>

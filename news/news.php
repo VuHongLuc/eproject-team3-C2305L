@@ -31,7 +31,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">    
 
-    <h1>News Page</h1>
+    <h1 class="my-3">News Page</h1>
 
     <?php
         // Array containing news information
@@ -71,7 +71,7 @@
         // Display news
         foreach ($news as $article) {
             echo '<div class="article">';
-            echo '<h3>' . $article['title'] . '</h3>';
+            echo '<h3 class="my-3">' . $article['title'] . '</h3>';
             echo '<img src="' . $article['image'] . '" alt="' . $article['title'] . '">';
             echo '<p>' . $article['content'] . '</p>';
             echo '<a href="' . $article['link'] . '" class="btn btn-danger">Read more</a>';
