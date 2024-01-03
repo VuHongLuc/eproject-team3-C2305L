@@ -29,7 +29,8 @@
 
     <?php include '../home/navbar.html'; ?>
 
-    <div class="container">    
+    <div class="wrapper container-fluid">
+<div class="container col-inner">    
     <h1>WARRANTY POLICY</h1>
 
     <h2>Warranty policy of OceanGate</h2>
@@ -73,7 +74,7 @@
 
     <p>To receive support, please contact <a href="../index/index.php" class="custom-link bold-link">oceangate.com.vn</a> or Hotline <strong>1800 1141</strong>.</p>
       </div>
-      
+      </div>
     <?php include '../home/footer.html' ?>
 
 </body>

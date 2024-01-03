@@ -12,7 +12,8 @@
 <body>
     <?php include '../home/navbar.html'; ?>
     
-    <div class="container">
+       <div class="wrapper container-fluid">
+<div class="container col-inner">
     <h2>SHIPPING AND PAYMENT</h2>
 
     <h3>Transport</h3>
@@ -49,7 +50,8 @@
     <div class="contact-info">
         <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm.</p>
     </div>
-    </div>
+    </div>    
+</div>
     <?php include "../home/footer.html" ?>
 </body>
 

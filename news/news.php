@@ -28,7 +28,9 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-<div class="container">
+<div class="wrapper container-fluid">
+<div class="container col-inner">    
+
     <h1>News Page</h1>
 
     <?php
@@ -77,6 +79,7 @@
             echo '</div>';
         }
     ?>
+    </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>

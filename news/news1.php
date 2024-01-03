@@ -28,7 +28,8 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-    <div class="container">
+<div class="wrapper container-fluid">
+<div class="container col-inner"> 
 
         <h2>Learn about USB-C</h2>
 
@@ -41,7 +42,7 @@
 
         <p><strong>Impressive USB-C performance</strong><br>
         Another reason USB-C is growing in popularity is because of its impressive performance standards. This type of connector supports the latest USB 3.2 communication protocols, which is much faster and more powerful than most standard USBs. USB-C can provide up to 100W of power to devices and can transfer data at speeds of up to 20Gbps. USB-C is also capable of transmitting 4K Ultra HD video and audio. This means you can charge full-sized products and transfer data up to 20 times faster than USB 2.0, while still enjoying the ultimate 4K Ultra HD video experience.</p>
-
+        </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>

@@ -19,11 +19,11 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-<div class="container">
-
+<div class="wrapper container-fluid">
+<div class="container col-inner">
     <h1>INTRODUCE</h1>
 
-    <h2>About Oceangate Technology</h2>
+    <h2 class="my-3">About Oceangate Technology</h2>
     <p>In 2003, Oceangate entered the market with a single product. Founders John Tu and David Sun solved the critical shortage of surface-mounted memory chips with a memory module that would redefine standards in the memory industry in the years that followed.</p>
 
     <p>Combining one of the most comprehensive and rigorous testing processes in the memory industry, a rare 24/7 toll-free technical support center and a consistent introduction of innovative technologies, Kingston Technology has consistently set industry standards for quality and reliability throughout its history.</p>
@@ -38,7 +38,7 @@
     <p>In Vietnam, Vietnam IT Technology Services and Trading Co., Ltd. is pleased to be the official authorized distributor of all USB, Memory Card, SSD, Ram,...</p>
 
     <p>Come to <a href="../index/index.php" >oceangate.com.vn</a> for advice, support, and experience genuine Oceangate products.</p>
-
+    </div>
 </div>
 <?php include '../home/footer.html'; ?>
 </body>

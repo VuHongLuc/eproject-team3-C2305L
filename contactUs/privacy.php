@@ -9,7 +9,8 @@
 <body>
     <?php include '../home/navbar.html'; ?>
 
-    <div class="container">
+    <div class="wrapper container-fluid">
+<div class="container col-inner">
         <h2>PRIVACY POLICY</h2>
 
         <h3>General Principles</h3>
@@ -36,7 +37,7 @@
             <li>Phone number: <strong>1800 1141</strong></li>
         </ul>
     </div>
-
+    </div>
     <?php include '../home/footer.html' ?>
 </body>
 </html>

@@ -9,7 +9,8 @@
 <body>
     <?php include '../home/navbar.html'; ?>
 
-    <div class="container">
+    <div class="wrapper container-fluid">
+<div class="container col-inner">
     <h2>EXCHANGE & RETURN POLICY</h2>
     <p>To help customers more conveniently during the shopping process at Kingston Vietnam, we would like to inform customers of the exchange and return regulations as follows:</p>
     
@@ -36,7 +37,7 @@
 
     <p>To know more about return regulations, please contact <strong>1800 1141</strong></p>
     </div>
-    
+    </div>
     <?php include '../home/footer.html' ?>
 </body>
 </html>

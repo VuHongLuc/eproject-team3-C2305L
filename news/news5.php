@@ -24,7 +24,8 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-    <div class="container">
+<div class="wrapper container-fluid">
+<div class="container col-inner">
 
         <h2>How to Format a USB Drive</h2>
 
@@ -81,7 +82,7 @@
 
         <h3>Conclusion</h3>
         <p>Formatting a USB drive can be a great option if you want to erase data from a flash drive quickly and efficiently or if you want to use the flash drive on another operating system. By formatting your USB drive, you will optimize the drive's performance.</p>
-
+        </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>

@@ -24,7 +24,8 @@
 </head>
 <body>
 <?php include '../home/navbar.html'; ?>
-    <div class="container">
+<div class="wrapper container-fluid">
+<div class="container col-inner">
 
         <h2>How to Set Up an IronKey Vault Privacy 80 Portable SSD</h2>
 
@@ -59,7 +60,7 @@
         <p>That's it! Once you've set up the IronKey Vault Privacy 80 removable SSD, you can begin safely saving and securing important data.</p>
 
 
-
+        </div>
     </div>
     <?php include '../home/footer.html'; ?>
 </body>
