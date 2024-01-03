@@ -134,14 +134,14 @@
                 }
             };
 
-            xhttp.open("GET", "search-process.php?search=" + searchInput, true);
+            xhttp.open("GET", "../search/search-process.php?search=" + searchInput, true);
 
             // Send the request
             xhttp.send();
         }
         function redirectToSearch() {
             var searchInput = document.getElementById("searchInput").value;
-            window.location.href = "product-search.php?search=" + searchInput;
+            window.location.href = "../search/product-search.php?search=" + searchInput;
         }
         
     </script>

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Search</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Add your custom styles if needed -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Add your custom styles if needed -->
 </head>
 
 <body>
-    <?php include "navbar.html" ?>
+    <?php include "../home/navbar.html" ?>
 
     <div class="container-fluid">
         <div class="row mt-3">
@@ -18,16 +18,19 @@
                 <h2>Product Filter</h2>
                 <!-- Example category links, replace with your actual category links -->
                 <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                    <li><a href="#">Category 3</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=1">HDD</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=2">SSD</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=3">USB</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=4">Memory Card</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=5">RAM</a></li>
+                    <li><a href="../listPage/viewListCategory.php?category=6">Portal Hard Driver</a></li>
                 </ul>
             </aside>
 
             <main class="col-md-9">
                 <div class="row">
                     <?php
-                    include('db.php');
+                    include('../db.php');
 
                     // Get the search keyword from the URL
                     $searchKeyword = isset($_GET['search']) ? $_GET['search'] : '';
@@ -42,7 +45,7 @@
                             <div class="col-md-4 mt-2">
                                 <div class="card custom-col">
                                     <a href="" class="list-group-item align-items-center">
-                                        <img src="<?php echo $row["imageLink"] ?>" class="p-5 object-fit-contain home-custom-image" alt="Product Image">
+                                        <img src="<?php echo "../".$row["imageLink"] ?>" class="p-5 object-fit-contain home-custom-image" alt="Product Image">
                                     </a>
                                     <div class="card-body text-center">
                                         <h5 class="card-title text-center mt-2 home-custom-card-title fw-bold text-uppercase">
@@ -72,7 +75,7 @@
         </div>
     </div>
 
-    <?php include "footer.html" ?>
+    <?php include "../home/footer.html" ?>
 </body>
 
 </html>
