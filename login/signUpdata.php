@@ -10,6 +10,7 @@
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $address = $_POST['address'];
+    $roleuser = $_POST['roleUser'];
     function convertToDate($day){
         $date = strtotime($day);
         return date("d-m-Y", $date);
@@ -17,8 +18,8 @@
 
     $dateIntoDb = convertToDate($dob);
 
-    $query = "INSERT INTO `user` (userName, password, dob,  address, phone, email)
-    VALUES ('$username', '$password',  '$dob','$address', '$phone', '$email')";
+    $query = "INSERT INTO `user` (userName, password, dob,  address, phone, email,roleUser)
+    VALUES ('$username', '$password',  '$dob','$address', '$phone', '$email','$roleuser')";
 
     $result = $conn->query($query);
      
