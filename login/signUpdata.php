@@ -26,7 +26,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])
     $result = $conn->query($query);
 
     if ($result === TRUE) {
-        echo "Successfully Register";
+        echo '<script>alert("Successfully Register")</script>';
         header('Refresh: 3; URL = login.php');
     } else {
         echo "Fail Register";
