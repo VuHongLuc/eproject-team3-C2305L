@@ -40,10 +40,10 @@ session_start();
             </a>
           </div>
         </form>
+        
 
 
-
-        <form action="singUp.php" method="post" class="sign-up-form">
+        <form action="signUpdata.php" method="post" class="sign-up-form">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -69,7 +69,7 @@ session_start();
             <i class="fas fa-map-marker-alt"></i>
             <input type="text" id="address" name="address" placeholder="Address" required />
           </div>
-          <input type="hidden" id="rolenumber" name="rolenumber" value="0">
+          <input type="hidden" id="roleUser" name="roleUser" value="0">
 
           <input type="submit" class="btn" value="Sign up" />
           <p class="social-text">-Or Sign up with- </p>
@@ -80,9 +80,10 @@ session_start();
             <a href="#" class="social-icon">
               <i class="fab fa-google"></i>
             </a>
-
           </div>
         </form>
+       
+
       </div>
     </div>
 
@@ -115,6 +116,8 @@ session_start();
   </div>
 
   <script src="app.js"></script>
+
 </body>
 
 </html>
+
