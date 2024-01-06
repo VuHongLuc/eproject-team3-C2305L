@@ -12,7 +12,7 @@
 <body>
     <?php
         include('../db.php');
-        include('../home/navbar.html');
+        include('../home/navbar.php');
     ?> 
     <?php
         if (isset($_GET['productID'])) {

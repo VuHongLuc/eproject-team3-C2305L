@@ -1,20 +1,38 @@
+<?php
+session_start();
+    // Khởi tạo biến numberCompare nếu chưa tồn tại
+    if (!isset($_SESSION['numberCompare'])) {
+        $_SESSION['numberCompare'] = 0;
+        $_SESSION['compareItems'] = [];
+    }
+
+    // Xử lý khi nút "COMPARE" được nhấn
+    if (isset($_POST['compareButton']) && $_SESSION['numberCompare'] < 3 ) {
+        $_SESSION['numberCompare']++;
+
+        $productCompare = array(
+            'productID' => $_POST['productID'],
+            'productName' => $_POST['productName'],
+            'unitPrice' => $_POST['unitPrice'],
+            'categoryID' => $_POST['categoryID'],
+            'brandID' => $_POST['brandID'],
+            'memory' => $_POST['memory'],
+            'speed' => $_POST['speed'],
+            'color' => $_POST['color'],
+            'warranty' => $_POST['warranty'],
+            'dimension' => $_POST['dimension']
+        );
+        $_SESSION['compareItems'][] = $productCompare;
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar with Dropdown</title>
-
-       <!-- Bootstrap CSS -->
-       <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
-
-       <!-- Font Awesome CSS -->
+    <!-- Font Awesome CSS -->
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
        <link rel="stylesheet" href="../style.css">
 </head>
@@ -84,23 +102,33 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
 
-                    <!-- Search function -->
+                        <!-- Search function -->
 
-                    <form id="searchForm" onsubmit="redirectToSearch(); return false;" method="GET" class="d-flex">
-                        <input class="form-control" type="text" id="searchInput" placeholder="Search for..." oninput="searchProducts()">
-                        <button type="submit" class="btn btn-outline-danger"> 
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="" width="20px" height="20px">
-                        </button>
-                    </form>
-                    <div id="searchResults"></div>
-
+                        <form id="searchForm" onsubmit="redirectToSearch(); return false;" method="GET" class="d-flex">
+                            <input class="form-control" type="text" id="searchInput" placeholder="Search for..." oninput="searchProducts()">
+                            <button type="submit" class="btn btn-outline-danger"> 
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png" alt="" width="20px" height="20px">
+                            </button>
+                        </form>
+                        <div id="searchResults"></div>
+                        <!-- cart logo -->
                     </li>
                     <li class="nav-item">
                       <a href="#" class="nav-link"><span class="px-2 text-danger"><i class="fas fa-shopping-cart"></i></span></a>
                     </li>
-                  </ul>
+                        <!-- compare logo -->
+                    <li class="nav-item">
+                        <a href="../compare/compare.php" class="nav-link">
+                            <span class="px-2 text-success" id="logoCompare">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                                <b class="text-center" id="numberCompare"><?php echo $_SESSION['numberCompare']?></b>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
 
-                <!-- User to menu -->
+                        <!-- User logo-->
                 <ul class="navbar-nav m-lg-3">
                     <li class="nav-item dropdown">
                         <a class="nav-link text-dark" href="../login/login.php" role="button">
@@ -145,5 +173,6 @@
         }
         
     </script>
+    <script src="../compare/compare.js"></script>
 </body>
 </html>

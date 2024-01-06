@@ -13,7 +13,7 @@
     <!-- Navbar -->
     <?php
         include('../../db.php');
-        include('../../navbar.html');
+        include('../../navbar.php');
    
          if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $proID = $_POST('product_id');

@@ -43,7 +43,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include '../home/navbar.html'; ?>
+    <?php include '../home/navbar.php'; ?>
     <div class="wrapper container-fluid">
 <div class="container col-inner">
         <h2>SEND THE CONTACT</h2>

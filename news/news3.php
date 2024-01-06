@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-<?php include '../home/navbar.html'; ?>
+<?php include '../home/navbar.php'; ?>
     <div class="wrapper container-fluid">
 <div class="container col-inner">
 

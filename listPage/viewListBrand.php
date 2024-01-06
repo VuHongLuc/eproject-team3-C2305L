@@ -12,7 +12,7 @@
     <title>View List Brand</title>
 </head>
 <body>
-<?php include "../home/navbar.html" ?>
+<?php include "../home/navbar.php" ?>
 
 <div class="wrapper container-fluid">
     <br>
