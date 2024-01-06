@@ -19,11 +19,10 @@
             margin: 0 auto; /* Để căn giữa theo chiều ngang */
             text-align: justify; /* Để căn đều nội dung trong các bài viết */
         }
-        img {
-            max-width: 100%;
-            height: auto;
+        .imgNews {
+            max-width: 500px;
+            height: 350px;
         }
-        
     </style>
 </head>
 <body>
@@ -55,7 +54,7 @@
                 'link' => 'news3.php'
             ],
             [
-                'title' => 'How to set up an IronKey Vault Privacy 80 portable SSD?',
+                'title' => 'How to set up a portable SSD?',
                 'content' => 'Need to set up an IronKey Vault Privacy 80 removable SSD? This guide Kingston..',
                 'image' => 'https://kingstonvietnam.vn/wp-content/uploads/2022/05/ktc-hero-ssd-ikvp80es-lg-1024x384.jpg',
                 'link' => 'news4.php'
@@ -67,18 +66,20 @@
                 'link' => 'news5.php'
             ],
         ];
-
+        echo '<div class="row">';
         // Display news
         foreach ($news as $article) {
-            echo '<div class="article">';
+            echo '<div class="article col-md-5 card p-4">';
             echo '<h3 class="my-3">' . $article['title'] . '</h3>';
-            echo '<img src="' . $article['image'] . '" alt="' . $article['title'] . '">';
+            echo '<img class="imgNews" src="' . $article['image'] . '" alt="' . $article['title'] . '">';
             echo '<p>' . $article['content'] . '</p>';
             echo '<a href="' . $article['link'] . '" class="btn btn-danger">Read more</a>';
 
             echo '</div>';
         }
+        echo'</div>' ;
     ?>
+   
     </div>
     </div>
     <?php include '../home/footer.html'; ?>
