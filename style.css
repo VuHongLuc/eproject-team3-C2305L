@@ -265,9 +265,11 @@ table {
 
 th, td {
     border: 1px solid rgb(0, 0, 0) !important;
-    padding: 10px;
+    padding: 5px;
 }
-
+.tableRowName {
+    height: 60px;
+}
 th {
     background-color: #2a6b2a;
     color: #fff;

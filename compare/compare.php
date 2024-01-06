@@ -13,8 +13,9 @@
         <div class="container col-inner">
             <h2 class="text-uppercase text-center">COMPARE</h2>
             <div class="row">
-                <table class="col-md-3 text-center">
-                    <thead>
+                <div class="col-md-1"></div>
+                <table class="col-md-1 text-center">
+                    <thead  class="tableRowName">
                         <th>
                             CONTENT
                         </th>
@@ -23,7 +24,7 @@
                         <tr>
                             <td>productID</td>
                         </tr>   
-                        <tr>
+                        <tr class="tableRowName">
                             <td>productName</td>
                         </tr>
                         <tr>
@@ -69,7 +70,7 @@
                         $dimension = $item['dimension'];
 
                         echo "<table class='col-md-3 text-center'>
-                        <thead>
+                        <thead class='tableRowName'>
                             <th>
                                 $productName
                             </th>
@@ -78,7 +79,7 @@
                         <tr>
                             <td>$productID</td>
                         </tr>   
-                        <tr>
+                        <tr class='tableRowName'>
                             <td>$productName</td>
                         </tr>
                         <tr>
@@ -113,7 +114,7 @@
 
                     }
                  ?>
-
+            <div class="col-md-1"></div>
             </div>
         </div>
     </div>

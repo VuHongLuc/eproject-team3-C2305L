@@ -1,10 +1,4 @@
-<?php  
-        include "../db.php";
-        $sql1 = "SELECT * FROM category";
-        $result1 = $conn->query($sql1);         
-        while ($row1 = $result1->fetch_assoc()) {
- 
-    ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +9,13 @@
 </head>
 <body>
 <div class="wrapper container-fluid">
-    <br>
+<?php  
+        include "../db.php";
+        $sql1 = "SELECT * FROM category";
+        $result1 = $conn->query($sql1);         
+        while ($row1 = $result1->fetch_assoc()) {
+ 
+    ?>
     <div class="container col-inner">
         <h2 class="text-uppercase text-center">
             <a href="../listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="list-group-item"><?php echo $row1["categoryName"]?>
