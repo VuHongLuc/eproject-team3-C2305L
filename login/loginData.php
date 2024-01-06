@@ -2,12 +2,12 @@
 session_start(); 
 include "../db.php";
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
 
     
 
-    $username = ($_POST['username']);
-    $password = ($_POST['password']);
+    $username = ($_SESSION['username']);
+    $password = ($_SESSION['password']);
 
     if (empty($username)) {
         header("Location: login.php?error=User Name is required");
