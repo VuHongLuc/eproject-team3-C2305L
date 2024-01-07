@@ -14,7 +14,7 @@
     
        <div class="wrapper container-fluid">
 <div class="container col-inner">
-    <h2 class="my-5">SHIPPING AND PAYMENT</h2>
+    <h2 class="my-3">SHIPPING AND PAYMENT</h2>
 
     <h3 class="my-3">Transport</h3>
 

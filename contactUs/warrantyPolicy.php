@@ -31,7 +31,7 @@
 
     <div class="wrapper container-fluid">
 <div class="container col-inner">    
-    <h1 class="my-5">WARRANTY POLICY</h1>
+    <h1 class="my-3">WARRANTY POLICY</h1>
 
     <h2 class="my-3">Warranty policy of OceanGate</h2>
 
