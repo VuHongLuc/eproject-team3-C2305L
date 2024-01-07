@@ -14,51 +14,52 @@
             <h2 class="text-uppercase text-center">COMPARE</h2>
             <div class="row">
                 <div class="col-md-1"></div>
-                <table class="col-md-1 text-center">
+                <table class="table-striped col-md-1 text-center">
                     <thead  class="tableRowName">
                         <th>
-                            CONTENT
+                        PRODUCT NAME
                         </th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>productID</td>
+                        <tr class="tableRowImage">
+                            <td><b>IMAGE</b></td>
                         </tr>   
-                        <tr class="tableRowName">
-                            <td>productName</td>
+                        <tr>
+                            <td><b>PRODUCT ID</b></td>
+                        </tr>   
+                        <tr>
+                            <td><b>UNIT PRICE</b></td>
                         </tr>
                         <tr>
-                            <td>unitPrice</td>
+                            <td><b>CATEGORY</b></td>
                         </tr>
                         <tr>
-                            <td>categoryID</td>
+                            <td><b>BRAND</b></td>
                         </tr>
                         <tr>
-                            <td>brandID</td>
+                            <td><b>MEMORY</b></td>
                         </tr>
                         <tr>
-                            <td>memory</td>
+                            <td><b>SPEED</b></td>
                         </tr>
                         <tr>
-                            <td>speed</td>
+                            <td><b>COLOR</b></td>
                         </tr>
                         <tr>
-                            <td>color</td>
+                            <td><b>WARRANTY</b></td>
                         </tr>
                         <tr>
-                            <td>warranty</td>
+                            <td><b>DIMENSION</b></td>
                         </tr>
                         <tr>
-                            <td>dimension</td>
-                        </tr>
-                        <tr>
-                            <td>State</td>
+                            <td><b>STATE</b></td>
                         </tr>                           
                     </tbody>
                 </table>
                 <?php
                     foreach ($_SESSION['compareItems'] as $item){
                         $productID = $item['productID'];
+                        $imageLink = $item['imageLink'];
                         $productName = $item['productName'];
                         $unitPrice = $item['unitPrice'];
                         $categoryID = $item['categoryID'];
@@ -77,11 +78,11 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <td class='tableRowImage'><img height='100%' src='../$imageLink'></td>
+                        </tr>
+                        <tr >
                             <td>$productID</td>
                         </tr>   
-                        <tr class='tableRowName'>
-                            <td>$productName</td>
-                        </tr>
                         <tr>
                             <td>$unitPrice$</td>
                         </tr>
@@ -107,7 +108,7 @@
                             <td>$dimension</td>
                         </tr>
                         <tr>
-                            <td><a href='deleteCompare.php?productID=$productID'>Delete product</a></td>
+                            <td><a style='text-decoration:none' href='deleteCompare.php?productID=$productID'>Delete Compare</a></td>
                         </tr>
                     </tbody>
                     </table>";

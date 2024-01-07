@@ -12,6 +12,7 @@ session_start();
 
         $productCompare = array(
             'productID' => $_POST['productID'],
+            'imageLink' => $_POST['imageLink'],
             'productName' => $_POST['productName'],
             'unitPrice' => $_POST['unitPrice'],
             'categoryID' => $_POST['categoryID'],
@@ -185,6 +186,5 @@ session_start();
         }
         
     </script>
-    <script src="../compare/compare.js"></script>
 </body>
 </html>
