@@ -11,7 +11,7 @@
 
     <div class="wrapper container-fluid">
 <div class="container col-inner">
-    <h2 class="my-5">EXCHANGE & RETURN POLICY</h2>
+    <h2 class="my-3">EXCHANGE & RETURN POLICY</h2>
     <p>To help customers more conveniently during the shopping process at Kingston Vietnam, we would like to inform customers of the exchange and return regulations as follows:</p>
     
     <h3 class="my-3">EXCHANGE REGULATIONS</h3>

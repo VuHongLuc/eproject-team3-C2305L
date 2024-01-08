@@ -21,7 +21,7 @@
 <?php include '../home/navbar.php'; ?>
 <div class="wrapper container-fluid">
 <div class="container col-inner">
-    <h1 class="my-5">INTRODUCE</h1>
+    <h1 class="my-3">INTRODUCE</h1>
 
     <h2 class="my-3">About Oceangate Technology</h2>
     <p>In 2003, Oceangate entered the market with a single product. Founders John Tu and David Sun solved the critical shortage of surface-mounted memory chips with a memory module that would redefine standards in the memory industry in the years that followed.</p>

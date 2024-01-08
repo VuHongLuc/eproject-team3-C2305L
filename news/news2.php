@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner"> 
 
-        <h2 class="my-3">Should I Buy a Kingston USB?</h2>
+        <h2 class="my-3">SHOULD I BUY A KINGSTON USB?</h2>
 
         <p>Is Kingston USB good or not is an issue that many people are concerned about today. In this article, we will answer your questions about this USB brand.</p>
 

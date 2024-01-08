@@ -19,13 +19,13 @@ include("../db.php");
             );
             
             $_SESSION['cartItem'][] = $productCart;
-            //truy vấn đến bảng user
-            // $userID = $_SESSION['userID'];
-            // $sqlUserID = "SELECT userID FROM user WHERE userID= '$userID'";
+            // $_SESSION['cartItem'] = [];
+
             // echo $_SESSION['cartNumber'];
             // echo '<pre>';
             // var_dump($_SESSION['cartItem']);
             // echo '</pre>';
+
 
             //insert into cart
             foreach ($_SESSION['cartItem'] as $product) {
@@ -58,6 +58,7 @@ include("../db.php");
 
         $productCompare = array(
             'productID' => $_POST['productID'],
+            'imageLink' => $_POST['imageLink'],
             'productName' => $_POST['productName'],
             'unitPrice' => $_POST['unitPrice'],
             'categoryID' => $_POST['categoryID'],
@@ -182,9 +183,21 @@ include("../db.php");
                         <!-- User logo-->
                 <ul class="navbar-nav m-lg-3">
                     <li class="nav-item dropdown">
-                        <a class="nav-link text-dark" href="../login/login.php" role="button">
-                            <span class="px-3 py-2 rounded-pill"><i class="far fa-user"></i></span>
-                        </a>
+                        <?php if(isset($_SESSION['userName'])){
+                            echo "<li class='nav-item  m-3 dropdown'>
+                            <a class='nav-link dropdown-toggle text-dark fw-bold' href='#' id='navbarDropdownBrand' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>".
+                            $_SESSION['userName'].
+                            "</a>
+                            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                <a class='dropdown-item' href='../login/logout.php'>Log out</a>
+                            </div>
+                        </li>";
+                        }else{
+                            echo "<a class='nav-link text-dark' href='../login/login.php' role='button'>
+                            <span class='px-3 py-2 rounded-pill'><i class='far fa-user'></i></span>
+                        </a>";
+                        }; ?>
+                        
                     </li>
                 </ul>
             </div>
@@ -224,6 +237,5 @@ include("../db.php");
         }
         
     </script>
-    <script src="../compare/compare.js"></script>
 </body>
 </html>

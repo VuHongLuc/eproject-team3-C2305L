@@ -2,12 +2,9 @@
 session_start(); 
 include "../db.php";
 
-if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
-
-    
-
-    $username = ($_SESSION['username']);
-    $password = ($_SESSION['password']);
+  if (isset($_POST["login"])){
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
     if (empty($username)) {
         header("Location: login.php?error=User Name is required");
@@ -23,7 +20,6 @@ if (isset($_SESSION['username']) && isset($_SESSION['password'])) {
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row['password'])) {
                 $_SESSION['userName'] = $row['userName'];
-                $_SESSION['password'] = $row['password'];
                 header("Location: ../index/index.php");
                 exit();
             } else {

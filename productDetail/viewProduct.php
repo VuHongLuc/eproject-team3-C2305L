@@ -12,7 +12,7 @@
 <body>
     <?php
        
-        include('../db.php');
+        
         include('../home/navbar.php');
     ?> 
     <?php

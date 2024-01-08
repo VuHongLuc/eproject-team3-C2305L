@@ -11,7 +11,7 @@
 
     <div class="wrapper container-fluid">
 <div class="container col-inner">
-        <h2 class="my-5">PRIVACY POLICY</h2>
+        <h2 class="my-3">PRIVACY POLICY</h2>
 
         <h3 class="my-3">General Principles</h3>
         <p>Kingston wishes to bring you a better solution for aluminum door systems, wooden doors, and glass doors at reasonable prices thanks to the support of the online marketing system,</p>

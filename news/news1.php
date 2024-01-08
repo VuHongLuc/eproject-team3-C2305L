@@ -31,7 +31,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner"> 
 
-        <h2 class="my-3">Learn about USB-C</h2>
+        <h2 class="my-3">LEARN ABOUT USB-C</h2>
 
         <p>What is USB-C? To solve the problem of incompatible cables ending up in landfills, a group of the world's most prestigious technology companies gathered under the name of the USB Implementers Forum to create a connector standard. As a result, USB-C® was born and quickly became widely adopted. Here are some advantages of using USB-C.</p>
 
