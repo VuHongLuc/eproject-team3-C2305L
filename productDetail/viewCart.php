@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +17,7 @@
 
         include('../db.php');
         include('../home/navbar.php');
+       
         
        
     ?>
@@ -65,6 +67,7 @@
         
         </div>
     </div>
+   
  
 
  

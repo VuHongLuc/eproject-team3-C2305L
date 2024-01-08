@@ -11,11 +11,7 @@
 </head>
 <body>
     <?php
-       
-        
-        include('../home/navbar.php');
-    ?> 
-    <?php
+    include('../home/navbar.php');
         if (isset($_GET['productID'])) {
             // Lấy giá trị productID từ URL
             $productID = $_GET['productID'];
