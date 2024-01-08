@@ -11,6 +11,7 @@
 </head>
 <body>
     <?php
+       
         include('../db.php');
         include('../home/navbar.php');
     ?> 
@@ -32,8 +33,6 @@
             if ($resultDetailPro) {
                 if (mysqli_num_rows($resultDetailPro) > 0) {
                     $rowProDetail = mysqli_fetch_assoc($resultDetailPro);
-                    // var_dump($rowProDetail);
-                    // Xử lý dữ liệu ở đây
                     $productImg = $rowProDetail['imageLink'];
                     $categoryName = $rowProDetail['categoryName'];
                     $brandName = $rowProDetail['brandName'];
@@ -51,11 +50,16 @@
     <div class="product-detail-container d-flex flex-wrap justify-content-center">
 
         <div class="product-details  p-5">
-            <form action="viewCart.php" method="POST" class="d-flex flex-wrap justify-content-around">
-                                    <input type="hidden" name="product_id" value="<?php $rowProDetail['productID'] ; ?>">
-                                    <input type="hidden" name="product_name" value="<?php $rowProDetail['productName'] ; ?>">
-                                    <input type="hidden" name="price" value="<?php $rowProDetail['unitPrice'] ; ?>">
-                                    <input type="hidden" name="imgLink" value="<?php $rowProDetail['imageLink'] ; ?>"> 
+            <form action="" method="POST" class="d-flex flex-wrap justify-content-around">
+                                    <input type="hidden" name="productID" value="<?php echo  $rowProDetail['productID'] ; ?>">
+                                    <input type="hidden" name="productName" value="<?php echo  $rowProDetail['productName'] ; ?>">
+                                    <input type="hidden" name="imageLink" value="<?php echo  "../" . $productImg ?>">
+                                
+                                    <input type="hidden" name="unitPrice" value="<?php echo  $rowProDetail['unitPrice'] ; ?>">
+                                 
+
+
+
                 <img src="../<?php echo $productImg;  ?>" alt="" class="product-detail-img col-lg-5 col-md-5 col-sm-12 col-12">
                 <div class="product-info col-lg-5 col-md-5 col-sm-12 col-12">
                     <h3 class="product-detail-name fw-bold text-start"><?php echo $rowProDetail['productName'] ; ?></h3>
@@ -67,22 +71,22 @@
 
                     <div class="product-details-quantity my-1">
                         <label for="" class="fw-bold p-2 font-size-sm mt-1">Quantity</label>
-                        <button class=" btn  decrease-btn btn-danger align-middle " id="decrementBtn" >-</button>
-                        <input type="number" class="quantity-pro-input align-middle text-center " name="quantity-pro-input" id="quantityInput" value="1" min="1" max="3" >
-                        <button class="btn  increase-btn btn-danger align-middle " id="incrementBtn">+</button>
+                        <button type="button" class=" btn  decrease-btn btn-danger align-middle " id="decrementBtn" >-</button>
+                        <input type="number" class="quantity-pro-input align-middle text-center " name="quantity" id="quantityInput" value="1" min="1" >
+                        <button type="button" class="btn  increase-btn btn-danger align-middle " id="incrementBtn">+</button>
                     </div>
                    
 
                     <div class="product-detail-action ">
                         <div class="justify-content-center">
                             <div class="d-flex flex-wrap justify-content-between ">
-                                <button type="submit" class="btn btn-add col-lg-5 col-md-12 col-sm-12 col-12  text-dark fw-bold my-1">
+                                <button type="submit" name="addToCart" class="btn btn-add col-lg-5 col-md-12 col-sm-12 col-12  text-dark fw-bold my-1">
                                     Add to cart
                                 </button>
-                                <button class="btn btn-buy bg-red col-lg-5 col-md-12 col-sm-12 col-12 text-white fw-bold my-1">Buy now</a></button>
+                                <button type="button" class="btn btn-buy bg-red col-lg-5 col-md-12 col-sm-12 col-12 text-white fw-bold my-1">Buy now</a></button>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button class="btn btn-contact text-white fw-bold col-lg-12 col-md-12 col-12 col-sm-12 col-12 my-1"><a href="#" class="list-group-item font-size-sm">Contact for better price</a></button>
+                                <button type="button" class="btn btn-contact text-white fw-bold col-lg-12 col-md-12 col-12 col-sm-12 col-12 my-1"><a href="#" class="list-group-item font-size-sm">Contact for better price</a></button>
                             </div>
                         </div>
                     </div>

@@ -1,28 +1,30 @@
-// Button tăng giảm số lượng
-     document.addEventListener('DOMContentLoaded', function() {
-            const decrementBtn = document.getElementById('decrementBtn');
-            const incrementBtn = document.getElementById('incrementBtn');
-            const quantityInput = document.getElementById('quantityInput');
+const priceProduct = document.getElementById('price-product');
+const quantityInput = document.getElementById('quantityInput');
+const totalPriceDisplay = document.getElementById('total-price');
 
-            decrementBtn.addEventListener('click', function() {
-                decreaseQuantity();
-            });
+function updateTotalPrice() {
+    const price = parseFloat(priceProduct.textContent);
+    const quantity = parseInt(quantityInput.value);
 
-            incrementBtn.addEventListener('click', function() {
-                increaseQuantity();
-            });
+    const totalPrice = price * quantity;
+    totalPriceDisplay.textContent = '$' + totalPrice.toFixed(2);
+}
 
-            function decreaseQuantity() {
-                let currentValue = parseInt(quantityInput.value);
-                if (currentValue > 1) {
-                currentValue--;
-                quantityInput.value = currentValue;
-                }
-            }
+document.getElementById('incrementBtn').addEventListener('click', function() {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+    updateTotalPrice();
+});
 
-            function increaseQuantity() {
-                let currentValue = parseInt(quantityInput.value);
-                currentValue++;
-                quantityInput.value = currentValue;
-            }
-        });
+document.getElementById('decrementBtn').addEventListener('click', function() {
+    const currentQuantity = parseInt(quantityInput.value);
+    if (currentQuantity > 1) {
+        quantityInput.value = currentQuantity - 1;
+        updateTotalPrice();
+    }
+});
+
+quantityInput.addEventListener('change', function() {
+    updateTotalPrice();
+});
+
+updateTotalPrice();

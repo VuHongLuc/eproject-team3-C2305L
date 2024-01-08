@@ -1,5 +1,51 @@
 <?php
 session_start();
+include("../db.php");
+        // Khởi tạo 
+        if (!isset($_SESSION['cartNumber'])) {
+            $_SESSION['cartNumber'] = 0;
+            $_SESSION['cartItem'] = [];
+        }
+    //Xử lý adđ to cart được nhấn
+        if(isset($_POST['addToCart'])) {
+            $_SESSION['cartNumber']++;
+    
+            $productCart = array(
+                'productID' => $_POST['productID'],
+                'productName' => $_POST['productName'],
+                'imageLink' => $_POST['imageLink'],
+                'quantity' => $_POST['quantity'],
+                'unitPrice' => $_POST['unitPrice']
+            );
+            
+            $_SESSION['cartItem'][] = $productCart;
+            //truy vấn đến bảng user
+            // $userID = $_SESSION['userID'];
+            // $sqlUserID = "SELECT userID FROM user WHERE userID= '$userID'";
+            // echo $_SESSION['cartNumber'];
+            // echo '<pre>';
+            // var_dump($_SESSION['cartItem']);
+            // echo '</pre>';
+
+            //insert into cart
+            foreach ($_SESSION['cartItem'] as $product) {
+                $productID = $product['productID'];
+                $productName = $product['productName'];
+                $imageLink = $product['imageLink'];
+                $quantity = $product['quantity'];
+                $unitPrice = $product['unitPrice'];
+
+                $totalMoney = $quantity*$unitPrice;
+        
+                // Chuẩn bị truy vấn chèn dữ liệu
+                $sql = "INSERT INTO carts(cartID, productID, cartCode, userID, cartQuantity,totalMoney) 
+                        VALUES (DEFAULT,'$productID', '1', '1', '$quantity', '$totalMoney')";
+
+                $result = $conn->query($sql);
+            }
+
+        }
+
     // Khởi tạo biến numberCompare nếu chưa tồn tại
     if (!isset($_SESSION['numberCompare'])) {
         $_SESSION['numberCompare'] = 0;
@@ -114,7 +160,12 @@ session_start();
                         <!-- cart logo -->
                     </li>
                     <li class="nav-item">
-                      <a href="#" class="nav-link"><span class="px-2 text-danger"><i class="fas fa-shopping-cart"></i></span></a>
+                        <a href="../productDetail/viewCart.php" class="nav-link">
+                            <span class="px-2 text-danger" id="logoCart" >
+                                <i class="fas fa-shopping-cart"></i>
+                                <b class="text-center" id="numberCart"><?php echo $_SESSION['cartNumber']?></b>
+                            </span>
+                        </a>
                     </li>
                         <!-- compare logo -->
                     <li class="nav-item">

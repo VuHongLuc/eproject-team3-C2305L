@@ -244,11 +244,11 @@ nav {
 
 }
 
-#logoCompare {
+#logoCompare, #logoCart {
     position: relative;
 }
 
-#numberCompare {
+#numberCompare, #numberCart {
     position: absolute;
     left: 20px;
     top: -10px;
@@ -259,7 +259,7 @@ nav {
     border-radius: 50%;
 }
 
-table {
+/* table {
     border-collapse: collapse;
 }
 
@@ -278,7 +278,7 @@ th {
 
 tr:hover {
     background-color: #f5f5f5;
-}
+} */
 
 .btn:active {
     box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
@@ -342,12 +342,12 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .product-detail-action .btn-add{
-    background-color: none !important;
+    background: none;
     border: 1px solid #ed1a20;
     border-radius: 3px;
 }
 .product-detail-action .btn-add:hover {
-    background: #ed1a20;
+    background: #ed1a20 ;
     color: white !important;
 }
 .product-detail-action .btn-contact {
@@ -398,23 +398,11 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 60%;
     background: #fff;
 }
-.view-cart-details  table {
-    width: 100%;
-    border-collapse: collapse;
-    border: none;
-  }
-  /* .view-cart-details  table td:first-child{
-    max-width: 50%;
-  }  */
-  .view-cart-details  table th:first-child, .view-cart-details  table td:first-child {
+ 
+  .view-cart-details  table th:first-child {
    width: 50%;
   }
-  .view-cart-details  table tr {
-    border-bottom: 1px solid #ececec;
-  }
-  .view-cart-details  table tr:first-child {
-    border-bottom: 2px solid #ececec;
-  }
+  
 .view-cart-details  table tr td img {
     max-width: 50px;
     max-height: 50px;
@@ -430,7 +418,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .cart-btn-x:hover {
     border: 1px solid #000;
     color:#000;
+    
 }
+
+
+
+
+
+
+
+
 /*Edit overflow for search  */
        #searchResults {
             position: absolute;
