@@ -27,7 +27,7 @@
     <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2 class="my-3">How to Format an SSD</h2>
+        <h2 class="my-3">HOW TO FORMAT AN SSD</h2>
 
         <p>Have you recently upgraded to a new SSD? Or are you planning to sell or convert the functionality of your old laptop? Whatever you plan to do, you should learn how to format a solid-state drive (SSD). This article walks you through the steps to format an SSD and helps you understand why you need to do so.</p>
 

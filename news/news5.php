@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2 class="my-3">How to Format a USB Drive</h2>
+        <h2 class="my-3">HOW TO SET UP A USB DRIVE?</h2>
 
         <p>Oceangate introduces to you how to format a USB drive</p>
 

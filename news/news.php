@@ -30,7 +30,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">    
 
-    <h1 class="my-3">News Page</h1>
+    <h1 class="my-3">NEWS PAGE</h1>
 
     <?php
         // Array containing news information

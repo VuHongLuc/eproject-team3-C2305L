@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2 class="my-3">How to Set Up an IronKey Vault Privacy 80 Portable SSD</h2>
+        <h2 class="my-3">HOW TO SET UP A PORTABLE SSD?</h2>
 
         <p>Need to set up an IronKey Vault Privacy 80 removable SSD? This guide Kingston Vietnam will help you easily through the simple setup process.</p>
 
