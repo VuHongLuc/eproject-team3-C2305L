@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php include "../home/navbar.html" ?>
+    <?php include "../home/navbar.php" ?>
 
     <div class="container-fluid">
         <div class="row mt-3">

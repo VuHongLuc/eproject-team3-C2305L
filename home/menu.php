@@ -11,7 +11,7 @@
     <div id="main-menu" class="d-flex flex-wrap justify-content-center">
         <div class="main-menu_categories p-3 ">
 
-            <h1 class="main-menu_name text-center text-uppercase p-3 ">Categories</h1>
+            <!-- <h1 class="main-menu_name text-center text-uppercase p-3 ">Categories</h1> -->
 
             <div class="category-menu row text-center  d-flex flex-wrap justify-content-around">
 

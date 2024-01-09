@@ -16,6 +16,8 @@ if ($conn->connect_error) {
 
 $searchQuery = $_GET['search'];
 
+if (!empty($searchQuery)) {
+
 $sql = "SELECT productID, productName, imageLink FROM products WHERE productName LIKE '%$searchQuery%' LIMIT 4";
 $result = $conn->query($sql);
 
@@ -38,7 +40,7 @@ if ($result->num_rows > 0) {
     echo "<li>No products found.</li>";
 }
 
-
+}
 ?>
   
   </body>
