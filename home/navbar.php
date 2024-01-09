@@ -43,11 +43,6 @@ include("../db.php");
             $_SESSION['cartItem'][] = $productCart;
             // $_SESSION['cartItem'] = [];
 
-            echo $_SESSION['cartNumber'];
-            echo '<pre>';
-            var_dump($_SESSION['cartItem']);
-            echo '</pre>';
-
 
             //insert into cart
             foreach ($_SESSION['cartItem'] as $product) {
@@ -77,9 +72,10 @@ include("../db.php");
         $_SESSION['compareItems'] = [];
     }
 
-    // Xử lý khi nút "COMPARE" được nhấn
+    // Xử lý khi nút "COMPARE" được nhấn và số lượng sản phẩm <3
     if (isset($_POST['compareButton']) && $_SESSION['numberCompare'] < 3 ) {
         $flag =true;
+        //Xử lý khi sản phẩm đã có trong compare rồi thì không thêm lại vào compare 1 lần nữa
         foreach ($_SESSION['compareItems'] as $item){
             if ($item['productID']==$_POST['productID']){
                 $flag =false;
@@ -102,9 +98,6 @@ include("../db.php");
                     'dimension' => $_POST['dimension']
                 );
                 $_SESSION['compareItems'][] = $productCompare;
-        }
-        else {
-            Header ("Location: ../index/index.php");
         }
     }
 ?>
@@ -155,7 +148,7 @@ include("../db.php");
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=3">USB</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=4">Memory Card</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=5">RAM</a>
-                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portal Hard
+                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portale Hard
                                 Driver</a>
                         </div>
                     </li>

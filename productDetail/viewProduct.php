@@ -50,11 +50,7 @@
                                     <input type="hidden" name="productID" value="<?php echo  $rowProDetail['productID'] ; ?>">
                                     <input type="hidden" name="productName" value="<?php echo  $rowProDetail['productName'] ; ?>">
                                     <input type="hidden" name="imageLink" value="<?php echo  "../" . $productImg ?>">
-                                
                                     <input type="hidden" name="unitPrice" value="<?php echo  $rowProDetail['unitPrice'] ; ?>">
-                                 
-
-
 
                 <img src="../<?php echo $productImg;  ?>" alt="" class="product-detail-img col-lg-5 col-md-5 col-sm-12 col-12">
                 <div class="product-info col-lg-5 col-md-5 col-sm-12 col-12">

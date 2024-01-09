@@ -126,7 +126,7 @@
     <script>
         var currentIndex = 0;
         var carousel = document.getElementById('categoryCarousel');
-        var totalItems = document.querySelectorAll('.carousel-itemThu').length / 2;
+        var totalItems = document.querySelectorAll('.carousel-itemThu').length / 3;
 
         function changeSlide(n) {
             currentIndex = (currentIndex + n + totalItems) % totalItems;
@@ -140,7 +140,7 @@
         // Auto-advance slides every 3 seconds
         setInterval(function () {
             changeSlide(1);
-        }, 1000);
+        }, 3000);
     </script>
 
 </body>
