@@ -6,35 +6,47 @@ include("../db.php");
             $_SESSION['cartNumber'] = 0;
             $_SESSION['cartItem'] = [];
         }
-    //Xử lý add to cart được nhấn
+       
+    //Xử lý adđ to cart được nhấn
         if(isset($_POST['addToCart'])) {
-            if (!isset($_SESSION["userName"])){
-                header('Location: ../login/login.php');
-            }
-            else {
-                $findUserID = "SELECT userID FROM user WHERE userName ='".$_SESSION["userName"]."'";
 
-                $resultUserID = $conn->query($findUserID);
-                $userID = $resultUserID->fetch_assoc()['userID'];
+            if (!isset($_SESSION['userName'])) {
+                // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+                header("Location: ../login/login.php");
+                exit(); 
+            }else {
+                $_SESSION['cartNumber']++;
+                $userName = $_SESSION["userName"];
+                $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+                $resultUserID = $conn ->query($sqlUseerID);
 
+                $userID = null;
 
-            $_SESSION['cartNumber']++;
+                if ($resultUserID && $resultUserID->num_rows > 0) {
+                    while ($row = $resultUserID->fetch_assoc()) {
+                        
+                        $userID = $row['userID'];
+                    }
+                
+            
+            
     
             $productCart = array(
                 'productID' => $_POST['productID'],
                 'productName' => $_POST['productName'],
                 'imageLink' => $_POST['imageLink'],
                 'quantity' => $_POST['quantity'],
-                'unitPrice' => $_POST['unitPrice']
+                'unitPrice' => $_POST['unitPrice'],
+                'userID' => $userID
             );
             
             $_SESSION['cartItem'][] = $productCart;
             // $_SESSION['cartItem'] = [];
 
-            // echo $_SESSION['cartNumber'];
-            // echo '<pre>';
-            // var_dump($_SESSION['cartItem']);
-            // echo '</pre>';
+            echo $_SESSION['cartNumber'];
+            echo '<pre>';
+            var_dump($_SESSION['cartItem']);
+            echo '</pre>';
 
 
             //insert into cart
@@ -44,16 +56,19 @@ include("../db.php");
                 $imageLink = $product['imageLink'];
                 $quantity = $product['quantity'];
                 $unitPrice = $product['unitPrice'];
+                $userIDCart = $product['userID'];
 
                 $totalMoney = $quantity*$unitPrice;
         
                 // Chuẩn bị truy vấn chèn dữ liệu
                 $sql = "INSERT INTO carts(cartID, productID, cartCode, userID, cartQuantity,totalMoney) 
-                        VALUES (DEFAULT,'$productID', '1', $userID , '$quantity', '$totalMoney')";
+                        VALUES (DEFAULT,'$productID', '1', '$userIDCart', '$quantity', '$totalMoney')";
 
                 $result = $conn->query($sql);
             }
-        }
+
+            }
+            }
         }
 
     // Khởi tạo biến numberCompare nếu chưa tồn tại
