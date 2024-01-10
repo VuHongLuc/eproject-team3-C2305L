@@ -124,7 +124,7 @@ include("../db.php");
     <div style="position: fixed; z-index: 10; width: 100%; height:101px; top: 0; left: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="../index/index.php">
-                <img src="https://i.snipboard.io/kQIriT.jpg" alt="Logo" width="125" height="75">
+                <img src="../Photos/Logo/logo.png" alt="Logo" width="125" height="75">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">

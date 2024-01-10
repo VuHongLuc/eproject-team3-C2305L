@@ -17,6 +17,9 @@ body{
 .text-red:hover {
     text-decoration: none;
 }
+.textDecreption {
+    line-height: 2.0;
+}
 
 .custom-input {
   border-radius: 10px;

@@ -4,7 +4,7 @@
  $servername = "localhost";
  $username = "root";
 
- $password = "hoilamgi1";
+ $password = "Vinh291203";
 
  $dbname = "eproject";
 
