@@ -37,22 +37,34 @@ include("../db.php");
                 'unitPrice' => $_POST['unitPrice'],
                 'userID' => $userID
             );
+
+        //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
             
-            $_SESSION['cartItem'][] = $productCart;
-            // $_SESSION['cartItem'] = [];
+            $flag =true;
+            foreach ($_SESSION['cartItem'] as &$item){
+                if ($item['productID'] == $_POST['productID']){
+                    $item['quantity'] += $_POST['quantity'];
+                    $_SESSION['cartNumber']--;
+                    $flag =false;
+                }
+            }
+            
+            if ($flag) {
+                $_SESSION['cartItem'][] = $productCart;
 
-
-            //insert into cart
-            foreach ($_SESSION['cartItem'] as $product) {
-                $productID = $product['productID'];
-                $productName = $product['productName'];
-                $imageLink = $product['imageLink'];
-                $quantity = $product['quantity'];
-                $unitPrice = $product['unitPrice'];
-                $userIDCart = $product['userID'];
-
-                $totalMoney = $quantity*$unitPrice;            
-        }
+                //insert into cart
+                foreach ($_SESSION['cartItem'] as $product) {
+                    $productID = $product['productID'];
+                    $productName = $product['productName'];
+                    $imageLink = $product['imageLink'];
+                    $quantity = $product['quantity'];
+                    $unitPrice = $product['unitPrice'];
+                    $userIDCart = $product['userID'];
+    
+                    $totalMoney = $quantity*$unitPrice;            
+            }
+            }
+            
         }
     }
 }

@@ -264,7 +264,7 @@ table {
 }
 
 .thCompare, .tdCompare {
-    border: 1px solid rgb(0, 0, 0) !important;
+    border: 1px solid rgb(211, 211, 211) !important;
     padding: 5px;
 }
 .tableRowName {
@@ -273,9 +273,6 @@ table {
 .tableRowImage {
     height: 100px;
 }
-.trCompare:nth-child(even) {
-    background-color: #e5fae5;
-  }
 .thCompare {
     background-color: #2a6b2a;
     color: #fff;
