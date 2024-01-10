@@ -27,10 +27,7 @@ include("../db.php");
                         
                         $userID = $row['userID'];
                     }
-                
-            
-            
-    
+
             $productCart = array(
                 'productID' => $_POST['productID'],
                 'productName' => $_POST['productName'],
@@ -118,7 +115,7 @@ include("../db.php");
 </head>
 
 <body>
-    <div style="position: fixed; z-index: 10; width: 100%; top: 0; left: 0;">
+    <div style="position: fixed; z-index: 10; width: 100%; height:101px; top: 0; left: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="../index/index.php">
                 <img src="https://i.snipboard.io/kQIriT.jpg" alt="Logo" width="125" height="75">
@@ -234,7 +231,7 @@ include("../db.php");
                             <a class='nav-link dropdown-toggle text-dark fw-bold' href='#' id='navbarDropdownBrand' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>".
                             $_SESSION['userName'].
                             "</a>
-                            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                            <div class='dropdown-menu' style='left: -75px; width: 50px;' aria-labelledby='navbarDropdown'>
                                 <a class='dropdown-item' href='../login/logout.php'>Log out</a>
                             </div>
                         </li>";
