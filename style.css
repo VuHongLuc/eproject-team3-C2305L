@@ -404,7 +404,6 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 60%;
     background: #fff;
 }
- 
   .view-cart-details  table th:first-child {
    width: 50%;
   }
@@ -426,10 +425,61 @@ input[type="number"]::-webkit-outer-spin-button {
     color:#000;
     
 }
+/* Check out */
+.view-Checkout {
+    width:100%;
+    background: #E7E7E7;
 
+}
+.view-checkout-details{
+    width: 40%;
+    background: #fff;
+}
+.view-checkout-details  table th:first-child {
+    width: 50%;
+   }
+   
+ .view-checkout-details  table tr td img {
+     max-width: 50px;
+     max-height: 50px;
+ }
+.viewChkoutLine {
+    width: 100%;
+    height: 2px;
+    background: #000;
+}
 
+.infor-user {
+    width: 100%;
+    background: #fff;
+}
+.infor-user label {
+    width: 40%;
+}
+.infor-user input {
+    width: 60%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.infor-user textarea {
 
-
+    width: 60%;
+    height: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+.infor-user input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+.infor-user a.checkOut{
+    width: 70%;
+}
+.infor-user button{
+    width: 100% !important;
+}
 
 
 

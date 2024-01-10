@@ -27,9 +27,6 @@ include("../db.php");
                     
                     $userID = $row['userID'];
                 }
-            
-            
-    
             $productCart = array(
                 'productID' => $_POST['productID'],
                 'productName' => $_POST['productName'],
@@ -38,75 +35,54 @@ include("../db.php");
                 'unitPrice' => $_POST['unitPrice'],
                 'userID' => $userID
             );
-            
             $_SESSION['cartItem'][] = $productCart;
+
             // $_SESSION['cartItem'] = [];
-
-
-            //insert into cart
-            foreach ($_SESSION['cartItem'] as $product) {
-                $productID = $product['productID'];
-                $productName = $product['productName'];
-                $imageLink = $product['imageLink'];
-                $quantity = $product['quantity'];
-                $unitPrice = $product['unitPrice'];
-                $userIDCart = $product['userID'];
-
-                $totalMoney = $quantity*$unitPrice;
-        
-        
-
-        $productCart = array(
-            'productID' => $_POST['productID'],
-            'productName' => $_POST['productName'],
-            'imageLink' => $_POST['imageLink'],
-            'quantity' => $_POST['quantity'],
-            'unitPrice' => $_POST['unitPrice'],
-            'userID' => $userID
-        );
-        
-        $_SESSION['cartItem'][] = $productCart;
-        // $_SESSION['cartItem'] = [];
-        // echo $_SESSION['cartNumber'];
-        // echo '<pre>';
-        // var_dump($_SESSION['cartItem']);
-        // echo '</pre>';
-        //insert into cart
-        // foreach ($_SESSION['cartItem'] as $product) {
-        //     $productID = $product['productID'];
-        //     $productName = $product['productName'];
-        //     $imageLink = $product['imageLink'];
-        //     $quantity = $product['quantity'];
-        //     $unitPrice = $product['unitPrice'];
-        //     $userIDCart = $product['userID'];
-
-        //     // $totalMoney = $quantity*$unitPrice;
-
-        //     $productID = $_POST['productID'];
-        //     $sqlCheckProduct = "SELECT * FROM carts WHERE productID = '$productID' AND userID = '$userID'";
-        //     $resultCheckProduct = $conn->query($sqlCheckProduct);
-
-        //     if ($resultCheckProduct && $resultCheckProduct->num_rows > 0) {
-        //         // Nếu sản phẩm đã có trong giỏ hàng, cập nhật số lượng
-        //         $row = $resultCheckProduct->fetch_assoc();
-        //         $existingQuantity = $row['cartQuantity'] + $_POST['quantity'];
-
-        //         $sqlUpdateQuantity = "UPDATE carts SET cartQuantity = '$existingQuantity' WHERE productID = '$productID' AND userID = '$userID'";
-        //         $resultUpdateQuantity = $conn->query($sqlUpdateQuantity);
-        //     } else {
-        //         // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới vào giỏ hàng
-        //         $quantity = $_POST['quantity'];
-        //         $totalMoney = $quantity * $_POST['unitPrice'];
-
-        //         $sqlInsertProduct = "INSERT INTO carts (productID, cartCode, userID, cartQuantity, totalMoney) 
-        //                             VALUES ('$productID', '1', '$userID', '$quantity', '$totalMoney')";
-        //         $resultInsertProduct = $conn->query($sqlInsertProduct);
-        //     }
-            
+            // $_SESSION['cartNumber'] = 0;
         }
         }
+    }   
+
+    if (!isset($_SESSION['checkout'])){
+        $_SESSION['checkout']=[];
     }
-}
+    // insert table cart when click button check out
+    if(isset($_POST['checkout'])){
+        for ($i = 0; $i < count($_SESSION['cartItem']); $i++){
+        $productCheckout = array(
+            'productID' => $_POST['productID'.$i],
+            'productName' => $_POST['productName'.$i],
+            'imageLink' => $_POST['imageLink'.$i],
+            'quantity' => $_POST['quantity'.$i],
+            'unitPrice' => $_POST['unitPrice'.$i],
+            'userID' => $_POST['userID'.$i]);
+
+        $_SESSION['checkout'][] = $productCheckout;
+    }
+    
+    // unset($_SESSION['cartItem']);
+    foreach ($_SESSION['checkout'] as $item){
+        $productID = $item['productID'];
+        $quantity = $item['quantity'];
+        $userID = $item['userID'];
+        $unitPrice = $item['unitPrice'];
+        $totalMoney = $quantity * $unitPrice;
+
+        // Thêm thông tin sản phẩm vào bảng carts trong cơ sở dữ liệu
+        $sqlInsertProduct = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) 
+                                VALUES (DEFAULT, $productID, '1', '$userID', '$quantity', '$totalMoney');";
+        $resultInsertProduct = $conn->query($sqlInsertProduct);
+
+    }
+    
+        // Xóa giỏ hàng sau khi đã thanh toán
+        // $_SESSION['cartItem'] = [];
+        // $_SESSION['cartNumber'] = 0;
+    
+        // Chuyển hướng đến trang viewCheckout.php
+        header("Location: viewCheckout.php");
+        exit();
+    }
 
     // Khởi tạo biến numberCompare nếu chưa tồn tại
     if (!isset($_SESSION['numberCompare'])) {
