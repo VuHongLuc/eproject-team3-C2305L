@@ -22,6 +22,9 @@
             color: #007bff !important; /* Màu xanh in đậm */
             text-decoration: none !important; /* Bỏ gạch chân */
         }
+        .container h1 {
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -43,7 +46,7 @@
 
     <p>This limited warranty covers only repair, replacement, refund or credit for defective OceanGate products as set forth above. OceanGate is not responsible and does not cover under warranty any damages or losses of any kind arising from loss, damage or corruption of content or data, or any costs related thereto. determine the cause of system problems or remove, service or install OceanGate products. This warranty does not cover third-party software, connected devices, or stored data. Therefore, OceanGate is not responsible for any actual or consequential loss or damage that may be attributed to third party software, connected devices or stored data. In the event of a claim, OceanGate's sole and maximum liability will be to repair and replace the hardware or provide a refund as determined by OceanGate Vietnam.</p>
 
-    <h2 class="my-3">Product warranty period</h2>
+    <h2 class="my-3">Lifetime product warranty</h2>
 
     <ul>
         <li><strong>Lifetime product warranty:</strong> The following oceangate products are covered by a lifetime product warranty:</li>

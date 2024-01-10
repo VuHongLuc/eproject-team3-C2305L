@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        h2 {
-            color: #333;
+        .container h1 {
+            text-align: center;
         }
         .container {
             max-width: 800px;
@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2 class="my-3">HOW TO SET UP A USB DRIVE?</h2>
+        <h1 class="my-3">HOW TO SET UP A USB DRIVE?</h1>
 
         <p>Oceangate introduces to you how to format a USB drive</p>
 
