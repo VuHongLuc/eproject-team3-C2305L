@@ -20,7 +20,12 @@ include "../db.php";
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row['password'])) {
                 $_SESSION['userName'] = $row['userName'];
-                header("Location: ../index/index.php");
+                if (!empty($_SESSION['previous_page'])){
+                    header("Location: " . $_SESSION['previous_page']);
+                  }
+                  else {
+                    header("Location: ../index/index.php");
+                  }
                 exit();
             } else {
                 header("Location: login.php?error=Incorrect User name or password");

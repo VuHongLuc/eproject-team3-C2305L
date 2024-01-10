@@ -12,6 +12,7 @@ include("../db.php");
 
         if (!isset($_SESSION['userName'])) {
             // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
             header("Location: ../login/login.php");
             exit(); 
         }else {
@@ -50,57 +51,7 @@ include("../db.php");
                 $unitPrice = $product['unitPrice'];
                 $userIDCart = $product['userID'];
 
-                $totalMoney = $quantity*$unitPrice;
-        
-        
-
-        $productCart = array(
-            'productID' => $_POST['productID'],
-            'productName' => $_POST['productName'],
-            'imageLink' => $_POST['imageLink'],
-            'quantity' => $_POST['quantity'],
-            'unitPrice' => $_POST['unitPrice'],
-            'userID' => $userID
-        );
-        
-        $_SESSION['cartItem'][] = $productCart;
-        // $_SESSION['cartItem'] = [];
-        // echo $_SESSION['cartNumber'];
-        // echo '<pre>';
-        // var_dump($_SESSION['cartItem']);
-        // echo '</pre>';
-        //insert into cart
-        // foreach ($_SESSION['cartItem'] as $product) {
-        //     $productID = $product['productID'];
-        //     $productName = $product['productName'];
-        //     $imageLink = $product['imageLink'];
-        //     $quantity = $product['quantity'];
-        //     $unitPrice = $product['unitPrice'];
-        //     $userIDCart = $product['userID'];
-
-        //     // $totalMoney = $quantity*$unitPrice;
-
-        //     $productID = $_POST['productID'];
-        //     $sqlCheckProduct = "SELECT * FROM carts WHERE productID = '$productID' AND userID = '$userID'";
-        //     $resultCheckProduct = $conn->query($sqlCheckProduct);
-
-        //     if ($resultCheckProduct && $resultCheckProduct->num_rows > 0) {
-        //         // Nếu sản phẩm đã có trong giỏ hàng, cập nhật số lượng
-        //         $row = $resultCheckProduct->fetch_assoc();
-        //         $existingQuantity = $row['cartQuantity'] + $_POST['quantity'];
-
-        //         $sqlUpdateQuantity = "UPDATE carts SET cartQuantity = '$existingQuantity' WHERE productID = '$productID' AND userID = '$userID'";
-        //         $resultUpdateQuantity = $conn->query($sqlUpdateQuantity);
-        //     } else {
-        //         // Nếu sản phẩm chưa có trong giỏ hàng, thêm mới vào giỏ hàng
-        //         $quantity = $_POST['quantity'];
-        //         $totalMoney = $quantity * $_POST['unitPrice'];
-
-        //         $sqlInsertProduct = "INSERT INTO carts (productID, cartCode, userID, cartQuantity, totalMoney) 
-        //                             VALUES ('$productID', '1', '$userID', '$quantity', '$totalMoney')";
-        //         $resultInsertProduct = $conn->query($sqlInsertProduct);
-        //     }
-            
+                $totalMoney = $quantity*$unitPrice;            
         }
         }
     }

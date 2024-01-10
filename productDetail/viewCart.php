@@ -54,9 +54,9 @@
                     </td>
                     <td class="price-product"><?php echo $unitPrice  ; ?></td>
                     <td>
-                        <button class="decrementBtn btn btn-danger align-middle " >-</button>
+                        <button type="button" class="decrementBtn btn btn-danger align-middle " >-</button>
                         <input type="number" class="quantityInput align-middle text-center " name="quantity" value="<?php echo $quantity; ?>" min="1" >
-                        <button class="incrementBtn btn btn-danger align-middle " >+</button>
+                        <button type="button" class="incrementBtn btn btn-danger align-middle " >+</button>
                     </td>
                     <td class="total-price" class=" mx-2"><?php echo $unitPrice*$quantity; ?></td>
                 </tr>
@@ -79,7 +79,7 @@
     <?php include('../home/footer.html'); ?>
 
     <!-- Link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
     <script src="controller.js"></script>
     
 </body>
