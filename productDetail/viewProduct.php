@@ -78,7 +78,7 @@
                                 <button type="button" class="btn btn-buy bg-red col-lg-5 col-md-12 col-sm-12 col-12 text-white fw-bold my-1">Buy now</a></button>
                             </div>
                             <div class="d-flex justify-content-center">
-                                <button type="button" class="btn btn-contact text-white fw-bold col-lg-12 col-md-12 col-12 col-sm-12 col-12 my-1"><a href="#" class="list-group-item font-size-sm">Contact for better price</a></button>
+                                <button type="button" class="btn btn-contact text-white fw-bold col-lg-12 col-md-12 col-12 col-sm-12 col-12 my-1"><a href="../contactUs/contact.php" class="list-group-item font-size-sm">Contact for better price</a></button>
                             </div>
                         </div>
                     </div>

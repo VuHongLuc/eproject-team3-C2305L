@@ -14,6 +14,9 @@
             <h2 class="text-uppercase text-center">COMPARE</h2>
             <div class="row">
                 <div class="col-md-1"></div>
+                <?php
+                if (!empty($_SESSION['compareItems'])){
+                ?>
                 <table class="table-striped col-md-1 text-center">
                     <thead  class="tableRowName">
                         <th class=" thCompare">
@@ -118,8 +121,12 @@
 
                     }
                  ?>
-            <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
             </div>
+            <?php }
+            else {
+                Echo "<h4 class='text-uppercase text-center'>DATA NOT FOUND!</h4>";
+            } ?>
         </div>
     </div>
 

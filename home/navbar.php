@@ -12,6 +12,7 @@ include("../db.php");
 
         if (!isset($_SESSION['userName'])) {
             // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
             header("Location: ../login/login.php");
             exit(); 
         }else {
@@ -22,11 +23,12 @@ include("../db.php");
 
             $userID = null;
 
-            if ($resultUserID && $resultUserID->num_rows > 0) {
-                while ($row = $resultUserID->fetch_assoc()) {
-                    
-                    $userID = $row['userID'];
-                }
+                if ($resultUserID && $resultUserID->num_rows > 0) {
+                    while ($row = $resultUserID->fetch_assoc()) {
+                        
+                        $userID = $row['userID'];
+                    }
+
             $productCart = array(
                 'productID' => $_POST['productID'],
                 'productName' => $_POST['productName'],
@@ -35,54 +37,37 @@ include("../db.php");
                 'unitPrice' => $_POST['unitPrice'],
                 'userID' => $userID
             );
-            $_SESSION['cartItem'][] = $productCart;
 
-            // $_SESSION['cartItem'] = [];
-            // $_SESSION['cartNumber'] = 0;
+        //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
+            
+            $flag =true;
+            foreach ($_SESSION['cartItem'] as &$item){
+                if ($item['productID'] == $_POST['productID']){
+                    $item['quantity'] += $_POST['quantity'];
+                    $_SESSION['cartNumber']--;
+                    $flag =false;
+                }
+            }
+            
+            if ($flag) {
+                $_SESSION['cartItem'][] = $productCart;
+
+                //insert into cart
+                foreach ($_SESSION['cartItem'] as $product) {
+                    $productID = $product['productID'];
+                    $productName = $product['productName'];
+                    $imageLink = $product['imageLink'];
+                    $quantity = $product['quantity'];
+                    $unitPrice = $product['unitPrice'];
+                    $userIDCart = $product['userID'];
+    
+                    $totalMoney = $quantity*$unitPrice;            
+            }
+            }
+            
         }
-        }
-    }   
-
-    if (!isset($_SESSION['checkout'])){
-        $_SESSION['checkout']=[];
     }
-    // insert table cart when click button check out
-    if(isset($_POST['checkout'])){
-        for ($i = 0; $i < count($_SESSION['cartItem']); $i++){
-        $productCheckout = array(
-            'productID' => $_POST['productID'.$i],
-            'productName' => $_POST['productName'.$i],
-            'imageLink' => $_POST['imageLink'.$i],
-            'quantity' => $_POST['quantity'.$i],
-            'unitPrice' => $_POST['unitPrice'.$i],
-            'userID' => $_POST['userID'.$i]);
-
-        $_SESSION['checkout'][] = $productCheckout;
-    }
-    
-    // unset($_SESSION['cartItem']);
-    foreach ($_SESSION['checkout'] as $item){
-        $productID = $item['productID'];
-        $quantity = $item['quantity'];
-        $userID = $item['userID'];
-        $unitPrice = $item['unitPrice'];
-        $totalMoney = $quantity * $unitPrice;
-
-        // Thêm thông tin sản phẩm vào bảng carts trong cơ sở dữ liệu
-        $sqlInsertProduct = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) 
-                                VALUES (DEFAULT, $productID, '1', '$userID', '$quantity', '$totalMoney');";
-        $resultInsertProduct = $conn->query($sqlInsertProduct);
-
-    }
-    
-        // Xóa giỏ hàng sau khi đã thanh toán
-        // $_SESSION['cartItem'] = [];
-        // $_SESSION['cartNumber'] = 0;
-    
-        // Chuyển hướng đến trang viewCheckout.php
-        header("Location: viewCheckout.php");
-        exit();
-    }
+}
 
     // Khởi tạo biến numberCompare nếu chưa tồn tại
     if (!isset($_SESSION['numberCompare'])) {
@@ -136,7 +121,7 @@ include("../db.php");
 </head>
 
 <body>
-    <div style="position: fixed; z-index: 10; width: 100%; top: 0; left: 0;">
+    <div style="position: fixed; z-index: 10; width: 100%; height:101px; top: 0; left: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="../index/index.php">
                 <img src="https://i.snipboard.io/kQIriT.jpg" alt="Logo" width="125" height="75">
@@ -252,7 +237,7 @@ include("../db.php");
                             <a class='nav-link dropdown-toggle text-dark fw-bold' href='#' id='navbarDropdownBrand' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>".
                             $_SESSION['userName'].
                             "</a>
-                            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                            <div class='dropdown-menu' style='left: -75px; width: 50px;' aria-labelledby='navbarDropdown'>
                                 <a class='dropdown-item' href='../login/logout.php'>Log out</a>
                             </div>
                         </li>";

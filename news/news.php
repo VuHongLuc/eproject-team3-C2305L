@@ -15,14 +15,19 @@
             color: #333;
         }
         .article {
-            width: 70%; /* Điều chỉnh chiều rộng của các bài viết */
-            margin: 0 auto; /* Để căn giữa theo chiều ngang */
-            text-align: justify; /* Để căn đều nội dung trong các bài viết */
+            width: 70%;
+            margin: 0 auto 90px; /* Để căn giữa theo chiều ngang và thêm khoảng cách dưới cùng của mỗi bài viết */
+            text-align: justify;
         }
         .imgNews {
             max-width: 500px;
             height: 350px;
         }
+        
+        .container h1 {
+            text-align: center;
+        }
+    </style>
     </style>
 </head>
 <body>
@@ -30,7 +35,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">    
 
-    <h1 class="my-3">NEWS PAGE</h1>
+    <h1 class="my-3">NEWS</h1>
 
     <?php
         // Array containing news information

@@ -10,15 +10,15 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        h2 {
-            color: #333;
-        }
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
         p {
             text-align: justify;
+        }
+        .container h1 {
+            text-align: center;
         }
     </style>
 </head>
@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner"> 
 
-        <h2 class="my-3">SHOULD I BUY A KINGSTON USB?</h2>
+        <h1 class="my-3">SHOULD I BUY A KINGSTON USB?</h1>
 
         <p>Is Kingston USB good or not is an issue that many people are concerned about today. In this article, we will answer your questions about this USB brand.</p>
 

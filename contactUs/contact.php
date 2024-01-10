@@ -75,7 +75,7 @@
                     <input type="text" class="form-control short-input" id="phoneNumber" placeholder="Phone number" name="phoneNumber" required><br>
                     <input type="email" class="form-control short-input" id="email" placeholder="Email" name="email" required><br>
                     <input type="text" class="form-control short-input" placeholder="Title" name="title"><br>
-                    <input type="text" class="form-control short-input" placeholder="Note" name="note"><br>
+                    <input type="text" class="form-control short-input" placeholder="Text area" name="Text area"><br>
                     <button type="button" class="btn btn-danger" onclick="onSubmitForm()">SEND</button>
                 </form>
             </div>
@@ -85,8 +85,8 @@
                 <p><strong>OCEANGATE GENUINE DISTRIBUTOR IN VIETNAM – VIETNAM IT TECHNOLOGY SERVICES AND TRADING COMPANY LIMITED</strong></p>
                 <p><strong>Address:</strong> 3rd floor, 19 Le Thanh Nghi Street, Bach Mai Ward, Hai Ba Trung District, Ha Noi City</p>
                 <p><strong>Hotline:</strong> 1800 1141</p>
-                <p><strong>Website:</strong> oceangate.com.vn</p>
-                <p><strong>Email:</strong> <a href="../index/index.php" class="custom-link bold-link">oceangate.com.vn@gmail.com</a></p>
+                <p><strong>Website:</strong> <a href="../index/index.php" class="custom-link bold-link">oceangate.com.vn</a></p>
+                <p><strong>Email:</strong> oceangate.com.vn@gmail.com</p>
             </div>
         </div>
 

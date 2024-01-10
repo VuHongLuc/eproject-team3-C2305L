@@ -29,6 +29,7 @@ for (let i = 0; i < btnDecre.length; i++) {
         updateTotalCart()
     })
 };
+
 function updateTotalCart() {
     let sum = 0;
     for (let i = 0; i < totalPriceDisplay.length; i++) {
@@ -36,6 +37,8 @@ function updateTotalCart() {
     }
     totalCart.textContent = "$" + sum.toFixed(2);
 }
+
+
 for (let i = 0; i < totalPriceDisplay.length; i++) {
     updateTotalPrice(i);
     updateTotalCart()

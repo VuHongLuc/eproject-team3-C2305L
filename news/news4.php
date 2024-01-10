@@ -10,8 +10,8 @@
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        h2 {
-            color: #333;
+        .container h1 {
+            text-align: center;
         }
         .container {
             max-width: 800px;
@@ -27,7 +27,7 @@
 <div class="wrapper container-fluid">
 <div class="container col-inner">
 
-        <h2 class="my-3">HOW TO SET UP A PORTABLE SSD?</h2>
+        <h1 class="my-3">HOW TO SET UP A PORTABLE SSD?</h1>
 
         <p>Need to set up an IronKey Vault Privacy 80 removable SSD? This guide Kingston Vietnam will help you easily through the simple setup process.</p>
 
