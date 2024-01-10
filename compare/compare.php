@@ -16,43 +16,43 @@
                 <div class="col-md-1"></div>
                 <table class="table-striped col-md-1 text-center">
                     <thead  class="tableRowName">
-                        <th>
+                        <th class=" thCompare">
                         PRODUCT NAME
                         </th>
                     </thead>
                     <tbody>
-                        <tr class="tableRowImage">
-                            <td><b>IMAGE</b></td>
+                        <tr class=" trCompare tableRowImage">
+                            <td class=" tdCompare"><b>IMAGE</b></td>
                         </tr>   
-                        <tr>
-                            <td><b>PRODUCT ID</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>PRODUCT ID</b></td>
                         </tr>   
-                        <tr>
-                            <td><b>UNIT PRICE</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>UNIT PRICE</b></td>
                         </tr>
-                        <tr>
-                            <td><b>CATEGORY</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>CATEGORY</b></td>
                         </tr>
-                        <tr>
-                            <td><b>BRAND</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>BRAND</b></td>
                         </tr>
-                        <tr>
-                            <td><b>MEMORY</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>MEMORY</b></td>
                         </tr>
-                        <tr>
-                            <td><b>SPEED</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>SPEED</b></td>
                         </tr>
-                        <tr>
-                            <td><b>COLOR</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>COLOR</b></td>
                         </tr>
-                        <tr>
-                            <td><b>WARRANTY</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>WARRANTY</b></td>
                         </tr>
-                        <tr>
-                            <td><b>DIMENSION</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>DIMENSION</b></td>
                         </tr>
-                        <tr>
-                            <td><b>STATE</b></td>
+                        <tr class=" trCompare">
+                            <td class=" tdCompare"><b>STATE</b></td>
                         </tr>                           
                     </tbody>
                 </table>
@@ -72,43 +72,46 @@
 
                         echo "<table class='col-md-3 text-center'>
                         <thead class='tableRowName'>
-                            <th>
+                            <th class='thCompare'>
                                 $productName
                             </th>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td class='tableRowImage'><img height='100%' src='../$imageLink'></td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare tableRowImage'><img height='100%' src='../$imageLink'></td>
                         </tr>
-                        <tr >
-                            <td>$productID</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$productID</td>
                         </tr>   
-                        <tr>
-                            <td>$unitPrice$</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$unitPrice$</td>
                         </tr>
-                        <tr>
-                            <td>$categoryID</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$categoryID</td>
                         </tr>
-                        <tr>
-                            <td>$brandID</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$brandID</td>
                         </tr>
-                        <tr>
-                            <td>$memory</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$memory</td>
                         </tr>
-                        <tr>
-                            <td>$speed</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$speed</td>
                         </tr>
-                        <tr>
-                            <td>$color</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$color</td>
                         </tr>
-                        <tr>
-                            <td>$warranty</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$warranty</td>
                         </tr>
-                        <tr>
-                            <td>$dimension</td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>$dimension</td>
                         </tr>
-                        <tr>
-                            <td><a style='text-decoration:none' href='deleteCompare.php?productID=$productID'>Delete Compare</a></td>
+                        <tr class='trCompare'>
+                            <td class='tdCompare'>
+                            <a style='text-decoration:none' href='deleteCompare.php?productID=$productID'>Delete Compare</a>
+                            
+                            </td>
                         </tr>
                     </tbody>
                     </table>";

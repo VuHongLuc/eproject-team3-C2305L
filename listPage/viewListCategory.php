@@ -119,6 +119,7 @@
 
                             ?>
                             <input type="hidden" name="productID" value="<?php echo $row['productID'];?>">
+                            <input type="hidden" name="imageLink" value="<?php echo $row['imageLink'];?>">
                             <input type="hidden" name="productName" value="<?php echo $row['productName'];?>">
                             <input type="hidden" name="unitPrice" value="<?php echo $row['unitPrice'];?>">
                             <input type="hidden" name="categoryID" value="<?php echo $category ?>">

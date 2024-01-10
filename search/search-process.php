@@ -16,6 +16,8 @@ if ($conn->connect_error) {
 
 $searchQuery = $_GET['search'];
 
+if (!empty($searchQuery)) {
+
 $sql = "SELECT productID, productName, imageLink FROM products WHERE productName LIKE '%$searchQuery%' LIMIT 4";
 $result = $conn->query($sql);
 
@@ -25,7 +27,7 @@ if ($result->num_rows > 0) {
         echo "<table>";
         echo "<tr>";
         echo "<td>";
-        echo "<a class='nav-link' href='productDetail/view/viewproduct.php?productID=".$row['productID']."'>";
+        echo "<a class='nav-link' href='../productDetail/viewproduct.php?productID=".$row['productID']."'>";
         echo "<img src='../" . $row['imageLink'] . "' alt='' style='width: 30x; height: 30px;'>";
         echo "<h8 class='card-title fw-bold text-uppercase'>" . $row['productName'] . "</h8>";
         echo "</a>";
@@ -38,7 +40,7 @@ if ($result->num_rows > 0) {
     echo "<li>No products found.</li>";
 }
 
-
+}
 ?>
   
   </body>
