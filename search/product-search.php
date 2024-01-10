@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php include "../home/navbar.html" ?>
+    <?php include "../home/navbar.php" ?>
 
     <div class="container-fluid">
         <div class="row mt-3">
@@ -53,7 +53,7 @@
                                         </h5>
                                         <p class="card-text text-danger fw-bold"><?php echo $row["unitPrice"] . "$" ?></p>
                                         <div class="justify-content-between d-flex">
-                                            <a href="#" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
+                                            <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
                                             <a href="#" class="btn btn-outline-secondary fw-bold">COMPARE</a>
                                         </div>
                                     </div>
