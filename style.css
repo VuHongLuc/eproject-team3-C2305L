@@ -322,13 +322,13 @@ table {
 
 
 /* Quantity product */
-.increase-btn, .decrease-btn {
+.incrementBtn, .decrementBtn {
     width: 30px;
     height: 30px;
     margin: 0 !important;
     padding: 0 !important;
 }
-.quantity-pro-input {
+.quantityInput {
     width: 50px !important;
     border: 1px solid #ececec;
 

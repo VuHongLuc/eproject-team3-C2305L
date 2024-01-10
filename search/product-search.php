@@ -53,7 +53,7 @@
                                         </h5>
                                         <p class="card-text text-danger fw-bold"><?php echo $row["unitPrice"] . "$" ?></p>
                                         <div class="justify-content-between d-flex">
-                                            <a href="#" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
+                                            <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
                                             <a href="#" class="btn btn-outline-secondary fw-bold">COMPARE</a>
                                         </div>
                                     </div>

@@ -63,9 +63,9 @@
 
                     <div class="product-details-quantity my-1">
                         <label for="" class="fw-bold p-2 font-size-sm mt-1">Quantity</label>
-                        <button type="button" class=" btn  decrease-btn btn-danger align-middle " id="decrementBtn" >-</button>
-                        <input type="number" class="quantity-pro-input align-middle text-center " name="quantity" id="quantityInput" value="1" min="1" >
-                        <button type="button" class="btn  increase-btn btn-danger align-middle " id="incrementBtn">+</button>
+                        <button type="button" class="decrementBtn btn btn-danger align-middle " >-</button>
+                        <input type="number" class="quantityInput align-middle text-center " name="quantity" value="1" min="1" >
+                        <button type="button" class="incrementBtn btn btn-danger align-middle ">+</button>
                     </div>
                    
 
