@@ -4,7 +4,7 @@ USE eproject;
 
 CREATE TABLE `eproject`.`user` (
   `userID` INT NOT NULL AUTO_INCREMENT,
-  `password` VARCHAR(20) NULL,
+  `password` VARCHAR(255) NULL,
   `userName` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `address` VARCHAR(100) NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `eproject`.`carts` (
 CREATE TABLE `eproject`.`order` (
   `orderID` INT NOT NULL AUTO_INCREMENT,
   `userID` INT NULL,
-  `cartId` INT NULL,
+  `cartCode` VARCHAR(30) NULL,
   `orderEmail` VARCHAR(45) NULL,
   `orderAddress` VARCHAR(100) NULL,
   `orderPhone` VARCHAR(12) NULL,
@@ -62,7 +62,6 @@ CREATE TABLE `eproject`.`orderDetails` (
   `orderDetailsID` INT NOT NULL AUTO_INCREMENT,
   `orderID` INT NULL,
   `productID` INT NULL,
-  `unitPrice` FLOAT NULL,
   `discount` FLOAT NULL,
   `orderQuantity` INT NULL,
   `totalMoney` INT NULL,
@@ -96,7 +95,7 @@ AFTER INSERT
 ON `eproject`.`order`
 FOR EACH ROW
 BEGIN
-  DELETE FROM `eproject`.`carts` WHERE `cartID` = NEW.cartID;
+  DELETE FROM `eproject`.`carts` WHERE `cartCode` = NEW.cartCode;
 END;
 //
 CREATE TRIGGER trg_orderDetails_insert
