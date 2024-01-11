@@ -79,15 +79,15 @@ include("../db.php");
     if (isset($_POST['compareButton'])) {
         //Nếu số sản phẩm so sánh < 3
         if ($_SESSION['numberCompare'] < 3 ){
-        $flag =true;
-        //Khi sản phẩm đã có trong COMPARE rồi thì không thêm lại vào compare 1 lần nữa
-        foreach ($_SESSION['compareItems'] as $item){
-            if ($item['productID']==$_POST['productID']){
-                $flag =false;
-            }
-        }
-        //sau khi thỏa mãn các điều kiện thì tiến hành thêm sản phẩm vào SESSION
-        if ($flag){
+            $flag =true;
+            //Khi sản phẩm đã có trong COMPARE rồi thì không thêm lại vào COMPARE 1 lần nữa
+            foreach ($_SESSION['compareItems'] as $item){
+                if ($item['productID']==$_POST['productID']){
+                    $flag =false;
+                }
+            };
+            //sau khi thỏa mãn các điều kiện thì tiến hành thêm sản phẩm vào SESSION
+            if ($flag){
                 $_SESSION['numberCompare']++;
 
                 $productCompare = array(
@@ -104,9 +104,10 @@ include("../db.php");
                     'dimension' => $_POST['dimension']
                 );
                 $_SESSION['compareItems'][] = $productCompare;
-                
-        }
-    }else {
+                    
+            };
+        };
+    };
         //Nếu số sản phẩm so sánh >= 3 tiến hành show pop-up thông báo không cho thêm sản phẩm nữa
         echo "<div class='modal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
         <div class='modal-dialog modal-dialog-centered'>
@@ -124,17 +125,13 @@ include("../db.php");
             </div>
           </div>
         </div>";
-    }
-}
+    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oceangate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
@@ -282,9 +279,9 @@ include("../db.php");
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
     <script>
         function searchProducts() {
