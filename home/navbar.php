@@ -75,15 +75,18 @@ include("../db.php");
         $_SESSION['compareItems'] = [];
     }
 
-    // Xử lý khi nút "COMPARE" được nhấn và số lượng sản phẩm <3
-    if (isset($_POST['compareButton']) && $_SESSION['numberCompare'] < 3 ) {
+    // Xử lý khi nút "COMPARE" được nhấn
+    if (isset($_POST['compareButton'])) {
+        //Nếu số sản phẩm so sánh < 3
+        if ($_SESSION['numberCompare'] < 3 ){
         $flag =true;
-        //Xử lý khi sản phẩm đã có trong compare rồi thì không thêm lại vào compare 1 lần nữa
+        //Khi sản phẩm đã có trong COMPARE rồi thì không thêm lại vào compare 1 lần nữa
         foreach ($_SESSION['compareItems'] as $item){
             if ($item['productID']==$_POST['productID']){
                 $flag =false;
             }
         }
+        //sau khi thỏa mãn các điều kiện thì tiến hành thêm sản phẩm vào SESSION
         if ($flag){
                 $_SESSION['numberCompare']++;
 
@@ -101,8 +104,28 @@ include("../db.php");
                     'dimension' => $_POST['dimension']
                 );
                 $_SESSION['compareItems'][] = $productCompare;
+                
         }
+    }else {
+        //Nếu số sản phẩm so sánh >= 3 tiến hành show pop-up thông báo không cho thêm sản phẩm nữa
+        echo "<div class='modal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered'>
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <h1 class='modal-title fs-5' id='staticBackdropLabel'>COMPARE</h1>
+                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+              </div>
+              <div class='modal-body'>
+              You can only choose up to 3 products to compare!
+              </div>
+              <div class='modal-footer'>
+                <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>";
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +136,7 @@ include("../db.php");
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Dropdown</title>
+    <title>Oceangate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
