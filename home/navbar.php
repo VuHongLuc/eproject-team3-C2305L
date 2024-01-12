@@ -171,7 +171,7 @@ include("../db.php");
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=3">USB</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=4">Memory Card</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=5">RAM</a>
-                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portale Hard
+                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portable Hard
                                 Driver</a>
                         </div>
                     </li>
