@@ -78,13 +78,13 @@
                 // Array containing news information
                 $news = [
                     [
-                        'title' => 'Learn about USB-C',
+                        'title' => 'Learn about USB-C ',
                         'content' => 'What is USB-C? To solve the problem of cables that are no longer compatible...',
                         'image' => 'https://media.kingston.com/kingston/articles/ktc-articles-blog-personal-storage-understanding-file-systems-md.jpg',
                         'link' => 'news1.php'
                     ],
                     [
-                        'title' => 'How to set up a portable SSD?',
+                        'title' => ' Set up a portable SSD.',
                         'content' => 'Need to set up an IronKey Vault Privacy 80 removable SSD? This guide Kingston..',
                         'image' => 'https://media.kingston.com/kingston/articles/ktc-blog-pc-performance-upgrade-dell-thumbnail-md.jpg',
                         'link' => 'news4.php'
@@ -99,7 +99,7 @@
                     [
                         'title' => 'Should I buy a Kingston USB?',
                         'content' => 'Is Kingston USB good or not an issue that many people are concerned about...',
-                        'image' => 'https://www.signupgenius.com/cms/images/groups/Man-with-Question-Bubble_15944676_620x400(2).jpg',
+                        'image' => 'https://media.kingston.com/kingston/articles/ktc-articles-solutions-pc-performance-memory-vs-storage-md.jpg',
                         'link' => 'news2.php'
                     ],
                     [
@@ -125,7 +125,7 @@
                 echo '</div>';
                 ?>
             </div>
-
+          
         </div>
     </div>
     <?php include '../home/footer.html'; ?>

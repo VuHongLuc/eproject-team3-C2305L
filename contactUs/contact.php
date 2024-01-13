@@ -95,27 +95,27 @@
                     <h2>SEND THE CONTACT</h2>
                     <form id="contactForm" method="post" action="index.php">
                         <div class="form-group">
-                            <label for="fullName">Full Name</label>
+                            <label for="fullName"></label>
                             <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" name="fullName" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phoneNumber">Phone Number</label>
+                            <label for="phoneNumber"></label>
                             <input type="text" class="form-control" id="phoneNumber" placeholder="Enter your phone number" name="phoneNumber" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email</label>
+                            <label for="email"></label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Title</label>
+                            <label for="title"></label>
                             <input type="text" class="form-control" id="title" placeholder="Enter a title" name="title">
                         </div>
 
                         <div class="form-group">
-                            <label for="note">Note</label>
+                            <label for="note"></label>
                             <textarea class="form-control" rows="3" placeholder="Write your note" name="note"></textarea>
                         </div>
                         <div class="p-2">   
@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="contact-section">
-                    <h2>CONTACT INFO</h2>
+                    <h2 class="p-3">CONTACT INFO</h2>
                     <p><strong>OCEANGATE GENUINE DISTRIBUTOR IN VIETNAM – VIETNAM IT TECHNOLOGY SERVICES AND TRADING COMPANY LIMITED</strong></p>
                     <p><strong>Address:</strong> 3rd floor, 19 Le Thanh Nghi Street, Bach Mai Ward, Hai Ba Trung District, Ha Noi City</p>
                     <p><strong>Hotline:</strong> 1800 1141</p>
