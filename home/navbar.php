@@ -119,6 +119,7 @@ include("../db.php");
         }
         
         if (isset($_POST["submitCheckout"])) {
+            $_SESSION['checkoutItems'] = [];
             for ($i = 0; $i < count($_SESSION['cartItem']); $i++) {
 
                 $checkoutItem = array(
