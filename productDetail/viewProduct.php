@@ -156,11 +156,9 @@
                                             <td  class=" fw-bold font-size-sm p-2 align-middle ">Decription</td>
                                             <td  class="font-size-sm text-justify "><?php echo $rowProDetail['description']; ?></td>
                                         </tr>
-                                        <tr>
-                                            <td>
-                                                
-                                            </td>
-                                        </tr>
+                                       <tr>
+                                        <td colspan=4><p><a href="downLoadFile.php?productID=<?php echo $productID;  ?>" download>Download File .docx</a></p></td>
+                                       </tr>
                                     </tbody>
                             </table>
                         

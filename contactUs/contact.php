@@ -46,7 +46,7 @@
     <?php include '../home/navbar.php'; ?>
     <div class="wrapper container-fluid">
 <div class="container col-inner">
-        <h2 class="my-3">SEND THE CONTACT</h2>
+        
 
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -68,8 +68,9 @@
         }
         ?>
 
-        <div class="flex-container">
-            <div class="contact-section">
+        <div class="flex-container m-5">
+            <div class="contact-section col-lg-6 col-md-6 col-sm-12 col-12 p-3">
+                <h2 class="my-3">SEND THE CONTACT</h2>
                 <form id="contactForm" method="post" action="index.php">
                     <input type="text" class="form-control short-input" id="fullName" placeholder="Full Name" name="fullName" required><br>
                     <input type="text" class="form-control short-input" id="phoneNumber" placeholder="Phone number" name="phoneNumber" required><br>
@@ -80,8 +81,8 @@
                 </form>
             </div>
 
-            <div class="contact-section">
-                <h3 class="my-3">CONTACT INFO</h3>
+            <div class="contact-section col-lg-6 col-md-6 col-sm-12 col-12 p-3 ">
+                <h2 class="my-3">CONTACT INFO</h2>
                 <p><strong>OCEANGATE GENUINE DISTRIBUTOR IN VIETNAM – VIETNAM IT TECHNOLOGY SERVICES AND TRADING COMPANY LIMITED</strong></p>
                 <p><strong>Address:</strong> 3rd floor, 19 Le Thanh Nghi Street, Bach Mai Ward, Hai Ba Trung District, Ha Noi City</p>
                 <p><strong>Hotline:</strong> 1800 1141</p>

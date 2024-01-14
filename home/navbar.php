@@ -48,23 +48,11 @@ include("../db.php");
                     $flag =false;
                 }
             }
-            
             if ($flag) {
                 $_SESSION['cartItem'][] = $productCart;
-
-                //insert into cart
-                foreach ($_SESSION['cartItem'] as $product) {
-                    $productID = $product['productID'];
-                    $productName = $product['productName'];
-                    $imageLink = $product['imageLink'];
-                    $quantity = $product['quantity'];
-                    $unitPrice = $product['unitPrice'];
-                    $userIDCart = $product['userID'];
-    
-                    $totalMoney = $quantity*$unitPrice;            
+                // insert to carts
+              
             }
-            }
-            
         }
     }
 }
