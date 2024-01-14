@@ -3,21 +3,20 @@
     <br>
     <?php 
         include "../db.php";
-        $sql1 = "SELECT * FROM category WHERE categoryID = ".$_GET['category'];
-        $result1 = $conn->query($sql1);
-        $row1 = $result1->fetch_assoc();
+        // Get the search keyword from the URL
+        $searchKeyword = isset($_GET['search']) ? $_GET['search'] : '';
+
     ?>
     <div class="container col-inner">
         <h2 style="text-align: center" class="text-uppercase">
-            <a href="" class="list-group-item">
-                <?php echo $row1["categoryName"]?>
+            <a href="" class="list-group-item">SEARCH FOR "<?php echo $searchKeyword?>"
             </a>
         </h2>
         <div class="row">
             <?php
 
             // Định nghĩa các thông số
-            $sql2 = "SELECT COUNT(*) as totalRecords FROM products WHERE categoryID =". $_GET['category'];
+            $sql2 = "SELECT COUNT(*) as totalRecords FROM products WHERE productName LIKE '%$searchKeyword%'";
             $result2 = $conn->query($sql2);
             if ($result2->num_rows > 0) {
                 $row2 = $result2->fetch_assoc();
@@ -31,12 +30,12 @@
             // Tính toán số trang và vị trí bắt đầu
             $totalPages = ceil($totalRecords / $recordsPerPage);
             $startPosition = ($currentPage - 1) * $recordsPerPage;
+            
+            // Use the search keyword in your SQL query
+            $sqlSearch = "SELECT * FROM products WHERE productName LIKE '%$searchKeyword%' LIMIT $recordsPerPage OFFSET $startPosition";
+            $resultSearch = $conn->query($sqlSearch);
 
-            // Truy vấn cơ sở dữ liệu
-            $sql = "SELECT * FROM products WHERE categoryID =". $_GET['category'] ." LIMIT $recordsPerPage OFFSET $startPosition";
-            $result = $conn->query($sql);
-
-            while ($row = $result->fetch_assoc()) {
+            while ($row = $resultSearch->fetch_assoc()) {
         ?>
             <form action="" method="POST" class="col-md-3 mt-2">
                 <div class="card custom-col">
@@ -142,7 +141,7 @@
                 <?php
                 for ($i = 1; $i <= $totalPages; $i++) {
                     $activeClass = ($i == $currentPage) ? 'active-page' : '';
-                    echo '<a href="?category='.$_GET['category'].'&page=' . $i . '" class="btn btn-danger list-btn-pagination ' . $activeClass . '">' . $i . '</a>';
+                    echo '<a href="?search='.$_GET['search'].'&page=' . $i . '" class="btn btn-danger list-btn-pagination ' . $activeClass . '">' . $i . '</a>';
                 }
             ?>
             </div>

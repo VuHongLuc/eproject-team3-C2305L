@@ -1,15 +1,15 @@
-<?php 
-session_start(); 
+<?php
+session_start();
 include "../db.php";
 
-  if (isset($_POST["login"])){
+if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
     if (empty($username)) {
         header("Location: login.php?error=User Name is required");
         exit();
-    } elseif (empty($password)){
+    } elseif (empty($password)) {
         header("Location: login.php?error=Password is required");
         exit();
     } else {
@@ -20,12 +20,11 @@ include "../db.php";
             $row = mysqli_fetch_assoc($result);
             if (password_verify($password, $row['password'])) {
                 $_SESSION['userName'] = $row['userName'];
-                if (!empty($_SESSION['previous_page'])){
+                if (!empty($_SESSION['previous_page'])) {
                     header("Location: " . $_SESSION['previous_page']);
-                  }
-                  else {
+                } else {
                     header("Location: ../index/index.php");
-                  }
+                }
                 exit();
             } else {
                 header("Location: login.php?error=Incorrect User name or password");
@@ -40,4 +39,3 @@ include "../db.php";
     header("Location: login.php");
     exit();
 }
-?>

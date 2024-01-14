@@ -63,16 +63,19 @@ include("../db.php");
         $_SESSION['compareItems'] = [];
     }
 
-    // Xử lý khi nút "COMPARE" được nhấn và số lượng sản phẩm <3
-    if (isset($_POST['compareButton']) && $_SESSION['numberCompare'] < 3 ) {
-        $flag =true;
-        //Xử lý khi sản phẩm đã có trong compare rồi thì không thêm lại vào compare 1 lần nữa
-        foreach ($_SESSION['compareItems'] as $item){
-            if ($item['productID']==$_POST['productID']){
-                $flag =false;
-            }
-        }
-        if ($flag){
+    // Xử lý khi nút "COMPARE" được nhấn
+    if (isset($_POST['compareButton'])) {
+        //Nếu số sản phẩm so sánh < 3
+        if ($_SESSION['numberCompare'] < 3 ){
+            $flag =true;
+            //Khi sản phẩm đã có trong COMPARE rồi thì không thêm lại vào compare 1 lần nữa
+            foreach ($_SESSION['compareItems'] as $item){
+                if ($item['productID']==$_POST['productID']){
+                    $flag =false;
+                }
+            };
+            //sau khi thỏa mãn các điều kiện thì tiến hành thêm sản phẩm vào SESSION
+            if ($flag){
                 $_SESSION['numberCompare']++;
 
                 $productCompare = array(
@@ -89,19 +92,61 @@ include("../db.php");
                     'dimension' => $_POST['dimension']
                 );
                 $_SESSION['compareItems'][] = $productCompare;
+                    
+            };
+        };
+    };
+        //Nếu số sản phẩm so sánh >= 3 tiến hành show pop-up thông báo không cho thêm sản phẩm nữa
+        echo "<div class='modal' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered'>
+            <div class='modal-content'>
+              <div class='modal-header'>
+                <h1 class='modal-title fs-5' id='staticBackdropLabel'>COMPARE</h1>
+                <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+              </div>
+              <div class='modal-body'>
+              You can only choose up to 3 products to compare!
+              </div>
+              <div class='modal-footer'>
+                <button type='button' class='btn btn-danger' data-bs-dismiss='modal'>Close</button>
+              </div>
+            </div>
+          </div>
+        </div>";
+    //Xử lý việc sửa số lượng trong page CART thì sẽ thay đổi số lượng trong page CHECKOUT
+        if (!isset($_SESSION['checkoutItems'])) {
+            $_SESSION['checkoutItems'] = [];
         }
-    }
+        
+        if (isset($_POST["submitCheckout"])) {
+            for ($i = 0; $i < count($_SESSION['cartItem']); $i++) {
+
+                $checkoutItem = array(
+                    "productID" => $_POST["productID$i"],
+                    "productName" => $_POST["productName$i"],
+                    "imageLink" => $_POST["imageLink$i"],
+                    "quantity" => $_POST["quantity$i"],
+                    "unitPrice" => $_POST["unitPrice$i"],
+                    "userID" => $_POST["userID$i"]
+                );
+                // Xử lý việc trùng sản phẩm khi đã thêm vào checkout từ trước
+                foreach ($_SESSION['checkoutItems'] as $key => &$item) {
+                    if ($checkoutItem["productID"] == $item["productID"]) {
+                        unset($_SESSION['checkoutItems'][$key]);
+                    }
+                }
+                //Thêm sp vào SESSION
+                $_SESSION['checkoutItems'][] = $checkoutItem;
+            }
+            header("Location: viewCheckout.php");
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Dropdown</title>
+    <title>Oceangate</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -112,7 +157,7 @@ include("../db.php");
     <div style="position: fixed; z-index: 10; width: 100%; height:101px; top: 0; left: 0;">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="../index/index.php">
-                <img src="https://i.snipboard.io/kQIriT.jpg" alt="Logo" width="125" height="75">
+                <img src="../Photos/Logo/logo.png" alt="Logo" width="125" height="75">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,15 +166,14 @@ include("../db.php");
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav m-auto font-size-25">
                     <li class="nav-item m-3">
-                        <a class="nav-link active fw-bold" aria-current="page" href="../index/index.php"
-                            style="color: red;">HOME</a>
+                        <a class="nav-link fw-bold" href="../index/index.php">HOME</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../contactUs/company.php">COMPANY</a>
+                        <a class="nav-link fw-bold" href="../contactUs/company.php">COMPANY</a>
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             CATEGORIES
                         </a>
@@ -139,13 +183,13 @@ include("../db.php");
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=3">USB</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=4">Memory Card</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=5">RAM</a>
-                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portale Hard
+                            <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portable Hard
                                 Driver</a>
                         </div>
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle text-dark fw-bold" href="#" id="navbarDropdownBrand"
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdownBrand"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             BRAND
                         </a>
@@ -160,20 +204,20 @@ include("../db.php");
                     </li>
 
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../contactUs/privacy.php">PRIVACY</a>
+                        <a class="nav-link fw-bold" href="../contactUs/privacy.php">PRIVACY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../contactUs/shippingPayment.php">SHIPPING
+                        <a class="nav-link fw-bold" href="../contactUs/shippingPayment.php">SHIPPING
                             PAYMENT</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
+                        <a class="nav-link fw-bold" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../news/news.php">NEWS</a>
+                        <a class="nav-link fw-bold" href="../news/news.php">NEWS</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link text-dark fw-bold" href="../contactUs/contact.php">CONTACT</a>
+                        <a class="nav-link fw-bold" href="../contactUs/contact.php">CONTACT</a>
                     </li>
                 </ul>
 
@@ -241,16 +285,6 @@ include("../db.php");
         </nav>
     </div>
 
-    <!-- Bootstrap JS and jQuery -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> -->
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script> -->
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-
     <script>
         function searchProducts() {
             var searchInput = document.getElementById("searchInput").value;
@@ -272,9 +306,75 @@ include("../db.php");
         }
         function redirectToSearch() {
             var searchInput = document.getElementById("searchInput").value;
-            window.location.href = "../search/product-search.php?search=" + searchInput;
-        }
+            window.location.href = "../search/productSearch.php?search=" + searchInput;
+        };
 
+
+        //Animation for navbar when click
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     // Lấy tất cả các thẻ a có class "nav-link"
+        //     var navLinks = document.querySelectorAll('.nav-link');
+
+        //     // Lặp qua từng thẻ a và thêm sự kiện click
+        //     navLinks.forEach(function (link) {
+        //         link.addEventListener('click', function (event) {
+        //             // Loại bỏ class 'text-danger' từ tất cả các thẻ a
+        //             navLinks.forEach(function (innerLink) {
+        //                 innerLink.classList.remove('text-danger');
+        //             });
+
+        //             // Thêm class 'text-danger' vào thẻ a được click
+        //             this.classList.add('text-danger');
+
+        //             // Lưu trạng thái vào localStorage
+        //             localStorage.setItem('selectedNavLink', this.getAttribute('href'));
+        //         });
+        //     });
+
+        //     // Kiểm tra xem có trạng thái đã lưu hay không
+        //     var selectedNavLink = localStorage.getItem('selectedNavLink');
+        //     if (selectedNavLink) {
+        //         // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
+        //         document.querySelector('a[href="' + selectedNavLink + '"]').classList.add('text-danger');
+        //     }
+        // });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy tất cả các thẻ a có class "nav-link"
+            var navLinks = document.querySelectorAll('.nav-link');
+
+            // Lặp qua từng thẻ a và thêm sự kiện click
+            navLinks.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    // Loại bỏ class 'text-danger' từ tất cả các thẻ a
+                    navLinks.forEach(function (innerLink) {
+                        innerLink.classList.remove('text-danger');
+                    });
+
+                    // Thêm class 'text-danger' vào thẻ a được click
+                    this.classList.add('text-danger');
+
+                    // Lưu trạng thái vào localStorage
+                    localStorage.setItem('selectedNavLink', this.getAttribute('href'));
+                });
+            });
+
+            // Kiểm tra xem có trạng thái đã lưu hay không
+            var selectedNavLink = localStorage.getItem('selectedNavLink');
+            if (selectedNavLink) {
+                // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
+                var selectedLink = document.querySelector('a[href="' + selectedNavLink + '"]');
+                if (selectedLink) {
+                    selectedLink.classList.add('text-danger');
+                } else {
+                    // Trường hợp đặc biệt: "Home"
+                    if (selectedNavLink.includes('index.php')) {
+                        document.querySelector('a[href*="index.php"]').classList.add('text-danger');
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>

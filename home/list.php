@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="wrapper container-fluid">
+
 <?php  
         include "../db.php";
         $sql1 = "SELECT * FROM category";
@@ -112,7 +113,7 @@
                             <!-- button ADD TO CART & COMPARE -->
                             <div class="justify-content-between d-flex">
                                 <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a>
-                                <button type="submit" name="compareButton" class="btn btn-outline-secondary fw-bold">COMPARE</button>
+                                <button type="submit" name="compareButton" class="btn btn-outline-secondary fw-bold compareButton" data-bs-toggle="modal" data-bs-target="#notifyCompare">COMPARE</button>
                             </div>
                         </div>
                     </div>
@@ -131,6 +132,6 @@
     
     ?>
 </div>
-<!-- <script src="../compare/compare.js"></script> -->
+
 </body>
 </html>

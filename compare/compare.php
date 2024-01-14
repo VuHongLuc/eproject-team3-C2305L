@@ -10,6 +10,7 @@
     <?php include '../home/navbar.php'; ?>
 
     <div class="wrapper container-fluid">
+        <br>
         <div class="container col-inner">
             <h2 class="text-uppercase text-center">COMPARE</h2>
             <div class="row">
