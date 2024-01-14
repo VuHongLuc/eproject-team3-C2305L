@@ -46,7 +46,7 @@
             <p>OceanGate wishes to bring you a better solution for aluminum door systems, wooden doors, and glass doors at reasonable prices thanks to the support of the online marketing system,</p>
             <p>OceanGate knows clearly that no one wants to share their personal information with anyone else. Kingston respects your privacy, all personal information when you transact with us is 100% confidential, and is not passed on to any other third party.</p>
             <p>Ultimately, OceanGate does not make a profit through the sale of Your information, ever, without exception!</p>
-            <img src="../Photos/Logo/2.jpg" alt="OceanGate Technology" class="col-lg-6 mx-auto d-block my-3 textDecreption">
+            <img src="https://www.hikvision.com/content/hikvision/en/newsroom/blog/how-to-balance-your-data-privacy-requirements-with-effective-video-security/_jcr_content/root/responsivegrid/image.coreimg.100.1280.jpeg/1618474794518/how-to-balance-your-data-privacy-requirements-with-effective-video-security-banner.jpeg" alt="OceanGate Technology" class="col-lg-6 mx-auto d-block my-3 textDecreption">
             <p>The OceanGate Corporation is committed to safeguarding the personal information of its customers with utmost importance and high responsibility. Our information security policy is designed to ensure the safety, security, and positive management of customer information related to the purchase of computer component products.</p>
 
 
