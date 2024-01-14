@@ -3,48 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learn about USB-C</title>
+    <title>Should I Buy a Kingston USB?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../style.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            background-color: #f8f9fa; /* Bootstrap light background color */
+            color: #333; /* Bootstrap dark text color */
         }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+
         p {
             text-align: justify;
         }
+
         .container h1 {
             text-align: center;
+            color: #dc3545; /* Bootstrap danger color */
         }
+
+        h3 {
+            color: #007bff; /* Bootstrap primary color */
+        }
+
+        .my-3 {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .wrapper {
+            background-color: #fff; /* White background color for wrapper */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add more styles as needed */
+
     </style>
 </head>
 <body>
-<?php include '../home/navbar.php'; ?>
-<div class="wrapper container-fluid">
-<div class="container col-inner"> 
+    <?php include '../home/navbar.php'; ?>
+    <div class="wrapper container-fluid">
+        <div class="container col-inner">
 
-        <h1 class="my-3">LEARN ABOUT USB-C</h1>
+            <h1 class="my-3">SHOULD I BUY A KINGSTON USB?</h1>
 
-        <p>What is USB-C? To solve the problem of incompatible cables ending up in landfills, a group of the world's most prestigious technology companies gathered under the name of the USB Implementers Forum to create a connector standard. As a result, USB-C® was born and quickly became widely adopted. Here are some advantages of using USB-C.</p>
+            <p>Is Kingston USB good or not is an issue that many people are concerned about today. In this article, we will answer your questions about this USB brand.</p>
 
-        <p class="my-3"><strong>Is USB-C easier to use?</strong><br>
-        Technology can make us frustrated, but there's nothing more frustrating than plugging a USB into your computer and finding it doesn't fit. So you turn the USB over only to realize that the original direction is correct... Does this sound familiar to you?</p>
+            <h3 class="my-3">Which brand of USB should I buy?</h3>
+            <p>Before learning about Kingston USB, we should learn about the USB models available on the market today to see which brand is the most popular and most trusted.</p>
 
-        <p>USB-C will help eliminate all of these annoyances because it is a user-friendly, symmetrically shaped, and reversible connector. Like Apple's Lightning connector, USB-C can be plugged in both ways. Far different from the original square, large-format USB head, USB-C has a thin, compact shape and rounded sides. USB-C is small enough to fit into today's increasingly slim mobile devices, but powerful enough to connect all the peripherals to your laptop.</p>
-        <p class="my-3"><strong>Set administrator password</strong></p>
-        <p>Next, you will create and confirm an Administrator password. This password must be at least 6 characters long and can include numbers, letters, and spaces.</p>
-        <p>Enter the password using the keyboard on the touch screen of the VP80ES. You can press the ABC or 123 button to switch between the alphabetic keyboard and the numeric keyboard.</p>
-        <p>Confirm your password by tapping the check mark.</p>
-        <p class="my-3"><strong>Impressive USB-C performance</strong><br>
-        Another reason USB-C is growing in popularity is because of its impressive performance standards. This type of connector supports the latest USB 3.2 communication protocols, which is much faster and more powerful than most standard USBs. USB-C can provide up to 100W of power to devices and can transfer data at speeds of up to 20Gbps. USB-C is also capable of transmitting 4K Ultra HD video and audio. This means you can charge full-sized products and transfer data up to 20 times faster than USB 2.0, while still enjoying the ultimate 4K Ultra HD video experience.</p>
+            <h3 class="my-3">Should I buy a Kingston USB?</h3>
+            <p>Previously, USB 2.0 lines were still being used more and more popularly. But currently, the USB 3.0 port is designed to be compatible with many devices, so it is also popular with many people because of its improvements.</p>
+
+            <p>In short, it doesn't matter which brand of USB you choose, what's important is that you choose the product that meets your standards and needs. Furthermore, the most important thing is to choose a reputable store.</p>
+
+            <h3 class="my-3">Is Kingston USB good?</h3>
+            <p>When mentioning Kingston, people immediately know of a brand specializing in manufacturing famous electronic and technology devices. This company's laptop accessories are available in almost every country in the world and are very trusted. Some of the most popular products are Kingston USB, Kingston hard drive, Kingston RAM,...</p>
+
+            <h3 class="my-3">Should I buy a Kingston USB?</h3>
+            <p>With Kingston USB, the compact, unique design as well as the diversity of designs and capacity are the attractions for consumers. Not only that, technology enthusiasts consider the Kingston USB to be quite convenient to carry and can connect to all operating systems. Furthermore, this product also has good quality and good warranty.</p>
         </div>
     </div>
     <?php include '../home/footer.html'; ?>

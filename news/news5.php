@@ -6,20 +6,27 @@
     <title>How to Format a USB Drive</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        .container h1 {
-            text-align: center;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        p {
-            text-align: justify;
-        }
+       body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f8f9fa; /* Set a light background color */
+    }
+
+    .container h1 {
+        text-align: center;
+        color: #dc3545; /* Red color for heading */
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    p {
+        text-align: justify;
+        color: #333; /* Text color */
+    }
+
     </style>
 </head>
 <body>
