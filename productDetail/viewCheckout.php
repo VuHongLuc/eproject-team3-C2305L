@@ -12,7 +12,7 @@ if(isset($_POST['checkout'])){
     $orderEmail = $_POST['email'];
     $orderAddress = $_POST['address'];
 
-    $sqlInsertOrder = "INSERT INTO `order`(orderID,userID,cartID,orderEmail,orderAddress,orderPhone,orderDate)
+    $sqlInsertOrder = "INSERT INTO `order`(orderID,userID,cartCode,orderEmail,orderAddress,orderPhone,orderDate)
                 VALUES (DEFAULT,'$userID', '1', '$orderEmail', '$orderAddress','$phoneNumber',DEFAULT)";
     $resultInsertOrder = $conn ->query($sqlInsertOrder);
 
@@ -32,13 +32,12 @@ if ($resultUser && $resultUser->num_rows > 0) {
         $userEmail = $row['email']; 
         $userAddress = $row['address'];
         $userPhone = $row['phone'];
-        // $cartidOrder = $cartID;
     }
 
 
 ?>
 
-<div class="view-Checkout d-flex justify-content-center py-4">
+<div class="view-Checkout d-flex justify-content-center py-5">
 <div class="view-checkout-details  p-4">
     <h1 class="">Your Order</h1>
     <form action="" method="post">
@@ -46,7 +45,7 @@ if ($resultUser && $resultUser->num_rows > 0) {
         <tr class="">
             <th scope="col" class="">Product</th>
             <th scope="col" class="">Price</th>
-            <th scope="col" class="">Quantity</th>
+            <th scope="col" class="text-center">Quantity</th>
             <th scope="col" class="">Money</th>
         </tr>
         <?php
@@ -59,21 +58,17 @@ if ($resultUser && $resultUser->num_rows > 0) {
                 $unitPrice = $item['unitPrice'];
                 $userID = $item['userID'];
                 $totalMoney = $quantity * $unitPrice;
-                // $totalCart+=($quantity*$unitPrice);
+                $totalCart+=($quantity*$unitPrice);
         ?>
         <tr>
             <td class="d-flex align-items-center">
-                <!-- <a href="deleteCart.php?productID=<?php echo $productID;?>"><button type="button" class="cart-btn-x m-1 text-center"><i class="fas fa-trash"></i></button></a> -->
                 <div class="cart-img p-1 m-1">
                     <img src="<?php echo  $imageLink; ?>" alt="Product img">
                 </div>
                 <div class="cart-name-product p-1 m-1 fw-bold"><?php echo $productName; ?></div>
             </td>
             <td class="price-product"><?php echo $unitPrice  ; ?></td>
-            <td>
-                <!-- <button type="button" class="decrementBtn btn btn-danger align-middle " >-</button> -->
-                <input type="number" class="quantityInput align-middle text-center " name="quantity" value="<?php echo $quantity; ?>" min="1" >
-                <!-- <button type="button" class="incrementBtn btn btn-danger align-middle " >+</button> -->
+            <td class="text-center"><?php echo $quantity; ?>
             </td>
             <td class="total-price" class=" mx-2"><?php echo $totalMoney; ?></td>
         </tr>
@@ -106,11 +101,11 @@ if ($resultUser && $resultUser->num_rows > 0) {
                     <label for="cash">Cash</label><br>
                 </div>
                 <div class="mx-1 d-flex col-lg-3 align-items-center">
-                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="cash" required>
+                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="bank" required>
                     <label for="cash">Bank </label><br>
                 </div>
                 <div class="mx-1 d-flex col-lg-3 align-items-center">
-                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="cash" required>
+                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="mastercard" required>
                     <label for="cash">MasterCard</label><br>
                 </div>
                 </div>
@@ -136,7 +131,7 @@ if ($resultUser && $resultUser->num_rows > 0) {
     function payment(){
         alert("Payment success");
         setTimeout(function() {
-            window.location.href = 'http://localhost/OceanGateGit3/eproject-team3-C2305L/index/index.php';
+            window.location.href = '../index/index.php';
         }, 300);
     }
 </script>

@@ -57,6 +57,59 @@ include("../db.php");
     }
 }
 
+
+//Xử lý BUY NOW được nhấn
+if(isset($_POST['buyNow'])) {
+
+    if (!isset($_SESSION['userName'])) {
+        // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+        $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
+        header("Location: ../login/login.php");
+        exit(); 
+    }else {
+        // $_SESSION['cartNumber']++;
+        $userName = $_SESSION["userName"];
+        $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+        $resultUserID = $conn ->query($sqlUseerID);
+
+        $userID = null;
+
+            if ($resultUserID && $resultUserID->num_rows > 0) {
+                while ($row = $resultUserID->fetch_assoc()) {
+                    
+                    $userID = $row['userID'];
+                }
+
+        $productCart = array(
+            'productID' => $_POST['productID'],
+            'productName' => $_POST['productName'],
+            'imageLink' => $_POST['imageLink'],
+            'quantity' => $_POST['quantity'],
+            'unitPrice' => $_POST['unitPrice'],
+            'userID' => $userID
+        );
+
+    //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
+        
+        $flag =true;
+        foreach ($_SESSION['cartItem'] as &$item){
+            if ($item['productID'] == $_POST['productID']){
+                $item['quantity'] += $_POST['quantity'];
+                $_SESSION['cartNumber']--;
+                $flag =false;
+            }
+        }
+        if ($flag) {
+            $_SESSION['cartItem'][] = $productCart;
+            // insert to carts
+          
+        }
+    }
+    header("Location:../productDetail/viewCart.php");
+}
+}
+
+
     // Khởi tạo biến numberCompare nếu chưa tồn tại
     if (!isset($_SESSION['numberCompare'])) {
         $_SESSION['numberCompare'] = 0;

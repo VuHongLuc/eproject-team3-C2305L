@@ -4,7 +4,7 @@
         if(empty($_SESSION['cartItem'])){
     ?>
 
-        <div class="view-cart-empty m-3 p-3 d-flex justify-content-center">
+        <div class="view-cart-empty p-3 d-flex justify-content-center">
             <div class="view-cart-details p-3 m-3">
                 <h1 class="text-center p-1 m-4">Cart</h1>
                 <table class="table aligh-middle">
@@ -26,7 +26,7 @@
         </div>
 
     <?php }else { ?>
-    <div class="view-cart d-flex justify-content-center py-4">
+    <div class="view-cart d-flex justify-content-center py-5">
         <div class="view-cart-details  p-4">
             <h1 class="">Cart</h1>
             <form action="" method="post">
