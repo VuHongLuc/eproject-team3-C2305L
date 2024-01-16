@@ -67,7 +67,7 @@ if(isset($_POST['buyNow'])) {
         header("Location: ../login/login.php");
         exit(); 
     }else {
-        // $_SESSION['cartNumber']++;
+        $_SESSION['cartNumber']++;
         $userName = $_SESSION["userName"];
         $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
         $resultUserID = $conn ->query($sqlUseerID);
