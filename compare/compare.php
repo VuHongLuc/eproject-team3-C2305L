@@ -2,7 +2,7 @@
 
     <div class="wrapper container-fluid">
         <div class="container col-inner">
-            <h2 class="text-uppercase text-center">COMPARE</h2>
+            <h2 class="text-uppercase text-center">PRODUCT COMPARISON</h2>
             <div class="row">
                 <div class="col-md-1"></div>
                 <?php
@@ -117,7 +117,7 @@
             <?php }
             else {
                 Echo "<i class='text-center fa-solid fa-scale-balanced' style='font-size: 300px;color: lightgray;'></i>
-                                <p class='text-center '>There are no items in the compare. Choose to buy at least one product to continue!!</p>
+                                <p class='text-center '>Your comparison page is empty, please choose products to compare.</p>
                                 <a href='../index/index.php' class='text-center list-group-item' ><button class='btn btn-success'><i class='fa-solid fa-arrow-left mx-1'></i>Select product</button></a>";
             } ?>
         </div>
