@@ -194,9 +194,58 @@ if(isset($_POST['buyNow'])) {
             }
             header("Location: viewCheckout.php");
         }
+
+    //Xử lý việc click ADD TO CART trong các pages list product
+    if(isset($_POST['addToCartButton'])) {
+
+        if (!isset($_SESSION['userName'])) {
+            // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
+            header("Location: ../login/login.php");
+            exit(); 
+        }else {
+            $_SESSION['cartNumber']++;
+            $userName = $_SESSION["userName"];
+            $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+            $resultUserID = $conn ->query($sqlUseerID);
+
+            $userID = null;
+
+                if ($resultUserID && $resultUserID->num_rows > 0) {
+                    while ($row = $resultUserID->fetch_assoc()) {
+                        
+                        $userID = $row['userID'];
+                    }
+
+            $productCart = array(
+                'productID' => $_POST['productID'],
+                'productName' => $_POST['productName'],
+                'imageLink' => "../".$_POST['imageLink'],
+                'quantity' => 1,
+                'unitPrice' => $_POST['unitPrice'],
+                'userID' => $userID
+            );
+
+        //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
+            
+            $flag =true;
+            foreach ($_SESSION['cartItem'] as &$item){
+                if ($item['productID'] == $_POST['productID']){
+                    $item['quantity'] += 1;
+                    $_SESSION['cartNumber']--;
+                    $flag =false;
+                }
+            }
+            if ($flag) {
+                $_SESSION['cartItem'][] = $productCart;             
+            }
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -227,8 +276,8 @@ if(isset($_POST['buyNow'])) {
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" id="category" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle fw-bold" id="category" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             CATEGORIES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCate">
@@ -238,7 +287,7 @@ if(isset($_POST['buyNow'])) {
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=4">Memory Card</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=5">RAM</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portable Hard
-                                Driver</a>
+                                Drive</a>
                         </div>
                     </li>
 
@@ -402,4 +451,5 @@ if(isset($_POST['buyNow'])) {
         });
     </script>
 </body>
+
 </html>
