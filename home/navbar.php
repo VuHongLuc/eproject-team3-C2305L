@@ -220,14 +220,14 @@ if(isset($_POST['buyNow'])) {
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav m-auto font-size-25">
                     <li class="nav-item m-3">
-                        <a class="nav-link fw-bold" href="../index/index.php">HOME</a>
+                        <a class="nav-link fw-bold" id="home" href="../index/index.php">HOME</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/company.php">COMPANY</a>
+                        <a class="nav-link fw-bold" id="company" href="../contactUs/company.php">COMPANY</a>
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
+                        <a class="nav-link dropdown-toggle fw-bold" id="category" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             CATEGORIES
                         </a>
@@ -243,7 +243,7 @@ if(isset($_POST['buyNow'])) {
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdownBrand"
+                        <a class="nav-link dropdown-toggle fw-bold" id="brand" href="" id="navbarDropdownBrand"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             BRAND
                         </a>
@@ -258,20 +258,20 @@ if(isset($_POST['buyNow'])) {
                     </li>
 
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/privacy.php">PRIVACY</a>
+                        <a class="nav-link fw-bold" id="privacy" href="../contactUs/privacy.php">PRIVACY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/shippingPayment.php">SHIPPING
+                        <a class="nav-link fw-bold" id="shipping" href="../contactUs/shippingPayment.php">SHIPPING
                             PAYMENT</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
+                        <a class="nav-link fw-bold" id="warranty" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../news/news.php">NEWS</a>
+                        <a class="nav-link fw-bold" id="news" href="../news/news.php">NEWS</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/contact.php">CONTACT</a>
+                        <a class="nav-link fw-bold" id="contact" href="../contactUs/contact.php">CONTACT</a>
                     </li>
                 </ul>
 
@@ -364,36 +364,7 @@ if(isset($_POST['buyNow'])) {
         };
 
 
-        //Animation for navbar when click
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     // Lấy tất cả các thẻ a có class "nav-link"
-        //     var navLinks = document.querySelectorAll('.nav-link');
-
-        //     // Lặp qua từng thẻ a và thêm sự kiện click
-        //     navLinks.forEach(function (link) {
-        //         link.addEventListener('click', function (event) {
-        //             // Loại bỏ class 'text-danger' từ tất cả các thẻ a
-        //             navLinks.forEach(function (innerLink) {
-        //                 innerLink.classList.remove('text-danger');
-        //             });
-
-        //             // Thêm class 'text-danger' vào thẻ a được click
-        //             this.classList.add('text-danger');
-
-        //             // Lưu trạng thái vào localStorage
-        //             localStorage.setItem('selectedNavLink', this.getAttribute('href'));
-        //         });
-        //     });
-
-        //     // Kiểm tra xem có trạng thái đã lưu hay không
-        //     var selectedNavLink = localStorage.getItem('selectedNavLink');
-        //     if (selectedNavLink) {
-        //         // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
-        //         document.querySelector('a[href="' + selectedNavLink + '"]').classList.add('text-danger');
-        //     }
-        // });
-
-
+        //Xử lý việc click vào content nào trong navbar thì sẽ highlight màu đỏ
         document.addEventListener("DOMContentLoaded", function () {
             // Lấy tất cả các thẻ a có class "nav-link"
             var navLinks = document.querySelectorAll('.nav-link');
@@ -410,7 +381,7 @@ if(isset($_POST['buyNow'])) {
                     this.classList.add('text-danger');
 
                     // Lưu trạng thái vào localStorage
-                    localStorage.setItem('selectedNavLink', this.getAttribute('href'));
+                    localStorage.setItem('selectedNavLink', this.getAttribute('id'));
                 });
             });
 
@@ -418,7 +389,7 @@ if(isset($_POST['buyNow'])) {
             var selectedNavLink = localStorage.getItem('selectedNavLink');
             if (selectedNavLink) {
                 // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
-                var selectedLink = document.querySelector('a[href="' + selectedNavLink + '"]');
+                var selectedLink = document.querySelector('a[id="' + selectedNavLink + '"]');
                 if (selectedLink) {
                     selectedLink.classList.add('text-danger');
                 } else {
