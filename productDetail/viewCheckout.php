@@ -2,39 +2,59 @@
 
 include('../db.php');
 include('../home/navbar.php'); 
-if (empty($_SESSION['checkoutItems'])){
-    echo "<p>Data not found</p>";
-};
 if(isset($_POST['checkout'])){
+    if(!empty($_POST['username'])&&!empty($_POST['phoneNumber'])&&!empty($_POST['email'])&&!empty($_POST['paymentMethod'])&&!empty($_POST['address'])){
+        $userID = $_POST['userID'];
+        $phoneNumber = $_POST['phoneNumber'];
+        $orderEmail = $_POST['email'];
+        $orderAddress = $_POST['address'];
     
-    $userID = $_POST['userID'];
-    $phoneNumber = $_POST['phoneNumber'];
-    $orderEmail = $_POST['email'];
-    $orderAddress = $_POST['address'];
-
-    $sqlInsertOrder = "INSERT INTO `order`(orderID,userID,cartCode,orderEmail,orderAddress,orderPhone,orderDate)
-                VALUES (DEFAULT,'$userID', '1', '$orderEmail', '$orderAddress','$phoneNumber',DEFAULT)";
-    $resultInsertOrder = $conn ->query($sqlInsertOrder);
-
-    if (!$resultInsertOrder) {
-        echo "Error: " . $sqlInsertOrder . "<br>" . $conn->error;
-    }  
+        $truncateTableCart = "TRUNCATE TABLE `eproject`.`carts`;";
+        $resultTruncateTableCart = $conn ->query($truncateTableCart);
+        $sqlInsertOrder = "INSERT INTO `order`(orderID,userID,cartCode,orderEmail,orderAddress,orderPhone,orderDate)
+                    VALUES (DEFAULT,'$userID', '1', '$orderEmail', '$orderAddress','$phoneNumber',DEFAULT);";
+        $resultInsertOrder = $conn ->query($sqlInsertOrder);
+    
+        unset($_SESSION['cartItem']);
+        unset($_SESSION['cartNumber']);
+    
+        if (!$resultInsertOrder) {
+            echo "Error: " . $sqlInsertOrder . "<br>" . $conn->error;
+        }  
+    }    
+}
+if (isset($_SESSION["userName"])){
+    $userName = $_SESSION["userName"];
+    $sqlUser = "SELECT * FROM user WHERE userName = '$userName'";
+    $resultUser = $conn->query($sqlUser);
+    $userID = null;
+    if ($resultUser && $resultUser->num_rows > 0) {
+        while ($row = $resultUser->fetch_assoc()) {
+            $userID = $row['userID'];
+            $userName = $row['userName'];
+            $userEmail = $row['email']; 
+            $userAddress = $row['address'];
+            $userPhone = $row['phone'];
+        }
 }
 
-$userName = $_SESSION["userName"];
-$sqlUser = "SELECT * FROM user WHERE userName = '$userName'";
-$resultUser = $conn->query($sqlUser);
-$userID = null;
-if ($resultUser && $resultUser->num_rows > 0) {
-    while ($row = $resultUser->fetch_assoc()) {
-        $userID = $row['userID'];
-        $userName = $row['userName'];
-        $userEmail = $row['email']; 
-        $userAddress = $row['address'];
-        $userPhone = $row['phone'];
-    }
-
-
+//Modal notification checkout completed
+    echo "<div class='modal modalPaymentSuccess' data-bs-backdrop='static' data-bs-keyboard='false' tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
+    <div class='modal-dialog modal-dialog-centered'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <h1 class='modal-title fs-5' id='staticBackdropLabel'>NOTIFICATION</h1>
+            <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+          </div>
+          <div class='modal-body text-success'>
+          Payment success <i class='fa-solid fa-check'></i>
+          </div>
+          <div class='modal-footer'>
+            <a href='completeCheckout.php' class='btn btn-success'>Close</a>
+          </div>
+        </div>
+      </div>
+    </div>";
 ?>
 
 <div class="view-Checkout d-flex justify-content-center py-5">
@@ -83,40 +103,40 @@ if ($resultUser && $resultUser->num_rows > 0) {
         <form action="" method="post">
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="username">Username:</label>
-            <input class="p-2" type="text" id="username" name="username" value="<?php echo $userName ?>" required>
+            <input class="p-2" type="text" id="username" name="username" value="<?php echo $userName ?>" required oninput="checkInput()">
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="phoneNumber">Phone Number:</label>
-            <input class="p-2" type="tel" id="phoneNumber" name="phoneNumber" value="<?php echo $userPhone ?>" required>
+            <input class="p-2" type="tel" id="phoneNumber" name="phoneNumber" value="<?php echo $userPhone ?>" required oninput="checkInput()">
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="email">Email:</label>
-            <input class="p-2" type="email" id="email" name="email" value="<?php echo $userEmail ?>" required>
+            <input class="p-2" type="email" id="email" name="email" value="<?php echo $userEmail ?>" required oninput="checkInput()">
         </div>
         <div class="d-flex m-2 p-2 align-items-center">
                 <label class="p-2 text-lg" for="email">Payment Method:</label>
                 <div class="d-flex flex-wrap  align-items-center">
                 <div class="mx-1 d-flex col-lg-3 align-items-center">
-                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="cash" required>
+                    <input class="p-2" type="radio" id="cash" checked name="paymentMethod" value="cash" required>
                     <label for="cash">Cash</label><br>
                 </div>
                 <div class="mx-1 d-flex col-lg-3 align-items-center">
-                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="bank" required>
+                    <input class="p-2" type="radio" id="bank" name="paymentMethod" value="bank" required>
                     <label for="cash">Bank </label><br>
                 </div>
                 <div class="mx-1 d-flex col-lg-3 align-items-center">
-                    <input class="p-2" type="radio" id="cash" name="paymentMethod" value="mastercard" required>
+                    <input class="p-2" type="radio" id="mastercard" name="paymentMethod" value="mastercard" required>
                     <label for="cash">MasterCard</label><br>
                 </div>
                 </div>
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="address">Address:</label>
-            <textarea class="p-3" id="address" name="address" value="" placeholder="Please enter your delivery address...." required></textarea>
+            <textarea class="p-3" id="address" name="address" value="" placeholder="Please enter your delivery address...." required oninput="checkInput()"></textarea>
         </div>
         <input type="hidden" name="userID" value="<?php echo $userID;  ?>">
         <div class="d-flex justify-content-center ">
-        <a href="" class="checkOut list-group=item "><button type="submit" name="checkout" class="btn btn-danger" onclick="payment()">Payment</button></a>
+        <button type="submit" name="checkout" class="btn btn-danger checkOut list-group=item" id ="paymentButton" data-bs-toggle="modal" data-bs-target="#notifyPaymentSuccess">Payment</button>
         </div>
         </form>
     </div>     
@@ -127,13 +147,6 @@ if ($resultUser && $resultUser->num_rows > 0) {
 <!-- footer -->
 <?php include('../home/footer.html'); ?>
 <!-- Link -->
-<script>
-    function payment(){
-        alert("Payment success");
-        setTimeout(function() {
-            window.location.href = '../index/index.php';
-        }, 300);
-    }
-</script>
 
 <script src="controller.js"></script>
+<script src="checkoutCompleted.js"></script>

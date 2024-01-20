@@ -7,7 +7,7 @@ include("../db.php");
             $_SESSION['cartItem'] = [];
         }
        
-    //Xử lý adđ to cart được nhấn
+    //CLICK "ADD TO CART" IN PRODUCT DETAIL PAGE
     if(isset($_POST['addToCart'])) {
 
         if (!isset($_SESSION['userName'])) {
@@ -49,16 +49,30 @@ include("../db.php");
                 }
             }
             if ($flag) {
+                
                 $_SESSION['cartItem'][] = $productCart;
-                // insert to carts
-              
+
+                //INSERT INTO CART
+                if (!empty($_SESSION['cartItem'])){
+
+                    foreach ($_SESSION['cartItem'] as $item){
+                        $productID = $item['productID'];
+                        $cartQuantity = $item['quantity'];
+                        $totalMoney = $item['quantity']*$item['unitPrice'];
+
+                        $sqlInsertCart = "TRUNCATE TABLE `eproject`.`carts`; INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`)
+                        VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                        $resultInsertCart = $conn ->query($sqlInsertCart);
+                    }
+                }
+
             }
         }
     }
 }
 
 
-//Xử lý BUY NOW được nhấn
+//CLICK "BUY NOW" IN PRODUCT DEATAIL PAGE
 if(isset($_POST['buyNow'])) {
 
     if (!isset($_SESSION['userName'])) {
@@ -101,7 +115,14 @@ if(isset($_POST['buyNow'])) {
         }
         if ($flag) {
             $_SESSION['cartItem'][] = $productCart;
-            // insert to carts
+            //INSERT INTO CART
+            $productID = $_POST['productID'];
+            $cartQuantity = $_POST['quantity'];
+            $totalMoney = $_POST['quantity']*$_POST['unitPrice'];
+
+            $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`)
+            VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+            $resultInsertCart = $conn ->query($sqlInsertCart);
           
         }
     }
@@ -116,7 +137,7 @@ if(isset($_POST['buyNow'])) {
         $_SESSION['compareItems'] = [];
     }
 
-    // Xử lý khi nút "COMPARE" được nhấn
+    // CLICK "COMPARE"
     if (isset($_POST['compareButton'])) {
         //Nếu số sản phẩm so sánh < 3
         if ($_SESSION['numberCompare'] < 3 ){
@@ -166,13 +187,24 @@ if(isset($_POST['buyNow'])) {
             </div>
           </div>
         </div>";
-    //Xử lý việc sửa số lượng trong page CART thì sẽ thay đổi số lượng trong page CHECKOUT
+
+
+    //CLICK "CHECKOUT" IN CART PAGE
         if (!isset($_SESSION['checkoutItems'])) {
             $_SESSION['checkoutItems'] = [];
         }
         
         if (isset($_POST["submitCheckout"])) {
             $_SESSION['checkoutItems'] = [];
+            $userName = $_SESSION["userName"];
+            $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+            $resultUserID = $conn ->query($sqlUseerID);
+
+            // $userID = null;
+
+            while ($row = $resultUserID->fetch_assoc()) {
+                $userID = $row['userID'];
+            };
             for ($i = 0; $i < count($_SESSION['cartItem']); $i++) {
 
                 $checkoutItem = array(
@@ -183,19 +215,29 @@ if(isset($_POST['buyNow'])) {
                     "unitPrice" => $_POST["unitPrice$i"],
                     "userID" => $_POST["userID$i"]
                 );
-                // Xử lý việc trùng sản phẩm khi đã thêm vào checkout từ trước
-                foreach ($_SESSION['checkoutItems'] as $key => &$item) {
-                    if ($checkoutItem["productID"] == $item["productID"]) {
-                        unset($_SESSION['checkoutItems'][$key]);
-                    }
-                }
-                //Thêm sp vào SESSION
+                //add a new product into SESSION
                 $_SESSION['checkoutItems'][] = $checkoutItem;
             }
+
+                //INSERT INTO CART
+                if (!empty($_SESSION['cartItem'])){
+                    $truncateTableCart = "TRUNCATE TABLE `eproject`.`carts`;";
+                    $resultTruncateTableCart = $conn ->query($truncateTableCart);
+    
+                    foreach ($_SESSION['checkoutItems'] as $item){
+                        $productID = $item['productID'];
+                        $cartQuantity = $item['quantity'];
+                        $totalMoney = $item['quantity']*$item['unitPrice'];
+    
+                        $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                        $resultInsertCart = $conn ->query($sqlInsertCart);
+                    }
+                }
+
             header("Location: viewCheckout.php");
         }
 
-    //Xử lý việc click ADD TO CART trong các pages list product
+    //CLICK "ADD TO CART" IN LIST PRODUCT PAGES
     if(isset($_POST['addToCartButton'])) {
 
         if (!isset($_SESSION['userName'])) {
@@ -209,13 +251,11 @@ if(isset($_POST['buyNow'])) {
             $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
             $resultUserID = $conn ->query($sqlUseerID);
 
-            $userID = null;
+            // $userID = null;
 
-                if ($resultUserID && $resultUserID->num_rows > 0) {
-                    while ($row = $resultUserID->fetch_assoc()) {
-                        
-                        $userID = $row['userID'];
-                    }
+            while ($row = $resultUserID->fetch_assoc()) {
+                $userID = $row['userID'];
+            };
 
             $productCart = array(
                 'productID' => $_POST['productID'],
@@ -236,12 +276,29 @@ if(isset($_POST['buyNow'])) {
                     $flag =false;
                 }
             }
+            unset($item); // Hủy tham chiếu của biến $item
             if ($flag) {
-                $_SESSION['cartItem'][] = $productCart;             
+                $_SESSION['cartItem'][] = $productCart; //add a new product into SESSION
+            }
+                //INSERT INTO CART
+            if (!empty($_SESSION['cartItem'])){
+                $truncateTableCart = "TRUNCATE TABLE `eproject`.`carts`;";
+                $resultTruncateTableCart = $conn ->query($truncateTableCart);
+
+                foreach ($_SESSION['cartItem'] as $item){
+                    $productID = $item['productID'];
+                    $cartQuantity = $item['quantity'];
+                    $totalMoney = $item['quantity']*$item['unitPrice'];
+
+                    $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                    $resultInsertCart = $conn ->query($sqlInsertCart);
+                }
             }
         }
     }
-}
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

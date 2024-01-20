@@ -56,3 +56,5 @@ for (let i = 0; i < totalPriceDisplay.length; i++) {
 
 
 
+
+
