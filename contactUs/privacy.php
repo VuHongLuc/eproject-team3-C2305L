@@ -12,9 +12,7 @@
             text-align: center;
         }
 
-        .contact-img {
-            width: 100%;
-        }
+
         .my-3 {
             font-weight: bold;
         }
@@ -40,72 +38,74 @@
 <body>
     <?php include '../home/navbar.php'; ?>
 
-    <div class="wrapper container-fluid">
-        <div class="container col-inner textDecreption text-justify  ">
-            <h1 class="my-5 p-2 text-center">PRIVACY POLICY</h1>
+    <div class="wrapper container-fluid ">
+        <div class="container col-inner textDecreption text-justify ">
+            <h1 class="my-3 text-center">PRIVACY POLICY</h1>
 
             <h3 class="my-3 ">General Rules</h3>
-            <p>OceanGate wishes to bring you a better solution for aluminum door systems, wooden doors, and glass doors at reasonable prices thanks to the support of the online marketing system,</p>
-            <p>OceanGate knows clearly that no one wants to share their personal information with anyone else. Kingston respects your privacy, all personal information when you transact with us is 100% confidential, and is not passed on to any other third party.</p>
-            <p>Ultimately, OceanGate does not make a profit through the sale of Your information, ever, without exception!</p>
+            <p>OceanGate is dedicated to providing enhanced solutions for aluminum door systems, wooden doors, and glass doors at reasonable prices, backed by a robust online marketing system.</p>
+            <p>Understanding the significance of privacy, OceanGate emphasizes that personal information is treated with the utmost confidentiality. The company ensures that any information shared during transactions remains 100% confidential and is not disclosed to any third party.</p>
+            <p>OceanGate steadfastly upholds a policy where it does not derive profit from the sale of customer information, maintaining a commitment to safeguarding privacy without exception.</p>
             <img src="https://www.hikvision.com/content/hikvision/en/newsroom/blog/how-to-balance-your-data-privacy-requirements-with-effective-video-security/_jcr_content/root/responsivegrid/image.coreimg.100.1280.jpeg/1618474794518/how-to-balance-your-data-privacy-requirements-with-effective-video-security-banner.jpeg" alt="OceanGate Technology" class="col-lg-6 mx-auto d-block my-3 textDecreption">
-            <p>The OceanGate Corporation is committed to safeguarding the personal information of its customers with utmost importance and high responsibility. Our information security policy is designed to ensure the safety, security, and positive management of customer information related to the purchase of computer component products.</p>
+            <p>Moreover, OceanGate Corporation places a high priority on securing the personal information of its customers. The information security policy is meticulously designed to ensure the safety, security, and responsible management of customer information, particularly in the context of purchasing computer component products.</p>
 
 
             <h3 class="my-3 ">Scope and Purpose of Data Collection</h3>
             <div>
 
-                <p>At OceanGate, we take your privacy seriously. Our data collection practices are designed to enhance your experience while ensuring the utmost security and confidentiality of your personal information. We believe in transparency and want to provide you with a clear understanding of why and how we collect your data.</p>
-
-                <p>When you engage with OceanGate, we collect information with the primary goal of improving our services, offering personalized experiences, and maintaining a secure and efficient platform for your transactions. The scope of data collection includes, but is not limited to, the following purposes:</p>
+                <p>At OceanGate, we prioritize your privacy and have developed data collection practices that aim to enhance your experience while ensuring the security and confidentiality of your personal information. </p>
+                <p>Transparency is important to us, and we want to provide you with a clear understanding of why and how we collect your data.</p>
+                <p>When you interact with OceanGate, we gather information with the primary objective of improving our services, offering personalized experiences, and maintaining a secure and efficient platform for your transactions. Our data collection encompasses various purposes, including:</p>
 
                 <ol>
-                    <li><strong>Order Processing:</strong> The information you provide allows us to process your orders efficiently. This includes order confirmation, tracking, and ensuring timely delivery of your purchases.</li>
+                    <li><strong>Order Processing:</strong> The information you provide enables us to process your orders efficiently, confirming orders, providing tracking information, and ensuring the timely delivery of your purchases.</li>
 
-                    <li><strong>Payment Management:</strong> We collect necessary details to facilitate secure payment transactions, protecting both you and OceanGate from potential fraud or unauthorized activities.</li>
+                    <li><strong>Payment Management:</strong> We collect necessary details to facilitate secure payment transactions, safeguarding both you and OceanGate from potential fraud or unauthorized activities.</li>
 
-                    <li><strong>Communication:</strong> Your contact information enables us to communicate important updates, promotions, and relevant information related to your transactions with OceanGate. We respect your communication preferences and provide options for opting in or out of promotional communications.</li>
+                    <li><strong>Communication:</strong> Your contact information allows us to communicate important updates, promotions, and relevant information related to your transactions with OceanGate. We respect your communication preferences and provide options for opting in or out of promotional communications.</li>
 
-                    <li><strong>Enhancing User Experience:</strong> Analyzing customer data helps us understand your preferences and tailor our website to provide a more personalized and user-friendly experience. This includes optimizing content, recommending products of interest, and improving navigation.</li>
+                    <li><strong>Enhancing User Experience:</strong> Analyzing customer data helps us understand your preferences, tailoring our website to offer a more personalized and user-friendly experience. This includes optimizing content, recommending products of interest, and improving navigation.</li>
 
                     <li><strong>Security and Fraud Prevention:</strong> We employ advanced security measures to protect your data from unauthorized access. Analyzing patterns and detecting anomalies in data helps us identify and prevent fraudulent activities.</li>
 
-                    <li><strong>Legal Compliance:</strong> In some cases, we may be required to collect and process data to comply with legal obligations, such as tax regulations or government requests.</li>
+                    <li><strong>Legal Compliance:</strong> In some instances, we may need to collect and process data to comply with legal obligations, such as tax regulations or government requests.</li>
 
                 </ol>
-                <p>It's important to note that the information collected is limited to what is necessary for the specific purposes mentioned above. OceanGate is committed to minimizing data collection and ensuring that your personal information is handled responsibly and ethically.</p>
-                <p>We continuously review and update our data collection practices to align with evolving privacy standards and regulations. If you have any concerns or questions regarding the scope and purpose of data collection, please do not hesitate to reach out to our Customer Care Center.</p>
+                <p>It's crucial to note that the information collected is limited to what is necessary for the specific purposes mentioned above. OceanGate is committed to minimizing data collection and handling your personal information responsibly and ethically.</p>
+                <p>We continuously review and update our data collection practices to align with evolving privacy standards and regulations. If you have any concerns or questions regarding the scope and purpose of data collection, please don't hesitate to reach out to our Customer Care Center. Your satisfaction and trust are of utmost importance to us.</p>
 
                 <h3 class="my-3 ">Information Storage Policy</h3>
-                <p>Ensuring the security and responsible management of your personal information is a top priority at OceanGate. Our Information Storage Policy outlines the practices and measures we have in place to safeguard the data you entrust to us. Please take a moment to understand how we handle the storage of your information:</p>
+                <p>At OceanGate, the security and responsible management of your personal information are paramount. Our Information Storage Policy outlines the practices and measures implemented to safeguard the data entrusted to us. Please take a moment to understand how we handle the storage of your information:</p>
 
                 <ol>
-                    <li><strong>Secure Storage:</strong> Your provided information is stored in secure databases and servers with advanced encryption protocols. This ensures that your data remains confidential and protected from unauthorized access.</li>
+                    <li><strong>Secure Storage:</strong> Your provided information is stored in secure databases and servers equipped with advanced encryption protocols. This ensures the confidentiality and protection of your data from unauthorized access.</li>
 
-                    <li><strong>Retention Period:</strong> We retain your information for a period necessary to fulfill the purposes outlined in our Privacy Policy. Once the retention period expires or if you request the removal of your data, we ensure secure and permanent deletion from our systems.</li>
+                    <li><strong>Retention Period:</strong> We retain your information for a period necessary to fulfill the purposes outlined in our Privacy Policy. Upon expiration of the retention period or upon your request for data removal, we ensure secure and permanent deletion from our systems.</li>
 
-                    <li><strong>User Control:</strong> You have the control to manage your information stored with OceanGate. Through your account settings, you can review, update, or delete your personal details. Additionally, you can contact our Customer Care Center for assistance with any data-related queries.</li>
+                    <li><strong>User Control:</strong> ou have control over your information stored with OceanGate. Through your account settings, you can review, update, or delete your personal details. Our Customer Care Center is also available to assist with any data-related queries.</li>
 
-                    <li><strong>Data Backup:</strong> To prevent data loss, we regularly back up our databases. This ensures the availability of your information even in the unlikely event of technical issues or system failures.</li>
+                    <li><strong>Data Backup:</strong> To prevent data loss, we regularly back up our databases. This practice ensures the availability of your information even in the unlikely event of technical issues or system failures.</li>
 
-                    <li><strong>Third-Party Services:</strong> In some instances, OceanGate may utilize third-party services for data storage. In such cases, we carefully select reputable partners who adhere to stringent security and privacy standards to maintain the integrity of your information.</li>
+                    <li><strong>Third-Party Services:</strong> On occasion, OceanGate may utilize third-party services for data storage. In such instances, we carefully select reputable partners adhering to stringent security and privacy standards to maintain the integrity of your information.</li>
 
-                    <li><strong>Continuous Security Evaluation:</strong> We conduct regular security assessments and audits to identify and address potential vulnerabilities. Our commitment to continuous improvement ensures that our information storage practices remain in line with industry best practices.</li>
+                    <li><strong>Continuous Security Evaluation:</strong> We conduct regular security assessments and audits to identify and address potential vulnerabilities. Our commitment to continuous improvement ensures that our information storage practices align with industry best practices.</li>
                 </ol>
 
-                <p>We believe in transparent communication, and we want you to feel confident about the safety of your data. If you have any specific questions or concerns about our Information Storage Policy, please do not hesitate to contact our Customer Care Center for further clarification.</p>
+                <p>We believe in transparent communication, and it is our goal to instill confidence in the safety of your data. If you have specific questions or concerns about our Information Storage Policy, please feel free to contact our Customer Care Center for further clarification. Your privacy and satisfaction are of utmost importance to us.</p>
 
-                <h3 class="my-3 ">Your Benefits</h3>
-                <p>You have the right to provide personal information to Kingston and can change your decision at any time.</p>
-                <p>You have the freedom to check, update, and adjust your personal information by logging into your account and editing your personal information or asking us to do this.</p>
-
+                <h3 class="my-3 ">Your Benefits with OceanGate</h3>
+                <p>At OceanGate, we recognize and respect your right to provide personal information, and we understand that your preferences may change over time. We want to assure you of the following benefits:</p>
+                <ol>
+                    <li><strong>Freedom to Provide Information:</strong> You have the right to provide personal information to OceanGate, and you are in control of this decision. Your choice is respected, and you can change your decision at any time.</li>
+                    <li><strong>Personal Information Management:</strong> OceanGate values transparency and provides you with the freedom to check, update, and adjust your personal information. You can conveniently do this by logging into your account and editing your personal details. Alternatively, feel free to ask us for assistance, and we'll be happy to help.</li>
+                </ol>
+                <p>We believe in empowering you with control over your personal information, ensuring a secure and customizable experience. If you have any questions or require further assistance, please don't hesitate to reach out to our Customer Care Center. Your satisfaction and peace of mind are important to us.</p>
+               
                 <h3 class="my-3 ">Contact Info</h3>
 
                 <div class="contact-info">
-                    <div class="contact-img d-flex justify-content-center">
-                        <img src="../Photos/Logo/support.avif" alt="OceanGate Contact" class="contact-image">
-                    </div>
-                    <p>If you have any questions or need assistance, please feel free to reach out to the OceanGate Customer Care Center. Our dedicated team is here to help you, you may contact the OceanGate Customer Care Center at:</p>
+                    <img src="../Photos/Logo/support.avif" alt="OceanGate Contact" class="contact-image">
+                    <p>If you have any questions or need assistance, please feel free to reach out to the OceanGate Customer Care Center. Our dedicated team is here to help you, and you may contact the OceanGate Customer Care Center using the following:</p>
 
                     <ul class="list-unstyled">
                         <li><strong>Email:</strong> <a href="../index/index.php" class="custom-link bold-link">OceanGate@oceangate.com.vn</a></li>

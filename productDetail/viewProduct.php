@@ -75,7 +75,7 @@
                                 <button type="submit" name="addToCart" class="btn btn-add col-lg-5 col-md-12 col-sm-12 col-12  text-dark fw-bold my-1">
                                     Add to cart
                                 </button>
-                                <button type="button" class="btn btn-buy bg-red col-lg-5 col-md-12 col-sm-12 col-12 text-white fw-bold my-1">Buy now</a></button>
+                                <button type="submit" name="buyNow" class="btn btn-buy bg-red col-lg-5 col-md-12 col-sm-12 col-12 text-white fw-bold my-1">Buy now</a></button>
                             </div>
                             <div class="d-flex justify-content-center">
                                 <button type="button" class="btn btn-contact text-white fw-bold col-lg-12 col-md-12 col-12 col-sm-12 col-12 my-1"><a href="../contactUs/contact.php" class="list-group-item font-size-sm">Contact for better price</a></button>
@@ -166,10 +166,10 @@
 
                 <!-- Feedback -->
                 <div class="product-feeback col-lg-12">
-                    <form action="" method="get" class="d-flex flex-wrap ">
+                    <form action="" method="POST" class="d-flex flex-wrap ">
                         <label for="" class="fw-bold col-lg-12 p-1 my-2">Customer feedback</label>
                         <textarea  placeholder="Your feedback..." name="message" class="product-text-feedback col-lg-12 p-4 my-2" id="myTextArea"></textarea>
-                        <button type="submit" class="btn btn-danger"><a href="#" class="list-group-item">Send</a></button>
+                        <button type="submit" name="sendFeedback" class="btn btn-danger"><a href="#" class="list-group-item">Send</a></button>
                     </form>
                 </div>
         </div>
@@ -180,8 +180,20 @@
  <?php } ?> 
 
     <!-- Lưu feedback vào database -->
+            <?php if (isset($_POST['sendFeedback'])){
+                if(isset($_SESSION['userName'])) {
+                    if (!empty($_POST['message'])){
+                        $productID = $_GET['productID'];
+                        
 
-       
+                    }else{
+                        echo "<p class='text-danger'>Empty message</p>";
+                    }
+                }else {
+                    echo "<p class='text-danger'>You need to log in!</p>";
+                }
+            }
+       ?>
 
 
     <!-- footer -->

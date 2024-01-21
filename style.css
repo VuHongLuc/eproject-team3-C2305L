@@ -62,21 +62,16 @@ body{
 nav {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
-.search-btn{
-    height: 43px;
 
-
-}
 /* Hưng */
    /* Styling for the footer section */
    .footer-section-container {
     bottom: 0;
     left: 0;
     right: 0;
-    justify-content: space-around; /* Canh giữa theo chiều ngang các phần tử trong footer */
-    background-color: #000; /* Nền đen cho phần footer */
+    justify-content: space-around; /* CĂN giữa theo chiều ngang các phần tử trong footer */
     display: flex;
-    background-color: #000; /* Nền đen cho phần footer */
+    background-color: #000;
     padding: 20px; /* Khoảng cách lề phần footer */
 }
 
@@ -84,12 +79,12 @@ nav {
 .footer-section {
     width: 20%;
     text-align: left; /* Canh trái nội dung trong footer */
-    color: #fff; /* Chữ màu trắng */
+    color: #fff;
 }
 
 /* Styling for h2 elements inside the footer section */
 .footer-section h2 {
-    color: #fff; /* Chữ màu trắng */
+    color: #fff; 
     font-size: 27px;
     position: relative;
 }
@@ -108,7 +103,7 @@ nav {
 
 /* Styling for p and a elements inside the footer section */
 .footer-section p, .footer-section a {
-    color: #fff !important; /* Chữ màu trắng */
+    color: #fff !important;
     display: block;
     position: relative;
     margin:0;
@@ -116,7 +111,7 @@ nav {
 }
 
 .footer-section a:hover {
-    color: red !important; /* Change the text color to red on hover */
+    color: red !important;
 }
 
 /* Styling for the map container */
@@ -134,11 +129,8 @@ nav {
 
 /* Styling for anchor elements inside the button container */
 .button-container a {
-    color: #fff; /* Chữ màu trắng */
+    color: #fff;
 }
-
-
-
 
 
 
@@ -168,14 +160,17 @@ nav {
 
 }
 .main-menu_categories, .main-menu_brands{
-    width: 1350px;  
+    width: 1350px;   
 }
 .main-menu_name {
    
     font-size: 25.6px;
     font-weight: 700;
 }
+.category-menu {
+    padding: 12px;
 
+}
 
 .menu-item {
     height: 180px;
@@ -238,6 +233,7 @@ nav {
 .wrapper {
     background-color: #E7E7E7;
     max-width: 100%;
+    padding: 30px;
 
 }
 
@@ -273,7 +269,6 @@ nav {
     height: 25px;
     width: 25px;
     color: red;
-    /* border: 2px solid red; */
     border-radius: 50%;
 }
 

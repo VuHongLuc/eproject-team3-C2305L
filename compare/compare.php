@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-</head>
-<body>
     <?php include '../home/navbar.php'; ?>
 
     <div class="wrapper container-fluid">
-        <br>
         <div class="container col-inner">
-            <h2 class="text-uppercase text-center">COMPARE</h2>
+            <h2 class="text-uppercase text-center">PRODUCT COMPARISON</h2>
             <div class="row">
                 <div class="col-md-1"></div>
                 <?php
@@ -126,13 +116,12 @@
             </div>
             <?php }
             else {
-                Echo "<h4 class='text-uppercase text-center'>DATA NOT FOUND!</h4>";
+                Echo "<i class='text-center fa-solid fa-scale-balanced' style='font-size: 300px;color: lightgray;'></i>
+                                <p class='text-center '>Your comparison page is empty, please choose products to compare.</p>
+                                <a href='../index/index.php' class='text-center list-group-item' ><button class='btn btn-success'><i class='fa-solid fa-arrow-left mx-1'></i>Select product</button></a>";
             } ?>
         </div>
     </div>
+    </div>
 
     <?php include '../home/footer.html'; ?>
-
-    
-</body>
-</html>

@@ -27,7 +27,7 @@ if (!empty($_POST['username']) && !empty($_POST['password'])
 
     if ($result === TRUE) {
         echo '<script>alert("Successfully Register")</script>';
-        header('Refresh: 3; URL = login.php');
+        header('Refresh: 1; URL = login.php');
     } else {
         echo "Fail Register";
     }

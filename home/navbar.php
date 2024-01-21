@@ -7,7 +7,7 @@ include("../db.php");
             $_SESSION['cartItem'] = [];
         }
        
-    //Xử lý adđ to cart được nhấn
+    //CLICK "ADD TO CART" IN PRODUCT DETAIL PAGE
     if(isset($_POST['addToCart'])) {
 
         if (!isset($_SESSION['userName'])) {
@@ -49,13 +49,87 @@ include("../db.php");
                 }
             }
             if ($flag) {
+                
                 $_SESSION['cartItem'][] = $productCart;
-                // insert to carts
-              
+
+                //INSERT INTO CART
+                if (!empty($_SESSION['cartItem'])){
+
+                    foreach ($_SESSION['cartItem'] as $item){
+                        $productID = $item['productID'];
+                        $cartQuantity = $item['quantity'];
+                        $totalMoney = $item['quantity']*$item['unitPrice'];
+
+                        $sqlInsertCart = "TRUNCATE TABLE `eproject`.`carts`; INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`)
+                        VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                        $resultInsertCart = $conn ->query($sqlInsertCart);
+                    }
+                }
+
             }
         }
     }
 }
+
+
+//CLICK "BUY NOW" IN PRODUCT DEATAIL PAGE
+if(isset($_POST['buyNow'])) {
+
+    if (!isset($_SESSION['userName'])) {
+        // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+        $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
+        header("Location: ../login/login.php");
+        exit(); 
+    }else {
+        $_SESSION['cartNumber']++;
+        $userName = $_SESSION["userName"];
+        $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+        $resultUserID = $conn ->query($sqlUseerID);
+
+        $userID = null;
+
+            if ($resultUserID && $resultUserID->num_rows > 0) {
+                while ($row = $resultUserID->fetch_assoc()) {
+                    
+                    $userID = $row['userID'];
+                }
+
+        $productCart = array(
+            'productID' => $_POST['productID'],
+            'productName' => $_POST['productName'],
+            'imageLink' => $_POST['imageLink'],
+            'quantity' => $_POST['quantity'],
+            'unitPrice' => $_POST['unitPrice'],
+            'userID' => $userID
+        );
+
+    //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
+        
+        $flag =true;
+        foreach ($_SESSION['cartItem'] as &$item){
+            if ($item['productID'] == $_POST['productID']){
+                $item['quantity'] += $_POST['quantity'];
+                $_SESSION['cartNumber']--;
+                $flag =false;
+            }
+        }
+        if ($flag) {
+            $_SESSION['cartItem'][] = $productCart;
+            //INSERT INTO CART
+            $productID = $_POST['productID'];
+            $cartQuantity = $_POST['quantity'];
+            $totalMoney = $_POST['quantity']*$_POST['unitPrice'];
+
+            $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`)
+            VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+            $resultInsertCart = $conn ->query($sqlInsertCart);
+          
+        }
+    }
+    header("Location:../productDetail/viewCart.php");
+}
+}
+
 
     // Khởi tạo biến numberCompare nếu chưa tồn tại
     if (!isset($_SESSION['numberCompare'])) {
@@ -63,7 +137,7 @@ include("../db.php");
         $_SESSION['compareItems'] = [];
     }
 
-    // Xử lý khi nút "COMPARE" được nhấn
+    // CLICK "COMPARE"
     if (isset($_POST['compareButton'])) {
         //Nếu số sản phẩm so sánh < 3
         if ($_SESSION['numberCompare'] < 3 ){
@@ -113,13 +187,24 @@ include("../db.php");
             </div>
           </div>
         </div>";
-    //Xử lý việc sửa số lượng trong page CART thì sẽ thay đổi số lượng trong page CHECKOUT
+
+
+    //CLICK "CHECKOUT" IN CART PAGE
         if (!isset($_SESSION['checkoutItems'])) {
             $_SESSION['checkoutItems'] = [];
         }
         
         if (isset($_POST["submitCheckout"])) {
             $_SESSION['checkoutItems'] = [];
+            $userName = $_SESSION["userName"];
+            $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+            $resultUserID = $conn ->query($sqlUseerID);
+
+            // $userID = null;
+
+            while ($row = $resultUserID->fetch_assoc()) {
+                $userID = $row['userID'];
+            };
             for ($i = 0; $i < count($_SESSION['cartItem']); $i++) {
 
                 $checkoutItem = array(
@@ -130,20 +215,94 @@ include("../db.php");
                     "unitPrice" => $_POST["unitPrice$i"],
                     "userID" => $_POST["userID$i"]
                 );
-                // Xử lý việc trùng sản phẩm khi đã thêm vào checkout từ trước
-                foreach ($_SESSION['checkoutItems'] as $key => &$item) {
-                    if ($checkoutItem["productID"] == $item["productID"]) {
-                        unset($_SESSION['checkoutItems'][$key]);
-                    }
-                }
-                //Thêm sp vào SESSION
+                //add a new product into SESSION
                 $_SESSION['checkoutItems'][] = $checkoutItem;
             }
+
+                //INSERT INTO CART
+                if (!empty($_SESSION['cartItem'])){
+                    $truncateTableCart = "TRUNCATE TABLE `eproject`.`carts`;";
+                    $resultTruncateTableCart = $conn ->query($truncateTableCart);
+    
+                    foreach ($_SESSION['checkoutItems'] as $item){
+                        $productID = $item['productID'];
+                        $cartQuantity = $item['quantity'];
+                        $totalMoney = $item['quantity']*$item['unitPrice'];
+    
+                        $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                        $resultInsertCart = $conn ->query($sqlInsertCart);
+                    }
+                }
+
             header("Location: viewCheckout.php");
         }
+
+    //CLICK "ADD TO CART" IN LIST PRODUCT PAGES
+    if(isset($_POST['addToCartButton'])) {
+
+        if (!isset($_SESSION['userName'])) {
+            // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            $_SESSION['previous_page'] = $_SERVER['REQUEST_URI'];
+            header("Location: ../login/login.php");
+            exit(); 
+        }else {
+            $_SESSION['cartNumber']++;
+            $userName = $_SESSION["userName"];
+            $sqlUseerID = "SELECT userID FROM user WHERE userName = '$userName'";
+            $resultUserID = $conn ->query($sqlUseerID);
+
+            // $userID = null;
+
+            while ($row = $resultUserID->fetch_assoc()) {
+                $userID = $row['userID'];
+            };
+
+            $productCart = array(
+                'productID' => $_POST['productID'],
+                'productName' => $_POST['productName'],
+                'imageLink' => "../".$_POST['imageLink'],
+                'quantity' => 1,
+                'unitPrice' => $_POST['unitPrice'],
+                'userID' => $userID
+            );
+
+        //Check if the product is already in the cart, then increase the quantity in the cart, not add a new product
+            
+            $flag =true;
+            foreach ($_SESSION['cartItem'] as &$item){
+                if ($item['productID'] == $_POST['productID']){
+                    $item['quantity'] += 1;
+                    $_SESSION['cartNumber']--;
+                    $flag =false;
+                }
+            }
+            unset($item); // Hủy tham chiếu của biến $item
+            if ($flag) {
+                $_SESSION['cartItem'][] = $productCart; //add a new product into SESSION
+            }
+                //INSERT INTO CART
+            if (!empty($_SESSION['cartItem'])){
+                $truncateTableCart = "TRUNCATE TABLE `eproject`.`carts`;";
+                $resultTruncateTableCart = $conn ->query($truncateTableCart);
+
+                foreach ($_SESSION['cartItem'] as $item){
+                    $productID = $item['productID'];
+                    $cartQuantity = $item['quantity'];
+                    $totalMoney = $item['quantity']*$item['unitPrice'];
+
+                    $sqlInsertCart = "INSERT INTO `eproject`.`carts` (`cartID`, `productID`, `cartCode`, `userID`, `cartQuantity`, `totalMoney`) VALUES (DEFAULT,'$productID', '1', '$userID','$cartQuantity','$totalMoney')";
+                    $resultInsertCart = $conn ->query($sqlInsertCart);
+                }
+            }
+        }
+    }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,15 +326,15 @@ include("../db.php");
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav m-auto font-size-25">
                     <li class="nav-item m-3">
-                        <a class="nav-link fw-bold" href="../index/index.php">HOME</a>
+                        <a class="nav-link fw-bold" id="home" href="../index/index.php">HOME</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/company.php">COMPANY</a>
+                        <a class="nav-link fw-bold" id="company" href="../contactUs/company.php">COMPANY</a>
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle fw-bold" id="category" href="#" id="navbarDropdown"
+                            role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             CATEGORIES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownCate">
@@ -185,12 +344,12 @@ include("../db.php");
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=4">Memory Card</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=5">RAM</a>
                             <a class="dropdown-item" href="../listPage/viewListCategory.php?category=6">Portable Hard
-                                Driver</a>
+                                Drive</a>
                         </div>
                     </li>
 
                     <li class="nav-item  m-3 dropdown">
-                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="navbarDropdownBrand"
+                        <a class="nav-link dropdown-toggle fw-bold" id="brand" href="" id="navbarDropdownBrand"
                             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             BRAND
                         </a>
@@ -205,20 +364,20 @@ include("../db.php");
                     </li>
 
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/privacy.php">PRIVACY</a>
+                        <a class="nav-link fw-bold" id="privacy" href="../contactUs/privacy.php">PRIVACY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/shippingPayment.php">SHIPPING
+                        <a class="nav-link fw-bold" id="shipping" href="../contactUs/shippingPayment.php">SHIPPING
                             PAYMENT</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
+                        <a class="nav-link fw-bold" id="warranty" href="../contactUs/warrantyPolicy.php">WARRANTY</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../news/news.php">NEWS</a>
+                        <a class="nav-link fw-bold" id="news" href="../news/news.php">NEWS</a>
                     </li>
                     <li class="nav-item  m-3">
-                        <a class="nav-link fw-bold" href="../contactUs/contact.php">CONTACT</a>
+                        <a class="nav-link fw-bold" id="contact" href="../contactUs/contact.php">CONTACT</a>
                     </li>
                 </ul>
 
@@ -310,36 +469,7 @@ include("../db.php");
         };
 
 
-        //Animation for navbar when click
-        // document.addEventListener("DOMContentLoaded", function () {
-        //     // Lấy tất cả các thẻ a có class "nav-link"
-        //     var navLinks = document.querySelectorAll('.nav-link');
-
-        //     // Lặp qua từng thẻ a và thêm sự kiện click
-        //     navLinks.forEach(function (link) {
-        //         link.addEventListener('click', function (event) {
-        //             // Loại bỏ class 'text-danger' từ tất cả các thẻ a
-        //             navLinks.forEach(function (innerLink) {
-        //                 innerLink.classList.remove('text-danger');
-        //             });
-
-        //             // Thêm class 'text-danger' vào thẻ a được click
-        //             this.classList.add('text-danger');
-
-        //             // Lưu trạng thái vào localStorage
-        //             localStorage.setItem('selectedNavLink', this.getAttribute('href'));
-        //         });
-        //     });
-
-        //     // Kiểm tra xem có trạng thái đã lưu hay không
-        //     var selectedNavLink = localStorage.getItem('selectedNavLink');
-        //     if (selectedNavLink) {
-        //         // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
-        //         document.querySelector('a[href="' + selectedNavLink + '"]').classList.add('text-danger');
-        //     }
-        // });
-
-
+        //Xử lý việc click vào content nào trong navbar thì sẽ highlight màu đỏ
         document.addEventListener("DOMContentLoaded", function () {
             // Lấy tất cả các thẻ a có class "nav-link"
             var navLinks = document.querySelectorAll('.nav-link');
@@ -356,7 +486,7 @@ include("../db.php");
                     this.classList.add('text-danger');
 
                     // Lưu trạng thái vào localStorage
-                    localStorage.setItem('selectedNavLink', this.getAttribute('href'));
+                    localStorage.setItem('selectedNavLink', this.getAttribute('id'));
                 });
             });
 
@@ -364,7 +494,7 @@ include("../db.php");
             var selectedNavLink = localStorage.getItem('selectedNavLink');
             if (selectedNavLink) {
                 // Thêm class 'text-danger' vào thẻ a tương ứng với trạng thái đã lưu
-                var selectedLink = document.querySelector('a[href="' + selectedNavLink + '"]');
+                var selectedLink = document.querySelector('a[id="' + selectedNavLink + '"]');
                 if (selectedLink) {
                     selectedLink.classList.add('text-danger');
                 } else {
@@ -380,4 +510,5 @@ include("../db.php");
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

@@ -4,7 +4,7 @@
         if(empty($_SESSION['cartItem'])){
     ?>
 
-        <div class="view-cart-empty m-3 p-3 d-flex justify-content-center">
+        <div class="view-cart-empty p-3 d-flex justify-content-center">
             <div class="view-cart-details p-3 m-3">
                 <h1 class="text-center p-1 m-4">Cart</h1>
                 <table class="table aligh-middle">
@@ -12,12 +12,12 @@
                         <th scope="col" class="">Product</th>
                         <th scope="col" class="">Price</th>
                         <th scope="col" class="">Quantity</th>
-                        <th scope="col" class="">Money</th>
+                        <th scope="col" class="">Total</th>
                     </tr>
                     <tr>
                         <td colspan="4" class="text-center ">
                             <i class="fa-solid fa-cart-shopping icon-cart m-2"></i>
-                            <p class="">There are no items in the cart. Choose to buy at least one product to continue!!</p>
+                            <p class="">Your cart is empty.</p>
                             <a href="../index/index.php" class="list-group-item" ><button class="btn btn-danger"><i class="fa-solid fa-arrow-left mx-1"></i>Select product</button></a>
                         </td>
                     </tr>
@@ -26,7 +26,7 @@
         </div>
 
     <?php }else { ?>
-    <div class="view-cart d-flex justify-content-center py-4">
+    <div class="view-cart d-flex justify-content-center py-5">
         <div class="view-cart-details  p-4">
             <h1 class="">Cart</h1>
             <form action="" method="post">
@@ -35,7 +35,7 @@
                     <th scope="col" class="">Product</th>
                     <th scope="col" class="">Price</th>
                     <th scope="col" class="">Quantity</th>
-                    <th scope="col" class="">Money</th>
+                    <th scope="col" class="">Total</th>
                 </tr>
                 <?php
                     $totalCart = 0;

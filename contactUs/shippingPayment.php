@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <title>SHIPPING AND PAYMENT</title>
+    <title>DELIVERY AND PAYMENT</title>
     <style>
         .container h1 {
             text-align: center;
@@ -53,44 +53,44 @@
     <div class="wrapper container-fluid">
         <div class="container col-inner textDecreption">
 
-            <h1 class="my-5">SHIPPING AND PAYMENT</h1>
+            <h1 class="my-3">DELIVERY AND PAYMENT</h1>
 
-            <h3 class="my-3">Shipping</h3>
+            <h3 class="my-3">Delivery information</h3>
 
-            <p><strong>Shipping with in Hanoi City:</strong></p>
+            <p><strong>Within Hanoi City:</strong></p>
             <ul>
-                <li>We transport and deliver goods exactly on time, with absolute safety.</li>
-                <li>Shipping and delivery fees range from 3$-10$, depending on location.</li>
+                <li>We guarantee timely and secure transportation and delivery of goods within Hanoi City.</li>
+                <li>Shipping and delivery fees range from $3 to $10, depending on the location.</li>
                 <li>Free shipping may be applicable for multiple products.</li>
-                <li>Delivery staff will contact customers in advance to schedule delivery.</li>
+                <li>Our delivery staff will proactively contact customers in advance to schedule delivery.</li>
                 <li>We ensure that goods are delivered safely in their original packaging.</li>
             </ul>
 
-            <p><strong>Shipping to other provinces and cities:</strong></p>
+            <p><strong>Shipping to Other Provinces and Cities:</strong></p>
             <ul>
-                <li>After packaging, we provide customers with a bill of lading code for tracking.</li>
-                <li>Shipping costs range from 10$-20$, depending on size.</li>
-                <li>Delivery staff will contact customers to schedule delivery.</li>
-                <li>We ensure safe delivery in the original packaging.</li>
+                <li>Upon packaging, customers will receive a bill of lading code for easy tracking.</li>
+                <li>Shipping costs vary between $10 and $20, depending on the size of the shipment.</li>
+                <li>Our delivery staff will communicate with customers to arrange a convenient delivery schedule.</li>
+                <li>We guarantee the safe delivery of goods in their original packaging.</li>
             </ul>
-
-            <h3 class="my-3">Payment</h3>
+            <p>For any inquiries or further assistance regarding shipping, feel free to reach out to our OceanGate Customer Care Center. Your satisfaction and the safety of your deliveries are our top priorities.</p>
+            <h3 class="my-3">Payment Information</h3>
 
             <p><strong>Payment via bank account:</strong></p>
-            <p>In case the customer wants to pay first and receive the goods later, please transfer to the following bank account:</p>
+            <p>If you prefer to make payment first and receive the goods later, kindly transfer the payment to the following bank account:</p>
 
             <div class="bank-info">
                 <p><strong>Bank Account:</strong> 19036828310118 <strong>TECHCOMBANK</strong></p>
             </div>
             <div>
-                <p>Or<strong> QR</strong> Code:</p>
+                <p>Or, you can use the provided<strong> QR</strong> Code:</p>
                 <img src="../Photos/Logo/QR.jpg" alt="OceanGate Technology" class="col-lg-6 mx-auto d-block my-3 textDecreption">
             </div>
 
             <p><strong><span style="color: #dc3545; font-style: italic;">Note:</span></strong> Any account not updated above is void for payment.</p>
 
             <div class="contact-info">
-                <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm.</p>
+                <p>Please notify us by phone at <strong>1800 1141</strong> after a successful transfer to confirm your payment. Your prompt confirmation allows us to efficiently process your order and ensures a smooth transaction. If you have any questions or require further assistance, feel free to contact the OceanGate Customer Care Center. Thank you for choosing OceanGate!</p>
             </div>
         </div>
     </div>
