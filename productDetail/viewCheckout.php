@@ -131,7 +131,7 @@ if (isset($_SESSION["userName"])){
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="address">Address:</label>
-            <textarea class="p-3" id="address" name="address" placeholder="Please enter your delivery address...." required oninput="checkInput()"><?php echo $userAddress ?></textarea>
+            <textarea class="p-3" id="address" name="address" placeholder="Please enter your delivery address...." required oninput="checkInput()"></textarea>
         </div>
         <input type="hidden" name="userID" value="<?php echo $userID;  ?>">
         <div class="d-flex justify-content-center ">
