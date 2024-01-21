@@ -50,7 +50,7 @@ if (isset($_SESSION["userName"])){
           Payment success <i class='fa-solid fa-check'></i>
           </div>
           <div class='modal-footer'>
-            <a href='completeCheckout.php' class='btn btn-success'>Close</a>
+            <a href='checkoutCompleted.php' class='btn btn-success'>Close</a>
           </div>
         </div>
       </div>
@@ -100,18 +100,17 @@ if (isset($_SESSION["userName"])){
     </table>
     <div class="infor-user">
         <h3>Customer information</h3>
-        <form action="" method="post">
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="username">Username:</label>
-            <input class="p-2" type="text" id="username" name="username" value="<?php echo $userName ?>" required oninput="checkInput()">
+            <input class="p-2" type="text" id="username" name="username" value="<?php echo $userName ?>" required oninput="checkInput()" placeholder="Please enter you user name">
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="phoneNumber">Phone Number:</label>
-            <input class="p-2" type="tel" id="phoneNumber" name="phoneNumber" value="<?php echo $userPhone ?>" required oninput="checkInput()">
+            <input class="p-2" type="tel" id="phoneNumber" name="phoneNumber" value="<?php echo $userPhone ?>" required oninput="checkInput()" placeholder="Please enter you phone number">
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="email">Email:</label>
-            <input class="p-2" type="email" id="email" name="email" value="<?php echo $userEmail ?>" required oninput="checkInput()">
+            <input class="p-2" type="email" id="email" name="email" value="<?php echo $userEmail ?>" required oninput="checkInput()" placeholder="Please enter you email">
         </div>
         <div class="d-flex m-2 p-2 align-items-center">
                 <label class="p-2 text-lg" for="email">Payment Method:</label>
@@ -132,13 +131,12 @@ if (isset($_SESSION["userName"])){
         </div>
         <div class="d-flex m-2 p-2">
             <label class="p-2 text-lg" for="address">Address:</label>
-            <textarea class="p-3" id="address" name="address" value="" placeholder="Please enter your delivery address...." required oninput="checkInput()"></textarea>
+            <textarea class="p-3" id="address" name="address" placeholder="Please enter your delivery address...." required oninput="checkInput()"><?php echo $userAddress ?></textarea>
         </div>
         <input type="hidden" name="userID" value="<?php echo $userID;  ?>">
         <div class="d-flex justify-content-center ">
         <button type="submit" name="checkout" class="btn btn-danger checkOut list-group=item" id ="paymentButton" data-bs-toggle="modal" data-bs-target="#notifyPaymentSuccess">Payment</button>
         </div>
-        </form>
     </div>     
 </form>
 </div>
