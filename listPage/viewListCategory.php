@@ -124,10 +124,10 @@
                         <input type="hidden" name="dimension" value="<?php echo $row['dimension'];?>">
 
                         <!-- button ADD TO CART & COMPARE -->
-                        <div class="justify-content-between d-flex">
-                            <button type="submit" name="addToCartButton" class="btn btn-outline-danger fw-bold">ADD TO CART</button>
+                        <div class="d-flex">
+                            <button type="submit" name="addToCartButton" class="btn btn-outline-danger fw-bold mx-1">ADD TO CART</button>
                             <button type="submit" name="compareButton"
-                                class="btn btn-outline-secondary fw-bold compareButton" data-bs-toggle="modal"
+                                class="btn btn-outline-secondary fw-bold compareButton mx-1" data-bs-toggle="modal"
                                 data-bs-target="#notifyCompare">COMPARE</button>
                         </div>
                     </div>

@@ -111,10 +111,9 @@
 
 
                             <!-- button ADD TO CART & COMPARE -->
-                            <div class="justify-content-between d-flex">
-                                <!-- <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="btn btn-outline-danger fw-bold">ADD TO CART</a> -->
-                                <button type="submit" name="addToCartButton" class="btn btn-outline-danger fw-bold">ADD TO CART</button>
-                                <button type="submit" name="compareButton" class="btn btn-outline-secondary fw-bold compareButton" data-bs-toggle="modal" data-bs-target="#notifyCompare">COMPARE</button>
+                            <div class=" d-flex ">
+                                <button type="submit" name="addToCartButton" class="btn btn-outline-danger fw-bold mx-1">ADD TO CART</button>
+                                <button type="submit" name="compareButton" class="btn btn-outline-secondary fw-bold compareButton mx-1" data-bs-toggle="modal" data-bs-target="#notifyCompare">COMPARE</button>
                             </div>
                         </div>
                     </div>
@@ -123,7 +122,7 @@
         }
         ?>
         <div class="justify-content-center d-flex">
-        <a href="../listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="btn btn-danger home-btn-showmore ">SHOW MORE</a>
+            <a href="../listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="btn btn-danger home-btn-showmore ">SHOW MORE</a>
         </div>
         </div>
         </div>
