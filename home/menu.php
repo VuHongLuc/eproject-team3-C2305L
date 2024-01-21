@@ -8,12 +8,12 @@
 </head>
 
 <body>
-    <div id="main-menu" class="d-flex flex-wrap justify-content-center">
-        <div class="main-menu_categories p-3 ">
+    <div id="main-menu" class="container-fluid d-flex flex-wrap justify-content-center ">
+        <div class="main-menu_categories  p-4 ">
 
             <!-- <h1 class="main-menu_name text-center text-uppercase p-3 ">Categories</h1> -->
 
-            <div class="category-menu row text-center  d-flex flex-wrap justify-content-around">
+            <div class="category-menu row text-center  d-flex flex-wrap ">
 
                 <!-- List item of Categories -->
                 <div class="menu-item  col-lg-2 col-md-3 col-6 p-3  ">
@@ -41,13 +41,13 @@
                         <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Ram</p>
                     </a>
                 </div>
-                <div class="menu-item col-lg-2 col-md-4  col-6 p-3">
+                <div class="menu-item col-lg-2 col-md-3  col-6 p-3">
                     <a href="../listPage/viewListCategory.php?category=3" class="list-group-item">
                         <img src="../Photos\category\USB.jpg" alt="" class="menu-item_img m-1 ">
                         <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">USB</p>
                     </a>
                 </div>
-                <div class="menu-item col-lg-2 col-md-4  col-6 p-3">
+                <div class="menu-item col-lg-2 col-md-3  col-6 p-3">
                     <a href="../listPage/viewListCategory.php?category=6" class="list-group-item">
                         <img src="../Photos\category\PortableHardDrive.png" alt="" class="menu-item_img m-1 ">
                         <p class="menu-item_name m-1  font-weight_bold text-center text-uppercase padding ">Portal hard

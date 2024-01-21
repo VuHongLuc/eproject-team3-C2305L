@@ -12,7 +12,9 @@
             text-align: center;
         }
 
-
+        .contact-img {
+            width: 100%;
+        }
         .my-3 {
             font-weight: bold;
         }
@@ -38,9 +40,9 @@
 <body>
     <?php include '../home/navbar.php'; ?>
 
-    <div class="wrapper container-fluid ">
-        <div class="container col-inner textDecreption text-justify ">
-            <h1 class="my-3 text-center">PRIVACY POLICY</h1>
+    <div class="wrapper container-fluid">
+        <div class="container col-inner textDecreption text-justify  ">
+            <h1 class="my-5 p-2 text-center">PRIVACY POLICY</h1>
 
             <h3 class="my-3 ">General Rules</h3>
             <p>OceanGate wishes to bring you a better solution for aluminum door systems, wooden doors, and glass doors at reasonable prices thanks to the support of the online marketing system,</p>
@@ -100,7 +102,9 @@
                 <h3 class="my-3 ">Contact Info</h3>
 
                 <div class="contact-info">
-                    <img src="../Photos/Logo/support.avif" alt="OceanGate Contact" class="contact-image">
+                    <div class="contact-img d-flex justify-content-center">
+                        <img src="../Photos/Logo/support.avif" alt="OceanGate Contact" class="contact-image">
+                    </div>
                     <p>If you have any questions or need assistance, please feel free to reach out to the OceanGate Customer Care Center. Our dedicated team is here to help you, you may contact the OceanGate Customer Care Center at:</p>
 
                     <ul class="list-unstyled">

@@ -155,8 +155,8 @@ include("../db.php");
 </head>
 
 <body>
-    <div style="position: fixed; z-index: 10; width: 100%; height:101px; top: 0; left: 0;">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="fixed-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-white">
             <a class="navbar-brand" href="../index/index.php">
                 <img src="../Photos/Logo/logo.png" alt="Logo" width="125" height="75">
             </a>
@@ -230,9 +230,8 @@ include("../db.php");
                         <form id="searchForm" onsubmit="redirectToSearch(); return false;" method="GET" class="d-flex">
                             <input class="form-control" type="text" id="searchInput" placeholder="Search for..."
                                 oninput="searchProducts()">
-                            <button type="submit" class="btn btn-outline-danger">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/1024px-Search_Icon.svg.png"
-                                    alt="" width="20px" height="20px">
+                            <button type="submit" class="search-btn btn btn-outline-danger mx-1 my-0">
+                                <i class="fa-solid fa-magnifying-glass" ></i>
                             </button>
                         </form>
                         <div id="searchResults"></div>
@@ -377,5 +376,8 @@ include("../db.php");
             }
         });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta2/js/bootstrap.min.js"></script>
+
 </body>
 </html>

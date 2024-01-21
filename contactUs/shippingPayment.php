@@ -53,7 +53,7 @@
     <div class="wrapper container-fluid">
         <div class="container col-inner textDecreption">
 
-            <h1 class="my-3">SHIPPING AND PAYMENT</h1>
+            <h1 class="my-5">SHIPPING AND PAYMENT</h1>
 
             <h3 class="my-3">Shipping</h3>
 

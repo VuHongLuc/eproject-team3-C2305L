@@ -22,7 +22,7 @@
             <a href="../listPage/viewListCategory.php?category=<?php echo (int)$row1["categoryID"] ?>" class="list-group-item"><?php echo $row1["categoryName"]?>
             </a>
         </h2>
-        <div class="row">
+        <div class="row justify-content-center">
     <?php
         $sql = "SELECT * FROM products where categoryID =". $row1["categoryID"] ." limit 8";
         $result = $conn->query($sql);
@@ -30,8 +30,8 @@
         while ($row = $result->fetch_assoc()) {
      
     ?>
-                <form action="" method="POST" class="col-md-3 mt-2">
-                    <div class="card custom-col">
+                <form action="" method="POST" class="d-flex col-xl-3 col-lg-4 col-md-6 mt-2 justify-content-center">
+                    <div class="card custom-col ">
                         <!-- Phong sửa đoạn href của thẻ a -->
                         <a href="../productDetail/viewProduct.php?productID=<?php echo $row['productID'];?>" class="list-group-item align-items-center">
                             <img src="<?php echo "../".$row["imageLink"]?>" class="p-5 object-fit-contain home-custom-image" alt="Product 3">

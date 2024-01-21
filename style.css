@@ -62,6 +62,11 @@ body{
 nav {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
+.search-btn{
+    height: 43px;
+
+
+}
 /* Hưng */
    /* Styling for the footer section */
    .footer-section-container {
@@ -163,17 +168,14 @@ nav {
 
 }
 .main-menu_categories, .main-menu_brands{
-    width: 1350px;   
+    width: 1350px;  
 }
 .main-menu_name {
    
     font-size: 25.6px;
     font-weight: 700;
 }
-.category-menu {
-    padding: 12px;
 
-}
 
 .menu-item {
     height: 180px;
