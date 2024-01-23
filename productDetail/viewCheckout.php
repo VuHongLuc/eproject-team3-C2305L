@@ -47,7 +47,7 @@ if (isset($_SESSION["userName"])){
             <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
           </div>
           <div class='modal-body text-success'>
-          Payment success <i class='fa-solid fa-check'></i>
+          Payment successful <i class='fa-solid fa-check'></i>
           </div>
           <div class='modal-footer'>
             <a href='checkoutCompleted.php' class='btn btn-success'>Close</a>

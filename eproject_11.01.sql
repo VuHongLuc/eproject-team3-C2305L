@@ -216,13 +216,13 @@ INSERT INTO `eproject`.`products` (
     `description`
 ) VALUES 
 -- HDD
-(DEFAULT ,'WD Red Pro NAS Hard Drive','Photos/SanDisk/SanDisk-HDD-01.png', 92.99, 70, 1, 4, '1TB', '7200RPM', 'Red', '5 year', '3.5 inch', 
+(DEFAULT ,'SanDisk Red Pro NAS Hard Drive','Photos/SanDisk/SanDisk-HDD-01.png', 92.99, 70, 1, 4, '1TB', '7200RPM', 'Red', '5 year', '3.5 inch', 
     'Ideal for creative pros, medium to large businesses, and commercial/enterprise NAS systems.\nFor RAID-optimized NAS systems with an unlimited number of bays.\nRated for 550TB/year workloads1 and up to 2.5M hours MTBF.'
 ),
 (DEFAULT ,'My Book','Photos/SanDisk/SanDisk-HDD-02.png', 134.99, 150, 1, 4, '4TB', '5Gb/s ', 'Black', '3 year', '3.5 inch', 
     'Complete, streamlined backup solution.\nEasy-to-use password protection.\n256-bit AES hardware encryption.'
 ),
-(DEFAULT ,'WD Elements SE','Photos/SanDisk/SanDisk-HDD-03.png', 44.99, 70, 1, 4, '1TB', '291 MB/s', 'Black', '5 year', '3,5 inch', 
+(DEFAULT ,'SanDisk Elements SE','Photos/SanDisk/SanDisk-HDD-03.png', 44.99, 70, 1, 4, '1TB', '291 MB/s', 'Black', '5 year', '3,5 inch', 
     'Improves PC performance .\nBuilt for durability, shock tolerance, and reliability.\nHigh capacity in a compact design.'
 ),
 (DEFAULT ,'My Cloud Pro Series PR4100','Photos/SanDisk/SanDisk-HDD-04.png', 769.99, 210, 1, 4, '8TB', '560MB/s2', 'Black', '4 year', '12.10x44.41 mm', 
@@ -232,10 +232,10 @@ INSERT INTO `eproject`.`products` (
 (DEFAULT ,'SanDisk Extreme PRO SSD','Photos/SanDisk/SanDisk-SSD-01.png', 119.99, 50, 2, 4, '1TB', '2000MB/s2 read/write', 'Black', '5 year', '8.60x12.10x44.41 mm', 
     'Save time storing and transferring data with powerful NVMe solid state performances.\nA forged aluminum chassis acts as a heatsink to deliver higher sustained speeds.\nUp to three-meter drop protection and IP65 water and dust resistance.'
 ),
-(DEFAULT ,'WD_BLACK SN770M NVMe™ SSD','Photos/SanDisk/SanDisk-SSD-02.png', 79.99, 110, 2, 4, '500GB', '5,150 MB/s2', 'Black', '5 year', '8.60x12.10x44.41 mm', 
+(DEFAULT ,'SanDisk_BLACK SN770M NVMe™ SSD','Photos/SanDisk/SanDisk-SSD-02.png', 79.99, 110, 2, 4, '500GB', '5,150 MB/s2', 'Black', '5 year', '8.60x12.10x44.41 mm', 
     'Play more games wherever you are with up to 2TB of trusted Western Digital TLC 3D NAND storage.\nExclusive gaming features including PCIe® Gen 4.0, Western Digital nCache 4.0 technology, and Microsoft’s DirectStorage Support.'
 ),
-(DEFAULT ,'WD_BLACK C50 Expansion Card for Xbox','Photos/SanDisk/SanDisk-SSD-03.png', 79.99, 200, 2, 4, '512GB', '2000 MB/s2', 'Black', '3 year', '8.60x12.10 mm', 
+(DEFAULT ,'SanDisk_BLACK C50 Expansion Card for Xbox','Photos/SanDisk/SanDisk-SSD-03.png', 79.99, 200, 2, 4, '512GB', '2000 MB/s2', 'Black', '3 year', '8.60x12.10 mm', 
     'Plug-and-play with your Xbox™ Series X|S, so you don’t have to worry about compatibility or opening your console to install.\nQuick Resume-compatible, allowing you to suspend your current game, play a different game, then come back to the first game as if you never left .'
 ),
 (DEFAULT ,'SanDisk Ultra 3D SSD','Photos/SanDisk/SanDisk-SSD-04.png', 39.99, 150, 2, 4, '500GB', '560MB/s2', 'Black', '5 year', '12.10x44.41 mm', 
@@ -282,8 +282,8 @@ INSERT INTO `eproject`.`products` (
     'Delivering blazing-fast DDR4 overclocked performance to elevate your gaming experience.\n Full range RGB support – customize your colors and effects with a vibrant RGB light bar.'
 ),
 -- portable
-(DEFAULT ,'WD 5TB Elements Portable HDD, External Hard Drive','Photos/SanDisk/SanDisk-Portable-01.png', 119.99, 30, 6, 4, '5TB', ' 5Gbps', 'Black', '4 year', '2.5 Inches ', 
-    'Improve PC performance - When your internal hard drive is almost full your PC slows down. Don’t delete files. Free up space on your internal hard drive by transferring files to your WD Elements portable hard drive and get your laptop moving again.Plug-and-play ready for Windows PC'
+(DEFAULT ,'SanDisk 5TB Elements Portable HDD, External Hard Drive','Photos/SanDisk/SanDisk-Portable-01.png', 119.99, 30, 6, 4, '5TB', ' 5Gbps', 'Black', '4 year', '2.5 Inches ', 
+    'Improve PC performance - When your internal hard drive is almost full your PC slows down. Don’t delete files. Free up space on your internal hard drive by transferring files to your SanDisk Elements portable hard drive and get your laptop moving again.Plug-and-play ready for Windows PC'
 ),
 (DEFAULT ,'Seagate Portable 4TB External Hard Drive HDD','Photos/SanDisk/SanDisk-Portable-02.png', 59.99, 629, 6, 4, '4TB', '10Gbps', 'Black', '5 year', '18 Inches', 
     'Easily store and access 4TB of content on the go with the Seagate Portable Drive, a USB external hard drive.Specific uses: Personal.Designed to work with Windows or Mac computers, this external hard drive makes backup a snap just drag and drop.'
